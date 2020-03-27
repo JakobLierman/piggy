@@ -1,0 +1,16 @@
+PODS:
+  - SwiftHash (2.0.2)
+
+DEPENDENCIES:
+  - SwiftHash
+
+SPEC REPOS:
+  trunk:
+    - SwiftHash
+
+SPEC CHECKSUMS:
+  SwiftHash: 6d312abe61c8359bdef8d0093642f3a70b1c17ba
+
+PODFILE CHECKSUM: 4c531b5ad0368ed0025b2d9064b72ab49ed86878
+
+COCOAPODS: 1.9.1
