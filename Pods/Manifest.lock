@@ -1,16 +1,26 @@
 PODS:
+  - Realm (4.4.0):
+    - Realm/Headers (= 4.4.0)
+  - Realm/Headers (4.4.0)
+  - RealmSwift (4.4.0):
+    - Realm (= 4.4.0)
   - SwiftHash (2.0.2)
 
 DEPENDENCIES:
+  - RealmSwift
   - SwiftHash
 
 SPEC REPOS:
   trunk:
+    - Realm
+    - RealmSwift
     - SwiftHash
 
 SPEC CHECKSUMS:
+  Realm: e125f464884cda953ebefe70c671b75b03b81b9b
+  RealmSwift: 33656a42bd300959a081fc13347376bc478071af
   SwiftHash: 6d312abe61c8359bdef8d0093642f3a70b1c17ba
 
-PODFILE CHECKSUM: 4c531b5ad0368ed0025b2d9064b72ab49ed86878
+PODFILE CHECKSUM: 4264c0c1b056bfb026b597b0a56c970560839d2f
 
 COCOAPODS: 1.9.1

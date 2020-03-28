@@ -6,6 +6,7 @@ target 'Piggy' do
   use_frameworks!
 
   # Pods for Piggy
+  pod 'RealmSwift'
   pod 'SwiftHash'
 
 end
