@@ -13,10 +13,23 @@
 		360CBD10242C024400F96167 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CBD06242C024300F96167 /* SceneDelegate.swift */; };
 		360CBD11242C024400F96167 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CBD08242C024300F96167 /* HomeViewController.swift */; };
 		360CBD12242C024400F96167 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360CBD0A242C024300F96167 /* Home.storyboard */; };
+		363AA9D1243DF02F005550D4 /* Calculator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 363AA9D0243DF02F005550D4 /* Calculator.storyboard */; };
+		36468FB12439C39400543F75 /* Proxima Nova Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36468FAC2439C39400543F75 /* Proxima Nova Thin.otf */; };
+		36468FB22439C39400543F75 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36468FAD2439C39400543F75 /* ProximaNova-Regular.otf */; };
+		36468FB32439C39400543F75 /* Proxima Nova Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36468FAE2439C39400543F75 /* Proxima Nova Black.otf */; };
+		36468FB42439C39400543F75 /* Proxima Nova Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36468FAF2439C39400543F75 /* Proxima Nova Bold.otf */; };
+		36468FB52439C39400543F75 /* Proxima Nova Extrabold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36468FB02439C39400543F75 /* Proxima Nova Extrabold.otf */; };
+		36468FB92439CD4500543F75 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36468FB82439CD4500543F75 /* Constants.swift */; };
+		36468FBB2439E09700543F75 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36468FBA2439E09700543F75 /* LoginViewController.swift */; };
 		365F3E3C242D32680096B76E /* SavingsTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F3E3B242D32680096B76E /* SavingsTarget.swift */; };
 		365F3E3E242D3D7A0096B76E /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F3E3D242D3D7A0096B76E /* Transaction.swift */; };
 		365F3E40242D42B20096B76E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F3E3F242D42B20096B76E /* Category.swift */; };
-		36D93F6C242EAE2F009AF577 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D93F6B242EAE2F009AF577 /* User.swift */; };
+		368117C4243686E800BBB6AA /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368117C3243686E800BBB6AA /* TabViewController.swift */; };
+		369F17DE243BBD6E0086B3BB /* Goals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 369F17DD243BBD6E0086B3BB /* Goals.storyboard */; };
+		36A4D898243A263E00CBB84C /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A4D897243A263E00CBB84C /* RealmService.swift */; };
+		36A4D89A243A68D100CBB84C /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A4D899243A68D100CBB84C /* AuthenticationService.swift */; };
+		36C398F524348F8600403DDB /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C398F424348F8600403DDB /* Login.storyboard */; };
+		36D93F6C242EAE2F009AF577 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D93F6B242EAE2F009AF577 /* Defaults.swift */; };
 		43A0F4C8CA496FB5CBBDA629 /* Pods_Piggy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AED37EDA87606CBB04C79716 /* Pods_Piggy.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,11 +41,24 @@
 		360CBD06242C024300F96167 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		360CBD08242C024300F96167 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		360CBD0A242C024300F96167 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		363AA9D0243DF02F005550D4 /* Calculator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calculator.storyboard; sourceTree = "<group>"; };
+		36468FAC2439C39400543F75 /* Proxima Nova Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Thin.otf"; sourceTree = "<group>"; };
+		36468FAD2439C39400543F75 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
+		36468FAE2439C39400543F75 /* Proxima Nova Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Black.otf"; sourceTree = "<group>"; };
+		36468FAF2439C39400543F75 /* Proxima Nova Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Bold.otf"; sourceTree = "<group>"; };
+		36468FB02439C39400543F75 /* Proxima Nova Extrabold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Extrabold.otf"; sourceTree = "<group>"; };
+		36468FB82439CD4500543F75 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		36468FBA2439E09700543F75 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		365F3E3B242D32680096B76E /* SavingsTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsTarget.swift; sourceTree = "<group>"; };
 		365F3E3D242D3D7A0096B76E /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		365F3E3F242D42B20096B76E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		3663E7A6242A889D00CECF87 /* Piggy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Piggy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		36D93F6B242EAE2F009AF577 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		368117C3243686E800BBB6AA /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		369F17DD243BBD6E0086B3BB /* Goals.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Goals.storyboard; sourceTree = "<group>"; };
+		36A4D897243A263E00CBB84C /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		36A4D899243A68D100CBB84C /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		36C398F424348F8600403DDB /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		36D93F6B242EAE2F009AF577 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		45A548FA65D0192B1268450D /* Pods-Piggy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piggy.debug.xcconfig"; path = "Target Support Files/Pods-Piggy/Pods-Piggy.debug.xcconfig"; sourceTree = "<group>"; };
 		AED37EDA87606CBB04C79716 /* Pods_Piggy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Piggy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF18BEADD0B0449A3BD9C9E8 /* Pods-Piggy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piggy.release.xcconfig"; path = "Target Support Files/Pods-Piggy/Pods-Piggy.release.xcconfig"; sourceTree = "<group>"; };
@@ -64,6 +90,7 @@
 				360CBD00242C024300F96167 /* Models */,
 				360CBD09242C024300F96167 /* Views */,
 				360CBD07242C024300F96167 /* Controllers */,
+				36A4D88C2439F14700CBB84C /* Extension */,
 				360CBD0B242C024300F96167 /* Services */,
 				360CBD01242C024300F96167 /* Supporting Files */,
 			);
@@ -76,7 +103,7 @@
 				365F3E3B242D32680096B76E /* SavingsTarget.swift */,
 				365F3E3D242D3D7A0096B76E /* Transaction.swift */,
 				365F3E3F242D42B20096B76E /* Category.swift */,
-				36D93F6B242EAE2F009AF577 /* User.swift */,
+				36D93F6B242EAE2F009AF577 /* Defaults.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -84,11 +111,13 @@
 		360CBD01242C024300F96167 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				36468FAB2439C37E00543F75 /* Fonts */,
 				360CBD05242C024300F96167 /* AppDelegate.swift */,
 				360CBD06242C024300F96167 /* SceneDelegate.swift */,
 				360CBCFF242C024300F96167 /* Assets.xcassets */,
 				360CBD02242C024300F96167 /* LaunchScreen.storyboard */,
 				360CBD03242C024300F96167 /* Info.plist */,
+				36468FB82439CD4500543F75 /* Constants.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -97,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				360CBD08242C024300F96167 /* HomeViewController.swift */,
+				368117C3243686E800BBB6AA /* TabViewController.swift */,
+				36468FBA2439E09700543F75 /* LoginViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -105,6 +136,9 @@
 			isa = PBXGroup;
 			children = (
 				360CBD0A242C024300F96167 /* Home.storyboard */,
+				36C398F424348F8600403DDB /* Login.storyboard */,
+				369F17DD243BBD6E0086B3BB /* Goals.storyboard */,
+				363AA9D0243DF02F005550D4 /* Calculator.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -112,8 +146,22 @@
 		360CBD0B242C024300F96167 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				36A4D897243A263E00CBB84C /* RealmService.swift */,
+				36A4D899243A68D100CBB84C /* AuthenticationService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		36468FAB2439C37E00543F75 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				36468FAE2439C39400543F75 /* Proxima Nova Black.otf */,
+				36468FAF2439C39400543F75 /* Proxima Nova Bold.otf */,
+				36468FB02439C39400543F75 /* Proxima Nova Extrabold.otf */,
+				36468FAC2439C39400543F75 /* Proxima Nova Thin.otf */,
+				36468FAD2439C39400543F75 /* ProximaNova-Regular.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		3663E79D242A889D00CECF87 = {
@@ -132,6 +180,13 @@
 				3663E7A6242A889D00CECF87 /* Piggy.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		36A4D88C2439F14700CBB84C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		C1894C2BDBA11688CC720C6E /* Pods */ = {
@@ -203,8 +258,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36468FB42439C39400543F75 /* Proxima Nova Bold.otf in Resources */,
+				363AA9D1243DF02F005550D4 /* Calculator.storyboard in Resources */,
+				369F17DE243BBD6E0086B3BB /* Goals.storyboard in Resources */,
+				36C398F524348F8600403DDB /* Login.storyboard in Resources */,
+				36468FB22439C39400543F75 /* ProximaNova-Regular.otf in Resources */,
+				36468FB12439C39400543F75 /* Proxima Nova Thin.otf in Resources */,
 				360CBD0C242C024400F96167 /* Assets.xcassets in Resources */,
+				36468FB52439C39400543F75 /* Proxima Nova Extrabold.otf in Resources */,
 				360CBD0D242C024400F96167 /* LaunchScreen.storyboard in Resources */,
+				36468FB32439C39400543F75 /* Proxima Nova Black.otf in Resources */,
 				360CBD12242C024400F96167 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,13 +321,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				368117C4243686E800BBB6AA /* TabViewController.swift in Sources */,
 				365F3E3C242D32680096B76E /* SavingsTarget.swift in Sources */,
+				36A4D898243A263E00CBB84C /* RealmService.swift in Sources */,
 				360CBD0F242C024400F96167 /* AppDelegate.swift in Sources */,
 				360CBD10242C024400F96167 /* SceneDelegate.swift in Sources */,
+				36468FB92439CD4500543F75 /* Constants.swift in Sources */,
+				36A4D89A243A68D100CBB84C /* AuthenticationService.swift in Sources */,
 				360CBD11242C024400F96167 /* HomeViewController.swift in Sources */,
 				365F3E3E242D3D7A0096B76E /* Transaction.swift in Sources */,
 				365F3E40242D42B20096B76E /* Category.swift in Sources */,
-				36D93F6C242EAE2F009AF577 /* User.swift in Sources */,
+				36468FBB2439E09700543F75 /* LoginViewController.swift in Sources */,
+				36D93F6C242EAE2F009AF577 /* Defaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +458,7 @@
 			baseConfigurationReference = 45A548FA65D0192B1268450D /* Pods-Piggy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Piggy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FP4N86Q9NT;
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
@@ -410,6 +479,7 @@
 			baseConfigurationReference = EF18BEADD0B0449A3BD9C9E8 /* Pods-Piggy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Piggy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FP4N86Q9NT;
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
