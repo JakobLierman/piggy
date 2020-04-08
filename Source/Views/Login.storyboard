@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Proxima Nova Bold.otf">
+            <string>ProximaNova-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="EHN-VU-IHW">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="hed-MF-D5f" customClass="LoginViewController" customModule="Piggy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ncl-io-WHz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="XSD-EK-2ve">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="foQ-36-yuM">
+                                <rect key="frame" x="137.66666666666666" y="95" width="100" height="98.666666666666671"/>
+                                <color key="tintColor" name="Text Light"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Y70-nQ-TIK"/>
+                                    <constraint firstAttribute="width" secondItem="foQ-36-yuM" secondAttribute="height" multiplier="1:1" id="vWa-Zn-qrJ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Piggy is locked" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KsK-1t-5Mg">
+                                <rect key="frame" x="30" y="243.99999999999997" width="315" height="58.666666666666657"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="48"/>
+                                <color key="textColor" name="Text Light"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gW0-ME-nfa" customClass="TORoundedButton">
+                                <rect key="frame" x="30" y="673" width="315" height="55"/>
+                                <color key="tintColor" name="Text Light"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="VuN-49-Bjp"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="qDT-8u-PBB"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Unlock"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="0.51764705879999995" green="0.14901960780000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="attemptUnlock:" destination="hed-MF-D5f" eventType="touchUpInside" id="XPz-nB-fp7"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.51764705879999995" green="0.14901960780000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KsK-1t-5Mg" secondAttribute="trailing" constant="30" id="0zW-Mx-h4O"/>
+                            <constraint firstItem="gW0-ME-nfa" firstAttribute="centerX" secondItem="Ncl-io-WHz" secondAttribute="centerX" id="3UB-5c-kdC"/>
+                            <constraint firstItem="KsK-1t-5Mg" firstAttribute="top" secondItem="foQ-36-yuM" secondAttribute="bottom" constant="50" id="7eI-F0-6Vd">
+                                <variation key="heightClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstAttribute="bottom" secondItem="XSD-EK-2ve" secondAttribute="bottom" id="DJu-7A-h6o"/>
+                            <constraint firstItem="foQ-36-yuM" firstAttribute="centerX" secondItem="Ncl-io-WHz" secondAttribute="centerX" id="EIQ-4h-uAa"/>
+                            <constraint firstItem="XSD-EK-2ve" firstAttribute="top" secondItem="Ncl-io-WHz" secondAttribute="top" id="TGK-ku-o9f"/>
+                            <constraint firstItem="kZn-S2-0d6" firstAttribute="bottom" secondItem="gW0-ME-nfa" secondAttribute="bottom" constant="50" id="eeT-GG-u4G"/>
+                            <constraint firstItem="XSD-EK-2ve" firstAttribute="trailing" secondItem="Ncl-io-WHz" secondAttribute="trailing" id="gP0-I4-40P"/>
+                            <constraint firstItem="KsK-1t-5Mg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ncl-io-WHz" secondAttribute="leading" constant="30" id="l1L-ML-Jfy"/>
+                            <constraint firstItem="gW0-ME-nfa" firstAttribute="leading" secondItem="kZn-S2-0d6" secondAttribute="leading" priority="750" constant="30" id="tHu-fg-Rhs"/>
+                            <constraint firstItem="kZn-S2-0d6" firstAttribute="trailing" secondItem="gW0-ME-nfa" secondAttribute="trailing" priority="750" constant="30" id="tRi-Zu-YtX"/>
+                            <constraint firstItem="foQ-36-yuM" firstAttribute="top" secondItem="kZn-S2-0d6" secondAttribute="top" constant="50" id="tiP-fO-8qN">
+                                <variation key="heightClass=compact-widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="KsK-1t-5Mg" firstAttribute="centerX" secondItem="Ncl-io-WHz" secondAttribute="centerX" id="x6p-Tn-vTa"/>
+                            <constraint firstItem="XSD-EK-2ve" firstAttribute="leading" secondItem="Ncl-io-WHz" secondAttribute="leading" id="xcA-y4-IPu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kZn-S2-0d6"/>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="tiP-fO-8qN"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5N3-Rj-lYn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="-6.0267857142857144"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Background" width="2048" height="2048"/>
+        <image name="lock.circle.fill" catalog="system" width="64" height="60"/>
+        <namedColor name="Text Light">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

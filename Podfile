@@ -7,6 +7,6 @@ target 'Piggy' do
 
   # Pods for Piggy
   pod 'RealmSwift'
-  pod 'SwiftHash'
+  pod 'TORoundedButton'
 
 end

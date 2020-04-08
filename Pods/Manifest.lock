@@ -4,23 +4,23 @@ PODS:
   - Realm/Headers (4.4.0)
   - RealmSwift (4.4.0):
     - Realm (= 4.4.0)
-  - SwiftHash (2.0.2)
+  - TORoundedButton (1.1.2)
 
 DEPENDENCIES:
   - RealmSwift
-  - SwiftHash
+  - TORoundedButton
 
 SPEC REPOS:
   trunk:
     - Realm
     - RealmSwift
-    - SwiftHash
+    - TORoundedButton
 
 SPEC CHECKSUMS:
   Realm: e125f464884cda953ebefe70c671b75b03b81b9b
   RealmSwift: 33656a42bd300959a081fc13347376bc478071af
-  SwiftHash: 6d312abe61c8359bdef8d0093642f3a70b1c17ba
+  TORoundedButton: d40dbf6f830dbe7a784a592d9f7933a3a49fd31e
 
-PODFILE CHECKSUM: 4264c0c1b056bfb026b597b0a56c970560839d2f
+PODFILE CHECKSUM: e50cd34421e96d262f56232b8ab07a5d112f9371
 
 COCOAPODS: 1.9.1

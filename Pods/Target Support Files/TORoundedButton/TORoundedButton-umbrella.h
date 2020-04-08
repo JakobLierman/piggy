@@ -10,7 +10,8 @@
 #endif
 #endif
 
+#import "TORoundedButton.h"
 
-FOUNDATION_EXPORT double SwiftHashVersionNumber;
-FOUNDATION_EXPORT const unsigned char SwiftHashVersionString[];
+FOUNDATION_EXPORT double TORoundedButtonVersionNumber;
+FOUNDATION_EXPORT const unsigned char TORoundedButtonVersionString[];
 
