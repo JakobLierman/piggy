@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="na9-x8-xP4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -49,17 +50,17 @@
         <!--ActiveGoals-->
         <scene sceneID="tUc-bx-CcU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CzB-N3-3ur" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewControllerPlaceholder storyboardName="Goals" referencedIdentifier="ActiveGoals" id="y2f-Cp-8tz" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="ActiveGoals" id="y2f-Cp-8tz" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="W1H-5C-3sf"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CzB-N3-3ur" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1706" y="-424"/>
+            <point key="canvasLocation" x="1706" y="-425"/>
         </scene>
         <!--FinishedGoals-->
         <scene sceneID="86c-t2-Pvw">
             <objects>
-                <viewControllerPlaceholder storyboardName="Goals" referencedIdentifier="FinishedGoals" id="WwK-7G-9e1" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="FinishedGoals" id="WwK-7G-9e1" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="OHd-pu-zFn"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KOD-dH-Raa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -80,10 +81,9 @@
         <scene sceneID="VJf-9e-QkL">
             <objects>
                 <tabBarController id="na9-x8-xP4" customClass="HomeViewController" customModule="Piggy" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="KJK-7D-5Vp">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KJK-7D-5Vp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" red="0.92156862750000001" green="0.21176470589999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>

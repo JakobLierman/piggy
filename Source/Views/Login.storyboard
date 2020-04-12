@@ -34,7 +34,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Piggy is locked" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KsK-1t-5Mg">
-                                <rect key="frame" x="30" y="243.99999999999997" width="315" height="58.666666666666657"/>
+                                <rect key="frame" x="30" y="244" width="315" height="56"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="48"/>
                                 <color key="textColor" name="Text Light"/>
                                 <nil key="highlightedColor"/>
