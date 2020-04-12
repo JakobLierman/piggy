@@ -7,13 +7,34 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Transaction {
+@objcMembers class Transaction: Object {
     
     // MARK: Properties
-    let savingsTarget: SavingsTarget
-    var amount: Double
-    var isAddition: Bool = true
-    let timeCreated: Date = Date()
+    dynamic var id: String = UUID().uuidString
+    dynamic var savingsTarget: SavingsTarget? = SavingsTarget()
+    dynamic var amount: Double = 0
+    dynamic var isAddition: Bool = true
+    dynamic var createdAt: Date = Date()
+    
+    // MARK: Constructors
+    convenience init(id: String?, savingsTarget: SavingsTarget?, amount: Double, isAddition: Bool?, createdAt: Date?) {
+        self.init()
+        self.id = id ?? UUID().uuidString
+        self.savingsTarget = savingsTarget ?? SavingsTarget()
+        self.amount = amount
+        self.isAddition = isAddition ?? true
+        self.createdAt = createdAt ?? Date()
+    }
+    
+    // MARK: Functions
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    override static func indexedProperties() -> [String] {
+        return ["createdAt"]
+    }
     
 }

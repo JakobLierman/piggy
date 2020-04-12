@@ -7,12 +7,31 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Category {
+@objcMembers class Category: Object {
     
     // MARK: Properties
-    var name: String
-    var iconPath: String?
-    var savingsTargets: [SavingsTarget]?
+    dynamic var id: String = UUID().uuidString
+    dynamic var name: String = ""
+    dynamic var iconPath: String? = nil
+    //dynamic var savingsTargets: List<SavingsTarget>? = List<SavingsTarget>()
+    
+    // MARK: Constructors
+    convenience init(id: String?, name: String, iconPath: String?) {
+        self.init()
+        self.id = id ?? UUID().uuidString
+        self.name = name
+        self.iconPath = iconPath
+    }
+    
+    // MARK: Functions
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    override static func indexedProperties() -> [String] {
+        return ["createdAt"]
+    }
     
 }

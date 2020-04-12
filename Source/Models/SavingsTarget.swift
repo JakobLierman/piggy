@@ -7,36 +7,58 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct SavingsTarget {
+@objcMembers class SavingsTarget: Object {
     
     // MARK: Properties
-    var name: String
-    var price: Double
-    var balance: Double?
-    var category: String? // TODO: Category
-    var deadline: Date?
-    var imagePath: String?
-    var transactions: [Date: Transaction] = [:]
-    let timeCreated: Date = Date()
+    dynamic var id: String = UUID().uuidString
+    dynamic var name: String = ""
+    dynamic var price: Double = 0
+    dynamic var balance: Double? = nil
+    dynamic var category: Category? = nil
+    dynamic var deadline: Date? = nil
+    dynamic var imagePath: String? = nil
+    //dynamic var transactions: List<Transaction>? = List<Transaction>()
+    dynamic var createdAt: Date = Date()
     
     // MARK: Constructors
+    convenience init(id: String?, name: String, price: Double, balance: Double?, category: Category?, deadline: Date?, imagePath: String?, createdAt: Date?) {
+        self.init()
+        self.id = id ?? UUID().uuidString
+        self.name = name
+        self.price = price
+        self.balance = balance
+        self.category = category
+        self.deadline = deadline
+        self.imagePath = imagePath
+        self.createdAt = createdAt ?? Date()
+    }
     
     // MARK: Functions
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    override static func indexedProperties() -> [String] {
+        return ["createdAt"]
+    }
+    
     func getRemainingTime() -> Double {
         return deadline!.timeIntervalSinceNow
     }
     
     func addBalance(amount: Double) {
-        self.addTransaction(amount: amount)
+        addTransaction(amount: amount)
     }
     
     func removeBalance(amount: Double) {
-        self.addTransaction(amount: amount, isAddition: false)
+        addTransaction(amount: amount, isAddition: false)
     }
     
     private func addTransaction(amount: Double, isAddition: Bool = true) {
-        // TODO
+        let transaction = Transaction(id: nil, savingsTarget: self, amount: amount, isAddition: isAddition, createdAt: nil)
+        RealmService.shared.create(transaction)
     }
     
     private func removeTransaction(date: Date) {
