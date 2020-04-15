@@ -12,6 +12,7 @@ import RealmSwift
 class ActiveGoalsTableViewController: UITableViewController {
     
     @IBOutlet var table: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var savingsTargets: Results<SavingsTarget>!
     
@@ -28,6 +29,14 @@ class ActiveGoalsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if savingsTargets.count == 0 {
+            self.searchBar.isHidden = true
+            tableView.setEmptyView(title: "You do not have any active goals", message: "Create one with the button above")
+        } else {
+            self.searchBar.isHidden = false
+            tableView.restore()
+        }
+
         return savingsTargets.count
     }
     
