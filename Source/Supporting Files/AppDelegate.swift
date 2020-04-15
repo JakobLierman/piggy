@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // TODO - Do authentication
             print("Not authenticated")
         }
+        
+        // Fill database
+        if (db.realm.objects(Category.self).count == 0) {
+            db.create(Category(id: nil, name: "Entertainment", iconPath: nil))
+            db.create(Category(id: nil, name: "Household", iconPath: nil))
+            db.create(Category(id: nil, name: "Gifts", iconPath: nil))
+            db.create(Category(id: nil, name: "Clothing", iconPath: nil))
+            db.create(Category(id: nil, name: "Transportation", iconPath: nil))
+            db.create(Category(id: nil, name: "Travelling", iconPath: nil))
+            db.create(Category(id: nil, name: "Hobbies", iconPath: nil))
+        }
+        
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         return true
     }
