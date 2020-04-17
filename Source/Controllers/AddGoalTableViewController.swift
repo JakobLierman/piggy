@@ -72,9 +72,27 @@ class AddGoalTableViewController: UITableViewController {
     }
     
     @IBAction func showCategoryPickerPopover(_ sender: UIButton) {
+        StringPickerPopover(title: "Category", choices: self.categories.map({ $0.name }))
+            .setClearButton(action: { (popover, _, _) in
+                self.setSelectedCategory(nil)
+                popover.disappear()
+            })
+            .setDoneButton(action: { (_, selectedRow, _) in
+                self.setSelectedCategory((selectedRow == 0) ? nil : self.categories[selectedRow-1])
+            })
+            .appear(originView: sender, baseViewController: self)
     }
     
     @IBAction func showDatePickerPopover(_ sender: UIButton) {
+        DatePickerPopover(title: "Deadline")
+            .setDateMode(.date)
+            .setMinimumDate(Date())
+            .setClearButton(action: { (popover, _) in
+                self.setSelectedDeadline(nil)
+                popover.disappear()
+            })
+            .setDoneButton(action: { (_, selectedDate) in self.setSelectedDeadline(selectedDate)})
+            .appear(originView: sender, baseViewController: self)
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
