@@ -26,13 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Fill database
         if (db.realm.objects(Category.self).count == 0) {
-            db.create(Category(id: nil, name: "Entertainment", iconPath: nil))
-            db.create(Category(id: nil, name: "Household", iconPath: nil))
-            db.create(Category(id: nil, name: "Gifts", iconPath: nil))
-            db.create(Category(id: nil, name: "Clothing", iconPath: nil))
-            db.create(Category(id: nil, name: "Transportation", iconPath: nil))
-            db.create(Category(id: nil, name: "Travelling", iconPath: nil))
-            db.create(Category(id: nil, name: "Hobbies", iconPath: nil))
+            db.create(Category(id: nil, name: "Entertainment", icon: "dice"))
+            db.create(Category(id: nil, name: "Household", icon: "fridge"))
+            db.create(Category(id: nil, name: "Gifts", icon: "balloon"))
+            db.create(Category(id: nil, name: "Clothing", icon: "hanger"))
+            db.create(Category(id: nil, name: "Transportation", icon: "car"))
+            db.create(Category(id: nil, name: "Travelling", icon: "luggage"))
+            db.create(Category(id: nil, name: "Hobbies", icon: "gamer"))
         }
         
         print(Realm.Configuration.defaultConfiguration.fileURL!)
