@@ -17,7 +17,6 @@
 		360CBD11242C024400F96167 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CBD08242C024300F96167 /* HomeViewController.swift */; };
 		360CBD12242C024400F96167 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360CBD0A242C024300F96167 /* Home.storyboard */; };
 		3612ECAD243E5C5E008CE83F /* SavingsTargetsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3612ECAC243E5C5E008CE83F /* SavingsTargetsTableViewController.swift */; };
-		3612ECAF243E5ED8008CE83F /* ActiveGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3612ECAE243E5ED8008CE83F /* ActiveGoalsViewController.swift */; };
 		3624E41224477EE30092624A /* CurrencyConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3624E41124477EE30092624A /* CurrencyConvert.swift */; };
 		363AA9D1243DF02F005550D4 /* Calculator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 363AA9D0243DF02F005550D4 /* Calculator.storyboard */; };
 		36468FB12439C39400543F75 /* Proxima Nova Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36468FAC2439C39400543F75 /* Proxima Nova Thin.otf */; };
@@ -52,7 +51,6 @@
 		360CBD08242C024300F96167 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		360CBD0A242C024300F96167 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		3612ECAC243E5C5E008CE83F /* SavingsTargetsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsTargetsTableViewController.swift; sourceTree = "<group>"; };
-		3612ECAE243E5ED8008CE83F /* ActiveGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveGoalsViewController.swift; sourceTree = "<group>"; };
 		3624E41124477EE30092624A /* CurrencyConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConvert.swift; sourceTree = "<group>"; };
 		363AA9D0243DF02F005550D4 /* Calculator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calculator.storyboard; sourceTree = "<group>"; };
 		36468FAC2439C39400543F75 /* Proxima Nova Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Thin.otf"; sourceTree = "<group>"; };
@@ -142,7 +140,6 @@
 			children = (
 				360CBD08242C024300F96167 /* HomeViewController.swift */,
 				36468FBA2439E09700543F75 /* LoginViewController.swift */,
-				3612ECAE243E5ED8008CE83F /* ActiveGoalsViewController.swift */,
 				3612ECAC243E5C5E008CE83F /* SavingsTargetsTableViewController.swift */,
 				36069489243E6D2900F3DE3D /* SavingsTargetTableViewCell.swift */,
 				36FAADB62444A32E00C94842 /* AddGoalTableViewController.swift */,
@@ -353,7 +350,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				365F3E3C242D32680096B76E /* SavingsTarget.swift in Sources */,
-				3612ECAF243E5ED8008CE83F /* ActiveGoalsViewController.swift in Sources */,
 				36FAADB72444A32E00C94842 /* AddGoalTableViewController.swift in Sources */,
 				36B2C0CA2446FCA20098C3DA /* UITableViewExtension.swift in Sources */,
 				36A4D898243A263E00CBB84C /* RealmService.swift in Sources */,
