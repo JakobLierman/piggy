@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import TORoundedButton
 
 class SavingsTargetsTableViewController: UITableViewController {
     
@@ -19,9 +20,8 @@ class SavingsTargetsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // TODO: Dynamic filter
         savingsTargets = db.realm.objects(SavingsTarget.self).filter("price > balance")
-        
-        //savingsTargets.append(SavingsTarget.init(name: "Mac Pro", price: 30000))
         
         table.delegate = self
         table.dataSource = self
@@ -45,5 +45,14 @@ class SavingsTargetsTableViewController: UITableViewController {
         
         return cell
     }
+
+    @IBAction func addTarget(_ sender: RoundedButton) {
+        let addGoalStoryboard: UIStoryboard = UIStoryboard(name: "AddGoal", bundle: nil)
+        let addGoalInitialViewController = addGoalStoryboard.instantiateInitialViewController()!
+        self.present(addGoalInitialViewController, animated: true, completion: nil) // TODO - Completion?
+    }
     
+    @IBAction func openSettings(_ sender: UIBarButtonItem) {
+        // TODO: Open settings panel on tap
+    }
 }

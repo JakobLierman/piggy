@@ -31,6 +31,9 @@
                                             <color key="value" name="Primary Dark"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="addTarget:" destination="Z6t-Oh-O8w" eventType="touchUpInside" id="lXO-6z-iLS"/>
+                                    </connections>
                                 </view>
                             </subviews>
                             <constraints>
@@ -143,7 +146,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Finished Goals" id="SGC-NU-GWN">
-                        <barButtonItem key="rightBarButtonItem" image="gear" catalog="system" style="done" id="2c3-Gr-fz5"/>
+                        <barButtonItem key="rightBarButtonItem" image="gear" catalog="system" style="done" id="2c3-Gr-fz5">
+                            <connections>
+                                <action selector="openSettings:" destination="Z6t-Oh-O8w" id="X1y-ft-xSe"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="table" destination="X7a-cv-AZb" id="cuE-Te-o4K"/>

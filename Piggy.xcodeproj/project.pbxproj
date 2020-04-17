@@ -156,8 +156,8 @@
 				360CBD0A242C024300F96167 /* Home.storyboard */,
 				36C398F424348F8600403DDB /* Login.storyboard */,
 				36FAADB42444977600C94842 /* ActiveGoals.storyboard */,
-				3604296F2441068600CD9BA4 /* AddGoal.storyboard */,
 				3606FF9D2440E8930021867E /* FinishedGoals.storyboard */,
+				3604296F2441068600CD9BA4 /* AddGoal.storyboard */,
 				363AA9D0243DF02F005550D4 /* Calculator.storyboard */,
 			);
 			path = Views;
