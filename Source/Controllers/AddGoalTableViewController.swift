@@ -100,6 +100,27 @@ class AddGoalTableViewController: UITableViewController {
     }
     
     @IBAction func save(_ sender: UIBarButtonItem) {
+        do {
+            let savingsTarget = try SavingsTarget(name: self.goalNameTextField.text ?? "", price: Double(self.typedAmountToSave / 100), balance: Double(self.typedAmountSaved / 100), category: self.category, deadline: self.deadline)
+            db.create(savingsTarget)
+            self.dismiss(animated: true, completion: nil)
+        } catch SavingsTargetError.emptyNameError {
+            self.showErrorAlert(title: "Name is missing", message: "Please add a name and try again.")
+        } catch SavingsTargetError.noPriceError {
+            self.showErrorAlert(title: "Price is missing", message: "Please add an amount to save bigger than 0 and try again.")
+        } catch SavingsTargetError.dateToEarly(let earliestDate) {
+            self.showErrorAlert(title: "Invalid deadline", message: "Please add a deadline after \(dateFormatter.string(from: earliestDate)) and try again.")
+        } catch {
+            self.showErrorAlert(title: "Something went wrong", message: "Unexpected error: \(error).")
+            print("Unexpected error: \(error).")
+        }
+    }
+    
+    private func showErrorAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.view.tintColor = UIColor(named: "Primary")
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
