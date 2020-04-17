@@ -14,15 +14,15 @@ import RealmSwift
     // MARK: Properties
     dynamic var id: String = UUID().uuidString
     dynamic var name: String = ""
-    dynamic var iconPath: String? = nil
+    dynamic var icon: String? = nil
     //dynamic var savingsTargets: List<SavingsTarget>? = List<SavingsTarget>()
     
     // MARK: Constructors
-    convenience init(id: String?, name: String, iconPath: String?) {
+    convenience init(id: String?, name: String, icon: String?) {
         self.init()
         self.id = id ?? UUID().uuidString
         self.name = name
-        self.iconPath = iconPath
+        self.icon = icon
     }
     
     // MARK: Functions

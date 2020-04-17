@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		360429702441068600CD9BA4 /* AddGoal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3604296F2441068600CD9BA4 /* AddGoal.storyboard */; };
-		3606948A243E6D2900F3DE3D /* ActiveGoalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36069489243E6D2900F3DE3D /* ActiveGoalsTableViewCell.swift */; };
+		3606948A243E6D2900F3DE3D /* SavingsTargetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36069489243E6D2900F3DE3D /* SavingsTargetTableViewCell.swift */; };
 		3606FF9E2440E8930021867E /* FinishedGoals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3606FF9D2440E8930021867E /* FinishedGoals.storyboard */; };
 		360CBD0C242C024400F96167 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 360CBCFF242C024300F96167 /* Assets.xcassets */; };
 		360CBD0D242C024400F96167 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360CBD02242C024300F96167 /* LaunchScreen.storyboard */; };
@@ -16,7 +16,7 @@
 		360CBD10242C024400F96167 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CBD06242C024300F96167 /* SceneDelegate.swift */; };
 		360CBD11242C024400F96167 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CBD08242C024300F96167 /* HomeViewController.swift */; };
 		360CBD12242C024400F96167 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360CBD0A242C024300F96167 /* Home.storyboard */; };
-		3612ECAD243E5C5E008CE83F /* ActiveGoalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3612ECAC243E5C5E008CE83F /* ActiveGoalsTableViewController.swift */; };
+		3612ECAD243E5C5E008CE83F /* SavingsTargetsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3612ECAC243E5C5E008CE83F /* SavingsTargetsTableViewController.swift */; };
 		3612ECAF243E5ED8008CE83F /* ActiveGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3612ECAE243E5ED8008CE83F /* ActiveGoalsViewController.swift */; };
 		3624E41224477EE30092624A /* CurrencyConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3624E41124477EE30092624A /* CurrencyConvert.swift */; };
 		363AA9D1243DF02F005550D4 /* Calculator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 363AA9D0243DF02F005550D4 /* Calculator.storyboard */; };
@@ -30,17 +30,19 @@
 		365F3E3C242D32680096B76E /* SavingsTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F3E3B242D32680096B76E /* SavingsTarget.swift */; };
 		365F3E3E242D3D7A0096B76E /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F3E3D242D3D7A0096B76E /* Transaction.swift */; };
 		365F3E40242D42B20096B76E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F3E3F242D42B20096B76E /* Category.swift */; };
-		369F17DE243BBD6E0086B3BB /* ActiveGoals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 369F17DD243BBD6E0086B3BB /* ActiveGoals.storyboard */; };
 		36A4D898243A263E00CBB84C /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A4D897243A263E00CBB84C /* RealmService.swift */; };
 		36A4D89A243A68D100CBB84C /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A4D899243A68D100CBB84C /* AuthenticationService.swift */; };
+		36B2C0CA2446FCA20098C3DA /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B2C0C92446FCA20098C3DA /* UITableViewExtension.swift */; };
 		36C398F524348F8600403DDB /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C398F424348F8600403DDB /* Login.storyboard */; };
 		36D93F6C242EAE2F009AF577 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D93F6B242EAE2F009AF577 /* Defaults.swift */; };
+		36FAADB52444977600C94842 /* ActiveGoals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36FAADB42444977600C94842 /* ActiveGoals.storyboard */; };
+		36FAADB72444A32E00C94842 /* AddGoalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FAADB62444A32E00C94842 /* AddGoalTableViewController.swift */; };
 		43A0F4C8CA496FB5CBBDA629 /* Pods_Piggy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AED37EDA87606CBB04C79716 /* Pods_Piggy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3604296F2441068600CD9BA4 /* AddGoal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddGoal.storyboard; sourceTree = "<group>"; };
-		36069489243E6D2900F3DE3D /* ActiveGoalsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActiveGoalsTableViewCell.swift; path = Source/Controllers/ActiveGoalsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		36069489243E6D2900F3DE3D /* SavingsTargetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SavingsTargetTableViewCell.swift; path = Source/Controllers/SavingsTargetTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		3606FF9D2440E8930021867E /* FinishedGoals.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FinishedGoals.storyboard; sourceTree = "<group>"; };
 		360CBCFF242C024300F96167 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		360CBD02242C024300F96167 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,7 +51,7 @@
 		360CBD06242C024300F96167 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		360CBD08242C024300F96167 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		360CBD0A242C024300F96167 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		3612ECAC243E5C5E008CE83F /* ActiveGoalsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveGoalsTableViewController.swift; sourceTree = "<group>"; };
+		3612ECAC243E5C5E008CE83F /* SavingsTargetsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsTargetsTableViewController.swift; sourceTree = "<group>"; };
 		3612ECAE243E5ED8008CE83F /* ActiveGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveGoalsViewController.swift; sourceTree = "<group>"; };
 		3624E41124477EE30092624A /* CurrencyConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConvert.swift; sourceTree = "<group>"; };
 		363AA9D0243DF02F005550D4 /* Calculator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calculator.storyboard; sourceTree = "<group>"; };
@@ -64,11 +66,13 @@
 		365F3E3D242D3D7A0096B76E /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		365F3E3F242D42B20096B76E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		3663E7A6242A889D00CECF87 /* Piggy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Piggy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		369F17DD243BBD6E0086B3BB /* ActiveGoals.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActiveGoals.storyboard; sourceTree = "<group>"; };
 		36A4D897243A263E00CBB84C /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		36A4D899243A68D100CBB84C /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		36B2C0C92446FCA20098C3DA /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		36C398F424348F8600403DDB /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		36D93F6B242EAE2F009AF577 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		36FAADB42444977600C94842 /* ActiveGoals.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ActiveGoals.storyboard; sourceTree = "<group>"; };
+		36FAADB62444A32E00C94842 /* AddGoalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalTableViewController.swift; sourceTree = "<group>"; };
 		45A548FA65D0192B1268450D /* Pods-Piggy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piggy.debug.xcconfig"; path = "Target Support Files/Pods-Piggy/Pods-Piggy.debug.xcconfig"; sourceTree = "<group>"; };
 		AED37EDA87606CBB04C79716 /* Pods_Piggy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Piggy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF18BEADD0B0449A3BD9C9E8 /* Pods-Piggy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piggy.release.xcconfig"; path = "Target Support Files/Pods-Piggy/Pods-Piggy.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,8 +143,9 @@
 				360CBD08242C024300F96167 /* HomeViewController.swift */,
 				36468FBA2439E09700543F75 /* LoginViewController.swift */,
 				3612ECAE243E5ED8008CE83F /* ActiveGoalsViewController.swift */,
-				3612ECAC243E5C5E008CE83F /* ActiveGoalsTableViewController.swift */,
-				36069489243E6D2900F3DE3D /* ActiveGoalsTableViewCell.swift */,
+				3612ECAC243E5C5E008CE83F /* SavingsTargetsTableViewController.swift */,
+				36069489243E6D2900F3DE3D /* SavingsTargetTableViewCell.swift */,
+				36FAADB62444A32E00C94842 /* AddGoalTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -150,8 +155,8 @@
 			children = (
 				360CBD0A242C024300F96167 /* Home.storyboard */,
 				36C398F424348F8600403DDB /* Login.storyboard */,
+				36FAADB42444977600C94842 /* ActiveGoals.storyboard */,
 				3604296F2441068600CD9BA4 /* AddGoal.storyboard */,
-				369F17DD243BBD6E0086B3BB /* ActiveGoals.storyboard */,
 				3606FF9D2440E8930021867E /* FinishedGoals.storyboard */,
 				363AA9D0243DF02F005550D4 /* Calculator.storyboard */,
 			);
@@ -208,6 +213,7 @@
 		36A4D88C2439F14700CBB84C /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				36B2C0C92446FCA20098C3DA /* UITableViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -283,7 +289,6 @@
 			files = (
 				36468FB42439C39400543F75 /* Proxima Nova Bold.otf in Resources */,
 				363AA9D1243DF02F005550D4 /* Calculator.storyboard in Resources */,
-				369F17DE243BBD6E0086B3BB /* ActiveGoals.storyboard in Resources */,
 				360429702441068600CD9BA4 /* AddGoal.storyboard in Resources */,
 				36C398F524348F8600403DDB /* Login.storyboard in Resources */,
 				36468FB22439C39400543F75 /* ProximaNova-Regular.otf in Resources */,
@@ -291,6 +296,7 @@
 				360CBD0C242C024400F96167 /* Assets.xcassets in Resources */,
 				36468FB52439C39400543F75 /* Proxima Nova Extrabold.otf in Resources */,
 				360CBD0D242C024400F96167 /* LaunchScreen.storyboard in Resources */,
+				36FAADB52444977600C94842 /* ActiveGoals.storyboard in Resources */,
 				36468FB32439C39400543F75 /* Proxima Nova Black.otf in Resources */,
 				360CBD12242C024400F96167 /* Home.storyboard in Resources */,
 				3606FF9E2440E8930021867E /* FinishedGoals.storyboard in Resources */,
@@ -348,15 +354,17 @@
 			files = (
 				365F3E3C242D32680096B76E /* SavingsTarget.swift in Sources */,
 				3612ECAF243E5ED8008CE83F /* ActiveGoalsViewController.swift in Sources */,
+				36FAADB72444A32E00C94842 /* AddGoalTableViewController.swift in Sources */,
+				36B2C0CA2446FCA20098C3DA /* UITableViewExtension.swift in Sources */,
 				36A4D898243A263E00CBB84C /* RealmService.swift in Sources */,
 				360CBD0F242C024400F96167 /* AppDelegate.swift in Sources */,
-				3612ECAD243E5C5E008CE83F /* ActiveGoalsTableViewController.swift in Sources */,
+				3612ECAD243E5C5E008CE83F /* SavingsTargetsTableViewController.swift in Sources */,
 				360CBD10242C024400F96167 /* SceneDelegate.swift in Sources */,
 				36468FB92439CD4500543F75 /* Constants.swift in Sources */,
 				36A4D89A243A68D100CBB84C /* AuthenticationService.swift in Sources */,
 				360CBD11242C024400F96167 /* HomeViewController.swift in Sources */,
 				365F3E3E242D3D7A0096B76E /* Transaction.swift in Sources */,
-				3606948A243E6D2900F3DE3D /* ActiveGoalsTableViewCell.swift in Sources */,
+				3606948A243E6D2900F3DE3D /* SavingsTargetTableViewCell.swift in Sources */,
 				3624E41224477EE30092624A /* CurrencyConvert.swift in Sources */,
 				365F3E40242D42B20096B76E /* Category.swift in Sources */,
 				36468FBB2439E09700543F75 /* LoginViewController.swift in Sources */,
@@ -417,7 +425,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -471,7 +479,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -490,7 +498,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FP4N86Q9NT;
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -511,7 +519,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FP4N86Q9NT;
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -15,24 +15,20 @@ import RealmSwift
     dynamic var id: String = UUID().uuidString
     dynamic var name: String = ""
     dynamic var price: Double = 0
-    dynamic var balance: Double? = nil
+    dynamic var balance: Double = 0
     dynamic var category: Category? = nil
     dynamic var deadline: Date? = nil
-    dynamic var imagePath: String? = nil
     //dynamic var transactions: List<Transaction>? = List<Transaction>()
     dynamic var createdAt: Date = Date()
     
     // MARK: Constructors
-    convenience init(id: String?, name: String, price: Double, balance: Double?, category: Category?, deadline: Date?, imagePath: String?, createdAt: Date?) {
+    convenience init(name: String, price: Double, balance: Double?, category: Category?, deadline: Date?) throws {
         self.init()
-        self.id = id ?? UUID().uuidString
         self.name = name
         self.price = price
-        self.balance = balance
+        self.balance = balance ?? 0
         self.category = category
         self.deadline = deadline
-        self.imagePath = imagePath
-        self.createdAt = createdAt ?? Date()
     }
     
     // MARK: Functions
