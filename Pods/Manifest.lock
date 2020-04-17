@@ -4,23 +4,27 @@ PODS:
   - Realm/Headers (4.4.0)
   - RealmSwift (4.4.0):
     - Realm (= 4.4.0)
+  - SwiftyPickerPopover (6.6.6)
   - TORoundedButton (1.1.2)
 
 DEPENDENCIES:
   - RealmSwift
+  - SwiftyPickerPopover
   - TORoundedButton
 
 SPEC REPOS:
   trunk:
     - Realm
     - RealmSwift
+    - SwiftyPickerPopover
     - TORoundedButton
 
 SPEC CHECKSUMS:
   Realm: e125f464884cda953ebefe70c671b75b03b81b9b
   RealmSwift: 33656a42bd300959a081fc13347376bc478071af
+  SwiftyPickerPopover: a402960a6687c911ffcb4e9fb282a1bc61186ab4
   TORoundedButton: d40dbf6f830dbe7a784a592d9f7933a3a49fd31e
 
-PODFILE CHECKSUM: e50cd34421e96d262f56232b8ab07a5d112f9371
+PODFILE CHECKSUM: 7cbe31ff62017fe49d25413dbc9b8579453e0d94
 
 COCOAPODS: 1.9.1

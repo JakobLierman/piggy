@@ -8,5 +8,6 @@ target 'Piggy' do
   # Pods for Piggy
   pod 'RealmSwift'
   pod 'TORoundedButton'
-
+  pod 'SwiftyPickerPopover'
+  
 end

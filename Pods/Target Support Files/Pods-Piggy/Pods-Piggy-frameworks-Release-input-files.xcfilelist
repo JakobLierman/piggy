@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-Piggy/Pods-Piggy-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Realm/Realm.framework
 ${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework
+${BUILT_PRODUCTS_DIR}/SwiftyPickerPopover/SwiftyPickerPopover.framework
 ${BUILT_PRODUCTS_DIR}/TORoundedButton/TORoundedButton.framework
