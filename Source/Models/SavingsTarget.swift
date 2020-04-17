@@ -24,6 +24,19 @@ import RealmSwift
     // MARK: Constructors
     convenience init(name: String, price: Double, balance: Double?, category: Category?, deadline: Date?) throws {
         self.init()
+        
+        guard name.trimmingCharacters(in: .whitespacesAndNewlines) != "" else {
+            throw SavingsTargetError.emptyNameError
+        }
+        guard price > 0 else {
+            throw SavingsTargetError.noPriceError
+        }
+        if deadline != nil {
+            guard deadline! > Date() else {
+                throw SavingsTargetError.dateToEarly(earliestDate: Date())
+            }
+        }
+        
         self.name = name
         self.price = price
         self.balance = balance ?? 0
@@ -61,4 +74,10 @@ import RealmSwift
         // TODO: Remove transaction
     }
     
+}
+
+enum SavingsTargetError: Error {
+    case emptyNameError
+    case noPriceError
+    case dateToEarly(earliestDate: Date)
 }
