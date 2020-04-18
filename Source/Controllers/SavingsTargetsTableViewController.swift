@@ -12,8 +12,6 @@ import TORoundedButton
 
 class SavingsTargetsTableViewController: UITableViewController {
     
-    @IBOutlet var table: UITableView!
-    
     let db = RealmService.shared
     var savingsTargets: Results<SavingsTarget>!
     var notificationToken: NotificationToken?
@@ -46,7 +44,7 @@ class SavingsTargetsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if savingsTargets.count == 0 {
+        if savingsTargets.isEmpty {
             tableView.setEmptyView(title: "You do not have any active goals", message: "Create one with the button above")
         } else {
             tableView.restore()
@@ -62,6 +60,21 @@ class SavingsTargetsTableViewController: UITableViewController {
         cell.configure(with: savingsTarget)
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.notificationToken?.invalidate()
+            
+            if let savingsTarget = savingsTargets?[(savingsTargets.count - 1) - indexPath.row] {
+                self.db.delete(savingsTarget)
+                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+            
+            self.notificationToken = self.db.realm.observe { notification, realm in
+                self.tableView.reloadData()
+            }
+        }
     }
     
     private func registerTableViewCells() {
