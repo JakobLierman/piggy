@@ -32,7 +32,7 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
-                                        <action selector="addTarget:" destination="qIL-57-eQA" eventType="touchUpInside" id="6QX-Vd-acI"/>
+                                        <action selector="addTargetTapped:" destination="qIL-57-eQA" eventType="touchUpInside" id="6QX-Vd-acI"/>
                                     </connections>
                                 </view>
                             </subviews>
@@ -52,13 +52,10 @@
                     <navigationItem key="navigationItem" title="Active Goals" id="vWc-iB-Hhw">
                         <barButtonItem key="rightBarButtonItem" image="gear" catalog="system" style="done" id="hfR-tf-dDg">
                             <connections>
-                                <action selector="openSettings:" destination="qIL-57-eQA" id="4O9-g4-yx1"/>
+                                <action selector="openSettingsTapped:" destination="qIL-57-eQA" id="4O9-g4-yx1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="table" destination="7xI-KR-DAW" id="a6J-fZ-9nC"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ReL-KP-qCS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

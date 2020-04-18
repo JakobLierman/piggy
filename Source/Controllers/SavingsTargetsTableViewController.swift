@@ -16,17 +16,33 @@ class SavingsTargetsTableViewController: UITableViewController {
     
     let db = RealmService.shared
     var savingsTargets: Results<SavingsTarget>!
+    var notificationToken: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // TODO: Dynamic filter
-        savingsTargets = db.realm.objects(SavingsTarget.self).filter("price > balance")
+        savingsTargets = db.realm.objects(SavingsTarget.self).filter((self.storyboard!.value(forKey: "name") as! String).starts(with: "Active") ? "price > balance" : "price == balance")
         
-        table.delegate = self
-        table.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
         
         self.registerTableViewCells()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.notificationToken = db.realm.observe { notification, realm in
+            self.tableView.reloadData()
+        }
+        
+        tableView.reloadData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.notificationToken?.invalidate()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,7 +58,7 @@ class SavingsTargetsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SavingsTargetCell") as? SavingsTargetTableViewCell else { return UITableViewCell() }
         
-        let savingsTarget = savingsTargets[indexPath.row]
+        let savingsTarget = savingsTargets[(savingsTargets.count - 1) - indexPath.row]
         cell.configure(with: savingsTarget)
         
         return cell
@@ -51,17 +67,21 @@ class SavingsTargetsTableViewController: UITableViewController {
     private func registerTableViewCells() {
         let SavingsTargetCell = UINib(nibName: "SavingsTargetTableViewCell",
                                   bundle: nil)
-        self.tableView.register(SavingsTargetCell,
+        tableView.register(SavingsTargetCell,
                                 forCellReuseIdentifier: "SavingsTargetCell")
     }
+    
+    func addTarget(_ savingsTarget: SavingsTarget) {
+        db.create(savingsTarget)
+    }
 
-    @IBAction func addTarget(_ sender: RoundedButton) {
+    @IBAction private func addTargetTapped(_ sender: RoundedButton) {
         let addGoalStoryboard: UIStoryboard = UIStoryboard(name: "AddGoal", bundle: nil)
         let addGoalInitialViewController = addGoalStoryboard.instantiateInitialViewController()!
-        self.present(addGoalInitialViewController, animated: true, completion: nil) // TODO - Completion?
+        self.present(addGoalInitialViewController, animated: true, completion: nil)
     }
     
-    @IBAction func openSettings(_ sender: UIBarButtonItem) {
+    @IBAction private func openSettingsTapped(_ sender: UIBarButtonItem) {
         // TODO: Open settings panel on tap
     }
 }
