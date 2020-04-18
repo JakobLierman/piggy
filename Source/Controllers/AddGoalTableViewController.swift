@@ -8,7 +8,6 @@
 
 import UIKit
 import RealmSwift
-import SwiftyPickerPopover
 
 class AddGoalTableViewController: UITableViewController {
 
@@ -71,28 +70,54 @@ class AddGoalTableViewController: UITableViewController {
         self.deadlineButton.setTitle((selectedDate == nil) ? "None" : dateFormatter.string(from: self.deadline!), for: .normal)
     }
     
-    @IBAction func showCategoryPickerPopover(_ sender: UIButton) {
-        StringPickerPopover(title: "Category", choices: self.categories.map({ $0.name }))
-            .setClearButton(action: { (popover, _, _) in
-                self.setSelectedCategory(nil)
-                popover.disappear()
+    @IBAction func showCategoryPicker(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Category", message: nil, preferredStyle: .actionSheet)
+        alert.view.tintColor = UIColor(named: "Primary")
+        for category: Category in self.categories {
+            let action = UIAlertAction(title: category.name, style: .default, handler: { _ in
+                self.setSelectedCategory(category)
             })
-            .setDoneButton(action: { (_, selectedRow, _) in
-                self.setSelectedCategory((selectedRow == 0) ? nil : self.categories[selectedRow-1])
-            })
-            .appear(originView: sender, baseViewController: self)
+            action.setValue(self.category == category, forKey: "checked")
+            /* TODO: Add image (correct size)
+            if (category.icon != nil) {
+                let image = UIImage(named: category.icon!)?.withRenderingMode(.alwaysOriginal)
+                action.setValue(image, forKey: "image")
+            }*/
+            alert.addAction(action)
+        }
+        let clearAction = UIAlertAction(title: "Clear", style: .destructive, handler: { _ in
+            self.setSelectedCategory(nil)
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(clearAction)
+        alert.addAction(cancelAction)
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func showDatePickerPopover(_ sender: UIButton) {
-        DatePickerPopover(title: "Deadline")
-            .setDateMode(.date)
-            .setMinimumDate(Date())
-            .setClearButton(action: { (popover, _) in
-                self.setSelectedDeadline(nil)
-                popover.disappear()
-            })
-            .setDoneButton(action: { (_, selectedDate) in self.setSelectedDeadline(selectedDate)})
-            .appear(originView: sender, baseViewController: self)
+    @IBAction func showDatePicker(_ sender: UIButton) {
+        let datePicker: UIDatePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        datePicker.date = self.deadline ?? Date()
+        datePicker.minimumDate = Date()
+        datePicker.timeZone = .current
+        datePicker.frame = CGRect(x: 0, y: 32, width: (self.view.window?.frame.width)! - 16, height: 200)
+        
+        let alert = UIAlertController(title: "Deadline", message: "\n\n\n\n\n\n\n\n\n", preferredStyle: .actionSheet)
+        alert.view.tintColor = UIColor(named: "Primary")
+        alert.view.addSubview(datePicker)
+        let selectAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
+            self.setSelectedDeadline(datePicker.date)
+        })
+        let clearAction = UIAlertAction(title: "Clear", style: .destructive, handler: { _ in
+            self.setSelectedDeadline(nil)
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(selectAction)
+        alert.addAction(clearAction)
+        alert.addAction(cancelAction)
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
