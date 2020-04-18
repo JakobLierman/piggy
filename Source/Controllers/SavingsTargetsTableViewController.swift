@@ -25,6 +25,8 @@ class SavingsTargetsTableViewController: UITableViewController {
         
         table.delegate = self
         table.dataSource = self
+        
+        self.registerTableViewCells()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,6 +46,13 @@ class SavingsTargetsTableViewController: UITableViewController {
         cell.configure(with: savingsTarget)
         
         return cell
+    }
+    
+    private func registerTableViewCells() {
+        let SavingsTargetCell = UINib(nibName: "SavingsTargetTableViewCell",
+                                  bundle: nil)
+        self.tableView.register(SavingsTargetCell,
+                                forCellReuseIdentifier: "SavingsTargetCell")
     }
 
     @IBAction func addTarget(_ sender: RoundedButton) {
