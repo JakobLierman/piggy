@@ -15,6 +15,17 @@ class SavingsTargetsTableViewController: UITableViewController {
     let db = RealmService.shared
     var savingsTargets: Results<SavingsTarget>!
     var notificationToken: NotificationToken?
+    let searchController = UISearchController(searchResultsController: nil)
+    var filteredSavingsTargets: [SavingsTarget] = []
+    
+    var isSearchBarEmpty: Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    var isFiltering: Bool {
+        return searchController.isActive && !isSearchBarEmpty
+    }
+    
+    @IBOutlet weak var addTargetButton: RoundedButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +36,21 @@ class SavingsTargetsTableViewController: UITableViewController {
         tableView.dataSource = self
         
         self.registerTableViewCells()
+        
+        self.searchController.delegate = self
+        self.searchController.searchResultsUpdater = self
+        self.searchController.obscuresBackgroundDuringPresentation = false
+        self.searchController.searchBar.placeholder = "Search Goals"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if let selectedIndexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: selectedIndexPath, animated: animated)
+        }
         
         self.notificationToken = db.realm.observe { notification, realm in
             self.tableView.reloadData()
@@ -49,6 +71,10 @@ class SavingsTargetsTableViewController: UITableViewController {
         } else {
             tableView.restore()
         }
+        
+        if isFiltering {
+            return filteredSavingsTargets.count
+        }
 
         return savingsTargets.count
     }
@@ -56,7 +82,13 @@ class SavingsTargetsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SavingsTargetCell") as? SavingsTargetTableViewCell else { return UITableViewCell() }
         
-        let savingsTarget = savingsTargets[(savingsTargets.count - 1) - indexPath.row]
+        let savingsTarget: SavingsTarget
+        if isFiltering {
+            savingsTarget = filteredSavingsTargets[(filteredSavingsTargets.count - 1) - indexPath.row]
+        } else {
+            savingsTarget = savingsTargets[(savingsTargets.count - 1) - indexPath.row]
+        }
+        
         cell.configure(with: savingsTarget)
         
         return cell
@@ -66,10 +98,17 @@ class SavingsTargetsTableViewController: UITableViewController {
         if editingStyle == .delete {
             self.notificationToken?.invalidate()
             
-            if let savingsTarget = savingsTargets?[(savingsTargets.count - 1) - indexPath.row] {
-                self.db.delete(savingsTarget)
-                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            let savingsTarget: SavingsTarget
+            if isFiltering {
+                savingsTarget = filteredSavingsTargets[(filteredSavingsTargets.count - 1) - indexPath.row]
+            } else {
+                savingsTarget = savingsTargets[(savingsTargets.count - 1) - indexPath.row]
             }
+            
+            self.db.delete(savingsTarget)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+            tableView.reloadData()
             
             self.notificationToken = self.db.realm.observe { notification, realm in
                 self.tableView.reloadData()
@@ -84,8 +123,14 @@ class SavingsTargetsTableViewController: UITableViewController {
                                 forCellReuseIdentifier: "SavingsTargetCell")
     }
     
-    func addTarget(_ savingsTarget: SavingsTarget) {
-        db.create(savingsTarget)
+    func filterContentForSearchText(_ searchText: String) {
+        filteredSavingsTargets = savingsTargets.filter { (savingsTarget: SavingsTarget) -> Bool in
+            let containsInName = savingsTarget.name.lowercased().contains(searchText.lowercased())
+            let containsInCategoryName = savingsTarget.category?.name.lowercased().contains(searchText.lowercased()) ?? false
+            return containsInName || containsInCategoryName
+        }
+        
+        tableView.reloadData()
     }
 
     @IBAction private func addTargetTapped(_ sender: RoundedButton) {
@@ -96,5 +141,31 @@ class SavingsTargetsTableViewController: UITableViewController {
     
     @IBAction private func openSettingsTapped(_ sender: UIBarButtonItem) {
         // TODO: Open settings panel on tap
+    }
+}
+
+extension SavingsTargetsTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        filterContentForSearchText(searchBar.text!)
+    }
+}
+
+extension SavingsTargetsTableViewController: UISearchControllerDelegate {
+    func didPresentSearchController(_ searchController: UISearchController) {
+        self.addTargetButton.setHidden(true)
+    }
+    
+    func didDismissSearchController(_ searchController: UISearchController) {
+        self.addTargetButton.setHidden(false)
+    }
+}
+
+extension RoundedButton {
+    func setHidden(_ hidden: Bool) {
+        UIView.transition(with: self, duration: 0.4, options: .transitionCrossDissolve, animations: {
+            // TODO: Completely remove item
+            //self.isHidden = hidden
+        })
     }
 }
