@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import SPAlert
 
 class AddGoalTableViewController: UITableViewController {
 
@@ -128,6 +129,7 @@ class AddGoalTableViewController: UITableViewController {
         do {
             let savingsTarget = try SavingsTarget(name: self.goalNameTextField.text ?? "", price: Double(self.typedAmountToSave / 100), balance: Double(self.typedAmountSaved / 100), category: self.category, deadline: self.deadline)
             db.create(savingsTarget)
+            SPAlert.present(title: "Goal Added", preset: .done)
             self.dismiss(animated: true, completion: nil)
         } catch SavingsTargetError.emptyNameError {
             self.showErrorAlert(title: "Name is missing", message: "Please add a name and try again.")
@@ -142,10 +144,11 @@ class AddGoalTableViewController: UITableViewController {
     }
     
     private func showErrorAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        alert.view.tintColor = UIColor(named: "Primary")
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        let alert = SPAlertView(title: title, message: message, preset: .error)
+        alert.duration = 3
+        alert.dismissByTap = true
+        alert.haptic = .error
+        alert.present()
     }
 }
 

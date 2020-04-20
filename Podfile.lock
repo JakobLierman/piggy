@@ -4,11 +4,13 @@ PODS:
   - Realm/Headers (4.4.1)
   - RealmSwift (4.4.1):
     - Realm (= 4.4.1)
+  - SPAlert (2.1.4)
   - SPLarkController (1.1.5)
   - TORoundedButton (1.1.2)
 
 DEPENDENCIES:
   - RealmSwift
+  - SPAlert
   - SPLarkController
   - TORoundedButton
 
@@ -16,15 +18,17 @@ SPEC REPOS:
   trunk:
     - Realm
     - RealmSwift
+    - SPAlert
     - SPLarkController
     - TORoundedButton
 
 SPEC CHECKSUMS:
   Realm: 4eb04d7487bd43c0581256f40b424eafb711deff
   RealmSwift: 3eb8924ff7100df5928c7602f71d0fec51e7c9c5
+  SPAlert: 1a8afa1c6ac86a82ab5b2cfdf7f9a51e68cb6c0c
   SPLarkController: 36a5db07b4609f808c8d520fc30c56ecdaa25c73
   TORoundedButton: d40dbf6f830dbe7a784a592d9f7933a3a49fd31e
 
-PODFILE CHECKSUM: 9abf7bf060616bff4be22a59eaef7c58354850a5
+PODFILE CHECKSUM: 1f30423fbc849a368c920b01c0e38a0b9cd9fd4d
 
 COCOAPODS: 1.9.1

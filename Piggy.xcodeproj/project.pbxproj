@@ -25,7 +25,6 @@
 		36468FB52439C39400543F75 /* Proxima Nova Extrabold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36468FB02439C39400543F75 /* Proxima Nova Extrabold.otf */; };
 		36468FB92439CD4500543F75 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36468FB82439CD4500543F75 /* Constants.swift */; };
 		36468FBB2439E09700543F75 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36468FBA2439E09700543F75 /* LoginViewController.swift */; };
-		364DA329244CFA9700195AE6 /* CustomIntensityVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364DA328244CFA9700195AE6 /* CustomIntensityVisualEffectView.swift */; };
 		365F3E3C242D32680096B76E /* SavingsTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F3E3B242D32680096B76E /* SavingsTarget.swift */; };
 		365F3E3E242D3D7A0096B76E /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F3E3D242D3D7A0096B76E /* Transaction.swift */; };
 		365F3E40242D42B20096B76E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F3E3F242D42B20096B76E /* Category.swift */; };
@@ -62,7 +61,6 @@
 		36468FB02439C39400543F75 /* Proxima Nova Extrabold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Extrabold.otf"; sourceTree = "<group>"; };
 		36468FB82439CD4500543F75 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		36468FBA2439E09700543F75 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		364DA328244CFA9700195AE6 /* CustomIntensityVisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIntensityVisualEffectView.swift; sourceTree = "<group>"; };
 		365F3E3B242D32680096B76E /* SavingsTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsTarget.swift; sourceTree = "<group>"; };
 		365F3E3D242D3D7A0096B76E /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		365F3E3F242D42B20096B76E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				3624E41124477EE30092624A /* CurrencyConvert.swift */,
-				364DA328244CFA9700195AE6 /* CustomIntensityVisualEffectView.swift */,
 			);
 			path = "Helper Classes";
 			sourceTree = "<group>";
@@ -373,7 +370,6 @@
 				365F3E3E242D3D7A0096B76E /* Transaction.swift in Sources */,
 				3606948A243E6D2900F3DE3D /* SavingsTargetTableViewCell.swift in Sources */,
 				3624E41224477EE30092624A /* CurrencyConvert.swift in Sources */,
-				364DA329244CFA9700195AE6 /* CustomIntensityVisualEffectView.swift in Sources */,
 				365F3E40242D42B20096B76E /* Category.swift in Sources */,
 				36468FBB2439E09700543F75 /* LoginViewController.swift in Sources */,
 				36D93F6C242EAE2F009AF577 /* Defaults.swift in Sources */,

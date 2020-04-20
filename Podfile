@@ -9,5 +9,6 @@ target 'Piggy' do
   pod 'RealmSwift'
   pod 'TORoundedButton'
   pod 'SPLarkController'
-  
+  pod 'SPAlert'
+
 end
