@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="na9-x8-xP4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="na9-x8-xP4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -70,17 +69,17 @@
         <!--Calculator-->
         <scene sceneID="3eR-7v-ak5">
             <objects>
-                <viewControllerPlaceholder storyboardName="Calculator" referencedIdentifier="Calculator" id="v0w-xS-xsz" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Calculator" id="v0w-xS-xsz" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="wdK-Ar-EDu"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W3G-MB-Yik" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1699" y="-331"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="VJf-9e-QkL">
             <objects>
-                <tabBarController id="na9-x8-xP4" customClass="HomeViewController" customModule="Piggy" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController hidesBottomBarWhenPushed="YES" id="na9-x8-xP4" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KJK-7D-5Vp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -97,9 +96,9 @@
             <point key="canvasLocation" x="950" y="-132"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.92156862750000001" green="0.21176470589999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
     <resources>
         <image name="Background" width="2048" height="2048"/>
         <image name="Icon white" width="1399" height="1214"/>
     </resources>
-    <color key="tintColor" red="0.92156862750000001" green="0.21176470589999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
 </document>

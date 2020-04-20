@@ -14,7 +14,6 @@
 		360CBD0D242C024400F96167 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360CBD02242C024300F96167 /* LaunchScreen.storyboard */; };
 		360CBD0F242C024400F96167 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CBD05242C024300F96167 /* AppDelegate.swift */; };
 		360CBD10242C024400F96167 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CBD06242C024300F96167 /* SceneDelegate.swift */; };
-		360CBD11242C024400F96167 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360CBD08242C024300F96167 /* HomeViewController.swift */; };
 		360CBD12242C024400F96167 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 360CBD0A242C024300F96167 /* Home.storyboard */; };
 		3612ECAD243E5C5E008CE83F /* SavingsTargetsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3612ECAC243E5C5E008CE83F /* SavingsTargetsTableViewController.swift */; };
 		3624E41224477EE30092624A /* CurrencyConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3624E41124477EE30092624A /* CurrencyConvert.swift */; };
@@ -26,12 +25,16 @@
 		36468FB52439C39400543F75 /* Proxima Nova Extrabold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36468FB02439C39400543F75 /* Proxima Nova Extrabold.otf */; };
 		36468FB92439CD4500543F75 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36468FB82439CD4500543F75 /* Constants.swift */; };
 		36468FBB2439E09700543F75 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36468FBA2439E09700543F75 /* LoginViewController.swift */; };
+		364DA329244CFA9700195AE6 /* CustomIntensityVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364DA328244CFA9700195AE6 /* CustomIntensityVisualEffectView.swift */; };
 		365F3E3C242D32680096B76E /* SavingsTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F3E3B242D32680096B76E /* SavingsTarget.swift */; };
 		365F3E3E242D3D7A0096B76E /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F3E3D242D3D7A0096B76E /* Transaction.swift */; };
 		365F3E40242D42B20096B76E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F3E3F242D42B20096B76E /* Category.swift */; };
 		36A4D898243A263E00CBB84C /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A4D897243A263E00CBB84C /* RealmService.swift */; };
 		36A4D89A243A68D100CBB84C /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A4D899243A68D100CBB84C /* AuthenticationService.swift */; };
 		36B2C0CA2446FCA20098C3DA /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B2C0C92446FCA20098C3DA /* UITableViewExtension.swift */; };
+		36BC0E52244AF55A00EFB769 /* SavingsTargetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36BC0E51244AF55A00EFB769 /* SavingsTargetTableViewCell.xib */; };
+		36BC0E54244B455F00EFB769 /* GoalDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36BC0E53244B455F00EFB769 /* GoalDetails.storyboard */; };
+		36BC0E56244B4CB900EFB769 /* GoalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BC0E55244B4CB900EFB769 /* GoalDetailsViewController.swift */; };
 		36C398F524348F8600403DDB /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C398F424348F8600403DDB /* Login.storyboard */; };
 		36D93F6C242EAE2F009AF577 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D93F6B242EAE2F009AF577 /* Defaults.swift */; };
 		36FAADB52444977600C94842 /* ActiveGoals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36FAADB42444977600C94842 /* ActiveGoals.storyboard */; };
@@ -48,7 +51,6 @@
 		360CBD03242C024300F96167 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		360CBD05242C024300F96167 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		360CBD06242C024300F96167 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		360CBD08242C024300F96167 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		360CBD0A242C024300F96167 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		3612ECAC243E5C5E008CE83F /* SavingsTargetsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsTargetsTableViewController.swift; sourceTree = "<group>"; };
 		3624E41124477EE30092624A /* CurrencyConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConvert.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 		36468FB02439C39400543F75 /* Proxima Nova Extrabold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Extrabold.otf"; sourceTree = "<group>"; };
 		36468FB82439CD4500543F75 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		36468FBA2439E09700543F75 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		364DA328244CFA9700195AE6 /* CustomIntensityVisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIntensityVisualEffectView.swift; sourceTree = "<group>"; };
 		365F3E3B242D32680096B76E /* SavingsTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsTarget.swift; sourceTree = "<group>"; };
 		365F3E3D242D3D7A0096B76E /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		365F3E3F242D42B20096B76E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -67,6 +70,9 @@
 		36A4D897243A263E00CBB84C /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		36A4D899243A68D100CBB84C /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		36B2C0C92446FCA20098C3DA /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		36BC0E51244AF55A00EFB769 /* SavingsTargetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavingsTargetTableViewCell.xib; sourceTree = "<group>"; };
+		36BC0E53244B455F00EFB769 /* GoalDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoalDetails.storyboard; sourceTree = "<group>"; };
+		36BC0E55244B4CB900EFB769 /* GoalDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailsViewController.swift; sourceTree = "<group>"; };
 		36C398F424348F8600403DDB /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		36D93F6B242EAE2F009AF577 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		36FAADB42444977600C94842 /* ActiveGoals.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ActiveGoals.storyboard; sourceTree = "<group>"; };
@@ -138,11 +144,11 @@
 		360CBD07242C024300F96167 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				360CBD08242C024300F96167 /* HomeViewController.swift */,
 				36468FBA2439E09700543F75 /* LoginViewController.swift */,
 				3612ECAC243E5C5E008CE83F /* SavingsTargetsTableViewController.swift */,
 				36069489243E6D2900F3DE3D /* SavingsTargetTableViewCell.swift */,
 				36FAADB62444A32E00C94842 /* AddGoalTableViewController.swift */,
+				36BC0E55244B4CB900EFB769 /* GoalDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -156,6 +162,8 @@
 				3606FF9D2440E8930021867E /* FinishedGoals.storyboard */,
 				3604296F2441068600CD9BA4 /* AddGoal.storyboard */,
 				363AA9D0243DF02F005550D4 /* Calculator.storyboard */,
+				36BC0E51244AF55A00EFB769 /* SavingsTargetTableViewCell.xib */,
+				36BC0E53244B455F00EFB769 /* GoalDetails.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				3624E41124477EE30092624A /* CurrencyConvert.swift */,
+				364DA328244CFA9700195AE6 /* CustomIntensityVisualEffectView.swift */,
 			);
 			path = "Helper Classes";
 			sourceTree = "<group>";
@@ -294,7 +303,9 @@
 				36468FB52439C39400543F75 /* Proxima Nova Extrabold.otf in Resources */,
 				360CBD0D242C024400F96167 /* LaunchScreen.storyboard in Resources */,
 				36FAADB52444977600C94842 /* ActiveGoals.storyboard in Resources */,
+				36BC0E52244AF55A00EFB769 /* SavingsTargetTableViewCell.xib in Resources */,
 				36468FB32439C39400543F75 /* Proxima Nova Black.otf in Resources */,
+				36BC0E54244B455F00EFB769 /* GoalDetails.storyboard in Resources */,
 				360CBD12242C024400F96167 /* Home.storyboard in Resources */,
 				3606FF9E2440E8930021867E /* FinishedGoals.storyboard in Resources */,
 			);
@@ -355,13 +366,14 @@
 				36A4D898243A263E00CBB84C /* RealmService.swift in Sources */,
 				360CBD0F242C024400F96167 /* AppDelegate.swift in Sources */,
 				3612ECAD243E5C5E008CE83F /* SavingsTargetsTableViewController.swift in Sources */,
+				36BC0E56244B4CB900EFB769 /* GoalDetailsViewController.swift in Sources */,
 				360CBD10242C024400F96167 /* SceneDelegate.swift in Sources */,
 				36468FB92439CD4500543F75 /* Constants.swift in Sources */,
 				36A4D89A243A68D100CBB84C /* AuthenticationService.swift in Sources */,
-				360CBD11242C024400F96167 /* HomeViewController.swift in Sources */,
 				365F3E3E242D3D7A0096B76E /* Transaction.swift in Sources */,
 				3606948A243E6D2900F3DE3D /* SavingsTargetTableViewCell.swift in Sources */,
 				3624E41224477EE30092624A /* CurrencyConvert.swift in Sources */,
+				364DA329244CFA9700195AE6 /* CustomIntensityVisualEffectView.swift in Sources */,
 				365F3E40242D42B20096B76E /* Category.swift in Sources */,
 				36468FBB2439E09700543F75 /* LoginViewController.swift in Sources */,
 				36D93F6C242EAE2F009AF577 /* Defaults.swift in Sources */,
