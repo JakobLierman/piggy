@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SPAlert
 
 class GoalDetailsViewController: UIViewController {
     
@@ -28,18 +29,11 @@ class GoalDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        imageContainer.layer.cornerRadius = imageContainer.frame.width / 2.0
+        imageContainer.layer.cornerRadius = imageContainer.frame.height / 2.0
         balanceLabel.layer.cornerRadius = 8
         priceLabel.layer.cornerRadius = 8
         addBalanceContainer.layer.cornerRadius = 20
         addBalanceValueLabel.layer.cornerRadius = 8
-        
-        self.title = savingsTarget.name
-        
-        imageView.image = UIImage(named: savingsTarget.category?.icon ?? "save-money")
-        
-        balanceLabel.text = CurrencyConvert.shared.doubleToCurrency(savingsTarget.balance)
-        priceLabel.text = CurrencyConvert.shared.doubleToCurrency(savingsTarget.price)
         
         let quickAddMinimumValue = 5.0
         let quickAddMaximumValue = 50.0
@@ -50,6 +44,22 @@ class GoalDetailsViewController: UIViewController {
         quickAddMinimumLabel.text = CurrencyConvert.shared.doubleToCurrency(quickAddMinimumValue)
         quickAddMaximumLabel.text = CurrencyConvert.shared.doubleToCurrency(quickAddMaximumValue)
         
+        self.loadValues()
+    }
+    
+    private func loadValues() {
+        self.title = savingsTarget.name
+        
+        imageView.image = UIImage(named: savingsTarget.category?.icon ?? "save-money")
+        
+        balanceLabel.text = CurrencyConvert.shared.doubleToCurrency(savingsTarget.balance)
+        priceLabel.text = CurrencyConvert.shared.doubleToCurrency(savingsTarget.price)
+        
+        let completePercentage = savingsTarget.balance / savingsTarget.price
+        imageBackground.heightAnchor.constraint(equalTo: imageBackground.superview!.heightAnchor, multiplier: CGFloat(completePercentage)).isActive = true
+        percentageLabel.text = "\(round(completePercentage * 100)) %"
+        
+        addBalanceContainer.isHidden = (completePercentage == 1.0)
     }
     
     @IBAction func sliderValueChanged(_ sender: UISlider) {
@@ -59,7 +69,10 @@ class GoalDetailsViewController: UIViewController {
     }
     
     @IBAction func quickAddTapped(_ sender: UIControl) {
-        // TODO: Quick add functionality
+        self.savingsTarget.addBalance(amount: Double(addBalanceSlider.value))
+        self.loadValues()
+        SPAlert.present(title: "Balance Added", preset: .done)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func advancedAddTapped(_ sender: UIControl) {

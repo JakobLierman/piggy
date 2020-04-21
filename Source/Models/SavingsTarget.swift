@@ -18,7 +18,6 @@ import RealmSwift
     dynamic var balance: Double = 0
     dynamic var category: Category? = nil
     dynamic var deadline: Date? = nil
-    //dynamic var transactions: List<Transaction>? = List<Transaction>()
     dynamic var createdAt: Date = Date()
     
     // MARK: Constructors
@@ -30,6 +29,9 @@ import RealmSwift
         }
         guard price > 0 else {
             throw SavingsTargetError.noPriceError
+        }
+        guard (balance ?? 0) >= (price - 1) else {
+            throw SavingsTargetError.balanceError(maxBalance: price - 1)
         }
         if deadline != nil {
             guard deadline! > Date() else {
@@ -58,20 +60,9 @@ import RealmSwift
     }
     
     func addBalance(amount: Double) {
-        addTransaction(amount: amount)
-    }
-    
-    func removeBalance(amount: Double) {
-        addTransaction(amount: amount, isAddition: false)
-    }
-    
-    private func addTransaction(amount: Double, isAddition: Bool = true) {
-        let transaction = Transaction(id: nil, savingsTarget: self, amount: amount, isAddition: isAddition, createdAt: nil)
-        RealmService.shared.create(transaction)
-    }
-    
-    private func removeTransaction(date: Date) {
-        // TODO: Remove transaction
+        let db = RealmService.shared
+        let amountToAdd = (self.balance + amount) > self.price ? self.price : amount
+        db.update(self, with: ["balance": (self.balance + amountToAdd)])
     }
     
 }
