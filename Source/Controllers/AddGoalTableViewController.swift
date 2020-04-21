@@ -135,6 +135,8 @@ class AddGoalTableViewController: UITableViewController {
             self.showErrorAlert(title: "Name is missing", message: "Please add a name and try again.")
         } catch SavingsTargetError.noPriceError {
             self.showErrorAlert(title: "Price is missing", message: "Please add an amount to save bigger than 0 and try again.")
+        } catch SavingsTargetError.balanceError(let maxBalance) {
+            self.showErrorAlert(title: "You've alreade save too much", message: "Please add a balance smaller than \(maxBalance) and try again.")
         } catch SavingsTargetError.dateToEarly(let earliestDate) {
             self.showErrorAlert(title: "Invalid deadline", message: "Please add a deadline after \(dateFormatter.string(from: earliestDate)) and try again.")
         } catch {

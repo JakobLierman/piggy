@@ -70,5 +70,6 @@ import RealmSwift
 enum SavingsTargetError: Error {
     case emptyNameError
     case noPriceError
+    case balanceError(maxBalance: Double)
     case dateToEarly(earliestDate: Date)
 }
