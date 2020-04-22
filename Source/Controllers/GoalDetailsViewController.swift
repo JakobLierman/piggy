@@ -25,6 +25,7 @@ class GoalDetailsViewController: UIViewController {
     @IBOutlet weak var addBalanceSlider: UISlider!
     @IBOutlet weak var quickAddMinimumLabel: UILabel!
     @IBOutlet weak var quickAddMaximumLabel: UILabel!
+    @IBOutlet weak var goalReachedContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,7 @@ class GoalDetailsViewController: UIViewController {
         priceLabel.layer.cornerRadius = 8
         addBalanceContainer.layer.cornerRadius = 20
         addBalanceValueLabel.layer.cornerRadius = 8
+        goalReachedContainer.layer.cornerRadius = 20
         
         let quickAddMinimumValue = 5.0
         let quickAddMaximumValue = 50.0
@@ -60,6 +62,7 @@ class GoalDetailsViewController: UIViewController {
         percentageLabel.text = "\(round(completePercentage * 100)) %"
         
         addBalanceContainer.isHidden = (completePercentage == 1.0)
+        goalReachedContainer.isHidden = (completePercentage != 1.0)
     }
     
     @IBAction func sliderValueChanged(_ sender: UISlider) {
