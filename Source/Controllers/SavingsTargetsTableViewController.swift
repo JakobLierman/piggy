@@ -59,10 +59,22 @@ class SavingsTargetsTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.hidesBottomBarWhenPushed = true
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         self.notificationToken?.invalidate()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        self.hidesBottomBarWhenPushed = false
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -114,6 +126,17 @@ class SavingsTargetsTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let rowItem = savingsTargets?[(savingsTargets.count - 1) - indexPath.row]
+        
+        let goalDetailsStoryboard: UIStoryboard = UIStoryboard(name: "GoalDetails", bundle: nil)
+        let goalDetailsInitialViewController = goalDetailsStoryboard.instantiateInitialViewController()! as GoalDetailsViewController
+        
+        goalDetailsInitialViewController.savingsTarget = rowItem
+        
+        self.navigationController?.pushViewController(goalDetailsInitialViewController, animated: true)
     }
     
     private func registerTableViewCells() {
