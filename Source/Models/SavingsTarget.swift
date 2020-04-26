@@ -30,7 +30,7 @@ import RealmSwift
         guard price > 0 else {
             throw SavingsTargetError.noPriceError
         }
-        guard (balance ?? 0) >= (price - 1) else {
+        guard (balance ?? 0) <= (price - 1) else {
             throw SavingsTargetError.balanceError(maxBalance: price - 1)
         }
         if deadline != nil {
