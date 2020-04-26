@@ -37,15 +37,6 @@ class GoalDetailsViewController: UIViewController {
         addBalanceValueLabel.layer.cornerRadius = 8
         goalReachedContainer.layer.cornerRadius = 20
         
-        let quickAddMinimumValue = 5.0
-        let quickAddMaximumValue = 50.0
-        addBalanceSlider.minimumValue = Float(quickAddMinimumValue)
-        addBalanceSlider.maximumValue = Float(quickAddMaximumValue)
-        addBalanceSlider.value = addBalanceSlider.minimumValue
-        addBalanceValueLabel.text = CurrencyConvert.shared.doubleToCurrency(quickAddMinimumValue)
-        quickAddMinimumLabel.text = CurrencyConvert.shared.doubleToCurrency(quickAddMinimumValue)
-        quickAddMaximumLabel.text = CurrencyConvert.shared.doubleToCurrency(quickAddMaximumValue)
-        
         self.loadValues()
     }
     
@@ -61,6 +52,19 @@ class GoalDetailsViewController: UIViewController {
         imageBackground.heightAnchor.constraint(equalTo: imageBackground.superview!.heightAnchor, multiplier: CGFloat(completePercentage)).isActive = true
         percentageLabel.text = "\(round(completePercentage * 100)) %"
         
+        var quickAddMinimumValue = 5.0
+        var quickAddMaximumValue = 50.0
+        if ((self.savingsTarget.price - self.savingsTarget.balance) < 50) {
+            quickAddMinimumValue = 1.0
+            quickAddMaximumValue = self.savingsTarget.price - self.savingsTarget.balance
+        }
+        addBalanceSlider.minimumValue = Float(quickAddMinimumValue)
+        addBalanceSlider.maximumValue = Float(quickAddMaximumValue)
+        addBalanceSlider.value = addBalanceSlider.minimumValue
+        addBalanceValueLabel.text = CurrencyConvert.shared.doubleToCurrency(quickAddMinimumValue)
+        quickAddMinimumLabel.text = CurrencyConvert.shared.doubleToCurrency(quickAddMinimumValue)
+        quickAddMaximumLabel.text = CurrencyConvert.shared.doubleToCurrency(quickAddMaximumValue)
+        
         addBalanceContainer.isHidden = (completePercentage == 1.0)
         goalReachedContainer.isHidden = (completePercentage != 1.0)
     }
@@ -72,7 +76,7 @@ class GoalDetailsViewController: UIViewController {
     }
     
     @IBAction func quickAddTapped(_ sender: UIControl) {
-        self.savingsTarget.addBalance(amount: Double(addBalanceSlider.value))
+        self.savingsTarget.addBalance(amount: Double(round(addBalanceSlider.value)))
         self.loadValues()
         SPAlert.present(title: "Balance Added", preset: .done)
         navigationController?.popViewController(animated: true)

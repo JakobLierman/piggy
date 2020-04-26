@@ -61,7 +61,7 @@ import RealmSwift
     
     func addBalance(amount: Double) {
         let db = RealmService.shared
-        let amountToAdd = (self.balance + amount) > self.price ? self.price : amount
+        let amountToAdd = (self.balance + amount) > self.price ? self.price - self.balance : amount
         db.update(self, with: ["balance": (self.balance + amountToAdd)])
     }
     
