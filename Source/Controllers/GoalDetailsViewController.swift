@@ -13,6 +13,7 @@ class GoalDetailsViewController: UIViewController {
     
     var savingsTarget: SavingsTarget!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageContainer: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageBackground: UIView!
@@ -40,6 +41,11 @@ class GoalDetailsViewController: UIViewController {
         self.loadValues()
     }
     
+    override func viewDidLayoutSubviews() {
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        scrollView.alwaysBounceVertical = true
+    }
+    
     private func loadValues() {
         self.title = savingsTarget.name
         
@@ -65,8 +71,7 @@ class GoalDetailsViewController: UIViewController {
         quickAddMinimumLabel.text = CurrencyConvert.doubleToCurrency(quickAddMinimumValue)
         quickAddMaximumLabel.text = CurrencyConvert.doubleToCurrency(quickAddMaximumValue)
         
-        addBalanceContainer.isHidden = (completePercentage == 1.0)
-        goalReachedContainer.isHidden = (completePercentage != 1.0)
+        completePercentage == 1.0 ? addBalanceContainer.removeFromSuperview() : goalReachedContainer.removeFromSuperview()
     }
     
     @IBAction func sliderValueChanged(_ sender: UISlider) {

@@ -325,6 +325,7 @@
                         <outlet property="priceLabel" destination="Nfh-zB-lxA" id="psT-WP-Gut"/>
                         <outlet property="quickAddMaximumLabel" destination="T1P-Ox-Zj5" id="sxN-if-zDh"/>
                         <outlet property="quickAddMinimumLabel" destination="wSy-R8-sYz" id="3B2-Ix-hwf"/>
+                        <outlet property="scrollView" destination="sGb-Sg-t9M" id="4UU-WE-Cyk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lv4-ug-HyF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
