@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import TORoundedButton
+import SPLarkController
 
 class SavingsTargetsTableViewController: UITableViewController {
     
@@ -159,11 +160,12 @@ class SavingsTargetsTableViewController: UITableViewController {
     @IBAction private func addTargetTapped(_ sender: RoundedButton) {
         let addGoalStoryboard: UIStoryboard = UIStoryboard(name: "AddGoal", bundle: nil)
         let addGoalInitialViewController = addGoalStoryboard.instantiateInitialViewController()!
-        self.present(addGoalInitialViewController, animated: true, completion: nil)
+        self.present(addGoalInitialViewController, animated: true)
     }
     
     @IBAction private func openSettingsTapped(_ sender: UIBarButtonItem) {
-        // TODO: Open settings panel on tap
+        let settingsController = SettingsController()
+        self.presentAsLark(settingsController)
     }
 }
 

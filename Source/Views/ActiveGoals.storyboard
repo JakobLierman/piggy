@@ -50,7 +50,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Active Goals" id="vWc-iB-Hhw">
-                        <barButtonItem key="rightBarButtonItem" image="gear" catalog="system" style="done" id="hfR-tf-dDg">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="ellipsis.circle" catalog="system" style="done" id="hfR-tf-dDg">
                             <connections>
                                 <action selector="openSettingsTapped:" destination="qIL-57-eQA" id="4O9-g4-yx1"/>
                             </connections>
@@ -85,7 +85,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="ellipsis.circle" catalog="system" width="128" height="121"/>
         <image name="money-box" width="30" height="30"/>
         <namedColor name="Primary">
             <color red="0.92156862745098034" green="0.21176470588235294" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
