@@ -33,9 +33,9 @@ class SavingsTargetTableViewCell: UITableViewCell {
     func configure(with savingsTarget: SavingsTarget) {
         cellImage.image = UIImage(named: savingsTarget.category?.icon ?? "save-money")
         nameLabel.text = savingsTarget.name
-        priceLabel.text = CurrencyConvert.shared.doubleToCurrency(savingsTarget.price)
+        priceLabel.text = CurrencyConvert.doubleToCurrency(savingsTarget.price)
         if (savingsTarget.price > savingsTarget.balance) {
-            balanceLabel.text = CurrencyConvert.shared.doubleToCurrency(savingsTarget.balance)
+            balanceLabel.text = CurrencyConvert.doubleToCurrency(savingsTarget.balance)
             balanceCheckmark.isHidden = true
         } else {
             ofLabel.isHidden = true

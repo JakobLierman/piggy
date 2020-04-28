@@ -45,8 +45,8 @@ class GoalDetailsViewController: UIViewController {
         
         imageView.image = UIImage(named: savingsTarget.category?.icon ?? "save-money")
         
-        balanceLabel.text = CurrencyConvert.shared.doubleToCurrency(savingsTarget.balance)
-        priceLabel.text = CurrencyConvert.shared.doubleToCurrency(savingsTarget.price)
+        balanceLabel.text = CurrencyConvert.doubleToCurrency(savingsTarget.balance)
+        priceLabel.text = CurrencyConvert.doubleToCurrency(savingsTarget.price)
         
         let completePercentage = savingsTarget.balance / savingsTarget.price
         imageBackground.heightAnchor.constraint(equalTo: imageBackground.superview!.heightAnchor, multiplier: CGFloat(completePercentage)).isActive = true
@@ -61,9 +61,9 @@ class GoalDetailsViewController: UIViewController {
         addBalanceSlider.minimumValue = Float(quickAddMinimumValue)
         addBalanceSlider.maximumValue = Float(quickAddMaximumValue)
         addBalanceSlider.value = addBalanceSlider.minimumValue
-        addBalanceValueLabel.text = CurrencyConvert.shared.doubleToCurrency(quickAddMinimumValue)
-        quickAddMinimumLabel.text = CurrencyConvert.shared.doubleToCurrency(quickAddMinimumValue)
-        quickAddMaximumLabel.text = CurrencyConvert.shared.doubleToCurrency(quickAddMaximumValue)
+        addBalanceValueLabel.text = CurrencyConvert.doubleToCurrency(quickAddMinimumValue)
+        quickAddMinimumLabel.text = CurrencyConvert.doubleToCurrency(quickAddMinimumValue)
+        quickAddMaximumLabel.text = CurrencyConvert.doubleToCurrency(quickAddMaximumValue)
         
         addBalanceContainer.isHidden = (completePercentage == 1.0)
         goalReachedContainer.isHidden = (completePercentage != 1.0)
@@ -71,7 +71,7 @@ class GoalDetailsViewController: UIViewController {
     
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         let x = Double(round(sender.value))
-        addBalanceValueLabel.text = CurrencyConvert.shared.doubleToCurrency(x)
+        addBalanceValueLabel.text = CurrencyConvert.doubleToCurrency(x)
         // TODO: Move label
     }
     

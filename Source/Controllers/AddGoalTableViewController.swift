@@ -51,8 +51,8 @@ class AddGoalTableViewController: UITableViewController {
         
         // Set fields
         self.goalNameTextField.text = self.goalName
-        self.amountToSaveTextField.text = CurrencyConvert.shared.typedValueToCurrency(self.typedAmountToSave)
-        self.amountSavedTextField.text = CurrencyConvert.shared.typedValueToCurrency(self.typedAmountSaved)
+        self.amountToSaveTextField.text = CurrencyConvert.typedValueToCurrency(self.typedAmountToSave)
+        self.amountSavedTextField.text = CurrencyConvert.typedValueToCurrency(self.typedAmountSaved)
         self.amountToSaveTextField.delegate = self
         self.amountSavedTextField.delegate = self
         self.setSelectedCategory(self.category)
@@ -164,7 +164,7 @@ extension AddGoalTableViewController: UITextFieldDelegate {
             if string == "" {
                typedAmountToSave = typedAmountToSave / 10
             }
-            amountToSaveTextField.text = CurrencyConvert.shared.typedValueToCurrency(self.typedAmountToSave)
+            amountToSaveTextField.text = CurrencyConvert.typedValueToCurrency(self.typedAmountToSave)
         } else if textFieldToChange == amountSavedTextField {
             if let digit = Int(string) {
                 typedAmountSaved = typedAmountSaved * 10 + digit
@@ -172,7 +172,7 @@ extension AddGoalTableViewController: UITextFieldDelegate {
             if string == "" {
                 typedAmountSaved = typedAmountSaved / 10
             }
-            amountSavedTextField.text = CurrencyConvert.shared.typedValueToCurrency(self.typedAmountSaved)
+            amountSavedTextField.text = CurrencyConvert.typedValueToCurrency(self.typedAmountSaved)
         } else {
             return true
         }

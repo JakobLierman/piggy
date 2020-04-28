@@ -10,28 +10,38 @@ import Foundation
 
 class CurrencyConvert {
     
-    private init() {}
-    static let shared = CurrencyConvert()
-    
-    func doubleToCurrency(_ amount: Double) -> String{
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .currency
-        numberFormatter.locale = Locale.current
-        return numberFormatter.string(from: NSNumber(value: amount))!
-    }
-    
-    func currencyToDouble(_ input: String) -> Double? {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .currency
-        numberFormatter.locale = Locale.current
-        return numberFormatter.number(from: input)?.doubleValue
-    }
-    
-    func typedValueToCurrency(_ typedAmount: Int) -> String? {
+    private static func currencyStringToFormatter(_ currency: String) -> NumberFormatter {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
-        formatter.locale = Locale.current
+        switch currency {
+            case "EUR":
+                formatter.locale = Locale.init(identifier: "nl_BE")
+                break
+            case "USD":
+                formatter.locale = Locale.init(identifier: "en_US")
+                break
+            case "GBP":
+                formatter.locale = Locale.init(identifier: "en_GB")
+                break
+            default:
+                formatter.locale = Locale.init(identifier: "nl_BE")
+        }
+        return formatter
+    }
+    
+    static func doubleToCurrency(_ amount: Double) -> String {
+        let formatter = self.currencyStringToFormatter(User.currentUser().currency)
+        return formatter.string(from: NSNumber(value: amount))!
+    }
+    
+    static func currencyToDouble(_ input: String) -> Double? {
+        let formatter = self.currencyStringToFormatter(User.currentUser().currency)
+        return formatter.number(from: input)?.doubleValue
+    }
+    
+    static func typedValueToCurrency(_ typedAmount: Int) -> String? {
         let amount = Double(typedAmount / 100) + Double(typedAmount % 100) / 100
+        let formatter = self.currencyStringToFormatter(User.currentUser().currency)
         return formatter.string(from: NSNumber(value: amount))
     }
 }
