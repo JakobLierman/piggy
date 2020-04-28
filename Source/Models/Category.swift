@@ -15,7 +15,6 @@ import RealmSwift
     dynamic var id: String = UUID().uuidString
     dynamic var name: String = ""
     dynamic var icon: String? = nil
-    //dynamic var savingsTargets: List<SavingsTarget>? = List<SavingsTarget>()
     
     // MARK: Constructors
     convenience init(id: String?, name: String, icon: String?) {
@@ -28,10 +27,6 @@ import RealmSwift
     // MARK: Functions
     override static func primaryKey() -> String? {
         return "id"
-    }
-    
-    override static func indexedProperties() -> [String] {
-        return ["createdAt"]
     }
     
 }

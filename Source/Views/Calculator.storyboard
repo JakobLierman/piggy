@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p8Y-MV-C53">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p8Y-MV-C53">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -44,8 +44,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L41-f2-nAL">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="2b2-68-1cS">
-                                        <rect key="frame" x="0.0" y="15.999999999999993" width="375" height="109.33333333333331"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2b2-68-1cS">
+                                        <rect key="frame" x="0.0" y="15.999999999999993" width="375" height="101.33333333333331"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="peo-Zh-ABk">
                                                 <rect key="frame" x="87" y="0.0" width="201" height="32"/>
@@ -55,7 +55,7 @@
                                                 </segments>
                                             </segmentedControl>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="IPP-ca-lUq">
-                                                <rect key="frame" x="20" y="47" width="335" height="62.333333333333343"/>
+                                                <rect key="frame" x="20" y="39" width="335" height="62.333333333333343"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount to save" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Rv-0T-VtQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="20.333333333333332"/>
@@ -73,6 +73,7 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="IPP-ca-lUq" firstAttribute="leading" secondItem="2b2-68-1cS" secondAttribute="leading" constant="20" symbolic="YES" id="Thz-te-QtY"/>
+                                            <constraint firstItem="peo-Zh-ABk" firstAttribute="centerX" secondItem="2b2-68-1cS" secondAttribute="centerX" id="XEc-tM-zdW"/>
                                             <constraint firstAttribute="trailing" secondItem="IPP-ca-lUq" secondAttribute="trailing" constant="20" symbolic="YES" id="ig2-M5-upq"/>
                                         </constraints>
                                     </stackView>
@@ -81,7 +82,7 @@
                                     <constraint firstItem="2b2-68-1cS" firstAttribute="top" secondItem="gOA-h1-n0I" secondAttribute="top" constant="16" id="Poi-AZ-ZqC"/>
                                     <constraint firstItem="2b2-68-1cS" firstAttribute="leading" secondItem="gOA-h1-n0I" secondAttribute="leading" id="QZW-Iw-idy"/>
                                     <constraint firstItem="2b2-68-1cS" firstAttribute="width" secondItem="hwg-GU-PZG" secondAttribute="width" id="ZEW-Ba-JKL"/>
-                                    <constraint firstItem="2b2-68-1cS" firstAttribute="bottom" secondItem="gOA-h1-n0I" secondAttribute="bottom" id="fCk-LF-fhW"/>
+                                    <constraint firstItem="2b2-68-1cS" firstAttribute="bottom" secondItem="gOA-h1-n0I" secondAttribute="bottom" constant="16" id="fCk-LF-fhW"/>
                                     <constraint firstItem="2b2-68-1cS" firstAttribute="trailing" secondItem="gOA-h1-n0I" secondAttribute="trailing" id="q15-3X-cy6"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="gOA-h1-n0I"/>
@@ -114,7 +115,7 @@
             <color red="0.92156862745098034" green="0.21176470588235294" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Text">
-            <color red="0.13300000131130219" green="0.13300000131130219" blue="0.13300000131130219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.12941176470588237" green="0.12941176470588237" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

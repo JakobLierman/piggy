@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eQh-c2-hf6">
-                                        <rect key="frame" x="0.0" y="16" width="375" height="767"/>
+                                        <rect key="frame" x="0.0" y="16" width="375" height="754.33333333333337"/>
                                         <subviews>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iOD-a5-ERU">
                                                 <rect key="frame" x="60" y="0.0" width="255" height="255"/>
@@ -248,19 +248,19 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRv-jk-eW2">
-                                                <rect key="frame" x="10" y="594" width="355" height="173"/>
+                                                <rect key="frame" x="10" y="594" width="355" height="160.33333333333337"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="gKF-BC-yKp">
-                                                        <rect key="frame" x="15" y="15" width="325" height="143"/>
+                                                        <rect key="frame" x="15" y="15" width="325" height="130.33333333333334"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal reached" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fk-3L-FoK">
-                                                                <rect key="frame" x="78.666666666666686" y="0.0" width="168" height="46.333333333333336"/>
+                                                                <rect key="frame" x="78.666666666666686" y="0.0" width="168" height="33.666666666666664"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.seal.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qKk-I6-Yge">
-                                                                <rect key="frame" x="110" y="44.666666666666714" width="105.33333333333331" height="102"/>
+                                                                <rect key="frame" x="110" y="31.999999999999972" width="105.33333333333331" height="102"/>
                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="80"/>
                                                             </imageView>
                                                         </subviews>

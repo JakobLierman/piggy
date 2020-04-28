@@ -31,16 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Not authenticated")
         }
         
-        // Load settings
-        // Settings dummy data
-        if (db.realm.objects(SettingsItem.self).count == 0) {
-            db.create(SettingsItem(id: nil, title: "Lock", subtitle: "Enabled", alternativeSubtitle: "Disabled", functionName: "lock"))
-            db.create(SettingsItem(title: "Help", functionName: "help"))
-            db.create(SettingsItem(id: nil, title: "Currency", subtitle: "EUR", functionName: "currency"))
-            db.create(SettingsItem(title: "Reset", highlighted: false, functionName: "reset"))
-            db.create(SettingsItem(title: "About", functionName: "about"))
-        }
-        
         // Fill database
         if defaults.bool(forKey: "firstLaunch") {
             db.create(User(name: "Saver", currency: "EUR")) // TODO: Onboarding
