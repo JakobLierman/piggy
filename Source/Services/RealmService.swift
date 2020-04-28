@@ -14,7 +14,7 @@ class RealmService {
     private init() {}
     static let shared = RealmService()
     
-    var realm = try! Realm()
+    let realm = try! Realm(configuration: Realm.Configuration(deleteRealmIfMigrationNeeded: true))
     
     func create<T: Object>(_ object: T) {
         do {
