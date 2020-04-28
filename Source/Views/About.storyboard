@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Oef-rQ-O2y">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Proxima Nova Bold.otf">
+            <string>ProximaNova-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="2fr-oi-bcp">
+            <objects>
+                <navigationController id="Oef-rQ-O2y" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="w47-bP-8B1">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="Primary"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="63a-2G-Yzi" kind="relationship" relationship="rootViewController" id="dtD-aZ-384"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WOz-92-gqH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1057" y="-279"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="GFQ-Jd-bGc">
+            <objects>
+                <viewController id="63a-2G-Yzi" customClass="AboutViewController" customModule="Piggy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9b8-jw-t5Z" customClass="SwiftConfettiView" customModule="SwiftConfettiView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yRc-aF-cC6">
+                                <rect key="frame" x="107" y="129" width="200" height="197.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="BaV-5U-8gK"/>
+                                    <constraint firstAttribute="width" constant="200" id="gVd-KD-Eyv"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Piggy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMd-RF-UJn">
+                                <rect key="frame" x="145.5" y="348" width="123" height="58.5"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="48"/>
+                                <color key="textColor" name="Primary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jakob Lierman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2n-31-sW9">
+                                <rect key="frame" x="151" y="709" width="112" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpc-8q-mk7">
+                                <rect key="frame" x="182.5" y="754" width="49" height="30"/>
+                                <state key="normal" title="GitHub"/>
+                                <connections>
+                                    <action selector="didTapGithub:" destination="63a-2G-Yzi" eventType="touchUpInside" id="MyZ-x3-6Pu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4D-bM-t6f">
+                                <rect key="frame" x="179" y="792" width="56" height="30"/>
+                                <state key="normal" title="Website"/>
+                                <connections>
+                                    <action selector="didTapWebsite:" destination="63a-2G-Yzi" eventType="touchUpInside" id="w8p-qN-fDw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkr-lq-C2e">
+                                <rect key="frame" x="166" y="680" width="82" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nZ-ep-yYh">
+                                <rect key="frame" x="179.5" y="414.5" width="55.5" height="16"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon white" translatesAutoresizingMaskIntoConstraints="NO" id="gad-oC-1sk">
+                                <rect key="frame" x="157" y="-379" width="100" height="1214"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" red="0.92156862750000001" green="0.21176470589999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="1nZ-ep-yYh" firstAttribute="centerX" secondItem="9b8-jw-t5Z" secondAttribute="centerX" id="08J-hs-Mzk"/>
+                            <constraint firstItem="gad-oC-1sk" firstAttribute="width" secondItem="yRc-aF-cC6" secondAttribute="height" multiplier="1:2" id="5Dv-QP-nXq"/>
+                            <constraint firstItem="gad-oC-1sk" firstAttribute="centerX" secondItem="yRc-aF-cC6" secondAttribute="centerX" id="Blm-Ec-8HM"/>
+                            <constraint firstItem="1nZ-ep-yYh" firstAttribute="top" secondItem="qMd-RF-UJn" secondAttribute="bottom" constant="8" id="Ecl-WW-tCk"/>
+                            <constraint firstItem="gad-oC-1sk" firstAttribute="centerY" secondItem="yRc-aF-cC6" secondAttribute="centerY" id="Fk2-A3-7K9"/>
+                            <constraint firstItem="yRc-aF-cC6" firstAttribute="centerX" secondItem="9b8-jw-t5Z" secondAttribute="centerX" id="S06-Ap-Br1"/>
+                            <constraint firstItem="vkr-lq-C2e" firstAttribute="centerX" secondItem="9b8-jw-t5Z" secondAttribute="centerX" id="T5e-Gd-F8a"/>
+                            <constraint firstItem="yJ3-4l-CTH" firstAttribute="bottom" secondItem="M4D-bM-t6f" secondAttribute="bottom" constant="40" id="Taa-Ho-UnG"/>
+                            <constraint firstItem="M4D-bM-t6f" firstAttribute="top" secondItem="xpc-8q-mk7" secondAttribute="bottom" constant="8" id="Uoa-J4-3dm"/>
+                            <constraint firstItem="xpc-8q-mk7" firstAttribute="top" secondItem="I2n-31-sW9" secondAttribute="bottom" constant="24" id="cPG-AJ-b8s"/>
+                            <constraint firstItem="I2n-31-sW9" firstAttribute="top" secondItem="vkr-lq-C2e" secondAttribute="bottom" constant="8" id="g79-7K-fen"/>
+                            <constraint firstItem="qMd-RF-UJn" firstAttribute="centerX" secondItem="9b8-jw-t5Z" secondAttribute="centerX" id="kIR-NP-YSY"/>
+                            <constraint firstItem="xpc-8q-mk7" firstAttribute="centerX" secondItem="9b8-jw-t5Z" secondAttribute="centerX" id="kaW-oL-gL5"/>
+                            <constraint firstItem="M4D-bM-t6f" firstAttribute="centerX" secondItem="9b8-jw-t5Z" secondAttribute="centerX" id="oig-rk-XUy"/>
+                            <constraint firstItem="I2n-31-sW9" firstAttribute="centerX" secondItem="9b8-jw-t5Z" secondAttribute="centerX" id="psz-hb-1m3"/>
+                            <constraint firstItem="yRc-aF-cC6" firstAttribute="top" secondItem="yJ3-4l-CTH" secondAttribute="top" constant="40" id="rkw-nc-KiB"/>
+                            <constraint firstItem="qMd-RF-UJn" firstAttribute="top" secondItem="yRc-aF-cC6" secondAttribute="bottom" constant="20" id="vuZ-TN-Rs5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yJ3-4l-CTH"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="About" id="Op2-Lp-yOw">
+                        <barButtonItem key="rightBarButtonItem" title="Close" style="done" id="rVV-mk-DIX">
+                            <connections>
+                                <action selector="close:" destination="63a-2G-Yzi" id="3FB-C2-cFQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="confettiView" destination="9b8-jw-t5Z" id="sD6-pw-UkO"/>
+                        <outlet property="versionLabel" destination="1nZ-ep-yYh" id="1gG-uC-exG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ipa-re-jC7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-201.44927536231884" y="-279.24107142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Icon white" width="1399" height="1214"/>
+        <image name="app.fill" catalog="system" width="128" height="114"/>
+        <namedColor name="Primary">
+            <color red="0.92156862745098034" green="0.21176470588235294" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -10,5 +10,6 @@ target 'Piggy' do
   pod 'TORoundedButton'
   pod 'SPLarkController'
   pod 'SPAlert'
+  pod 'SwiftConfettiView'
 
 end

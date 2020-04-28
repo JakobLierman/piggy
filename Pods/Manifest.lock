@@ -6,12 +6,14 @@ PODS:
     - Realm (= 4.4.1)
   - SPAlert (2.1.4)
   - SPLarkController (1.1.5)
+  - SwiftConfettiView (0.1.0)
   - TORoundedButton (1.1.2)
 
 DEPENDENCIES:
   - RealmSwift
   - SPAlert
   - SPLarkController
+  - SwiftConfettiView
   - TORoundedButton
 
 SPEC REPOS:
@@ -20,6 +22,7 @@ SPEC REPOS:
     - RealmSwift
     - SPAlert
     - SPLarkController
+    - SwiftConfettiView
     - TORoundedButton
 
 SPEC CHECKSUMS:
@@ -27,8 +30,9 @@ SPEC CHECKSUMS:
   RealmSwift: 3eb8924ff7100df5928c7602f71d0fec51e7c9c5
   SPAlert: 1a8afa1c6ac86a82ab5b2cfdf7f9a51e68cb6c0c
   SPLarkController: 36a5db07b4609f808c8d520fc30c56ecdaa25c73
+  SwiftConfettiView: 1bdbc2e6913b6b1c76d8070802b212508ad5c352
   TORoundedButton: d40dbf6f830dbe7a784a592d9f7933a3a49fd31e
 
-PODFILE CHECKSUM: 1f30423fbc849a368c920b01c0e38a0b9cd9fd4d
+PODFILE CHECKSUM: 1dff3b138fbfcb2fc6bf069de075cc55a784404e
 
 COCOAPODS: 1.9.1
