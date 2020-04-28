@@ -18,6 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        let defaults = UserDefaults.standard
+        if defaults.object(forKey: "firstLaunch") == nil {
+            defaults.set(true, forKey: "firstLaunch")
+        } else {
+            defaults.set(false, forKey: "firstLaunch")
+        }
+        
         // If login is expired
         if (!AuthenticationService.isAuthenticated()) {
             // TODO - Do authentication
@@ -35,7 +42,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         // Fill database
-        if (db.realm.objects(Category.self).count == 0) {
+        if defaults.bool(forKey: "firstLaunch") {
+            db.create(User(name: "Saver", currency: "EUR")) // TODO: Onboarding
+            
             db.create(Category(id: nil, name: "Entertainment", icon: "dice"))
             db.create(Category(id: nil, name: "Household", icon: "fridge"))
             db.create(Category(id: nil, name: "Gifts", icon: "balloon"))
