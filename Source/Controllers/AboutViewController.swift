@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 import SwiftConfettiView
 
 class AboutViewController: UIViewController {
@@ -15,20 +16,24 @@ class AboutViewController: UIViewController {
     
     @IBOutlet var confettiView: SwiftConfettiView!
     @IBOutlet weak var versionLabel: UILabel!
+    @IBOutlet weak var iconLogoFrame: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         versionLabel.text = "Version 0.0.1 alpha"
+        iconLogoFrame.isUserInteractionEnabled = true
         
         confettiView.type = .confetti
-        
-        let seconds = 15.0
-        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+    }
+    
+    @IBAction func didLongPressIcon(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
             self.confettiView.startConfetti()
         }
     }
-
+    
     @IBAction func didTapGithub(_ sender: UIButton) {
         if let url = URL(string: "https://github.com/JakobLierman/piggy") {
             UIApplication.shared.open(url, options: [:])

@@ -40,10 +40,14 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yRc-aF-cC6">
                                 <rect key="frame" x="107" y="129" width="200" height="197.5"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="BaV-5U-8gK"/>
                                     <constraint firstAttribute="width" constant="200" id="gVd-KD-Eyv"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="gmo-c5-tmo" appends="YES" id="gQp-LX-h3H"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Piggy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMd-RF-UJn">
                                 <rect key="frame" x="146.5" y="348" width="121" height="56"/>
@@ -119,10 +123,16 @@
                     </navigationItem>
                     <connections>
                         <outlet property="confettiView" destination="9b8-jw-t5Z" id="sD6-pw-UkO"/>
+                        <outlet property="iconLogoFrame" destination="yRc-aF-cC6" id="hWF-xq-yvt"/>
                         <outlet property="versionLabel" destination="1nZ-ep-yYh" id="1gG-uC-exG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ipa-re-jC7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="gmo-c5-tmo">
+                    <connections>
+                        <action selector="didLongPressIcon:" destination="63a-2G-Yzi" id="gXt-YQ-EGU"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-201.44927536231884" y="-279.24107142857139"/>
         </scene>
