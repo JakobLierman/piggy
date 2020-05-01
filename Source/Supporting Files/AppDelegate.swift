@@ -18,17 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        // First launch
         let defaults = UserDefaults.standard
         if defaults.object(forKey: "firstLaunch") == nil {
             defaults.set(true, forKey: "firstLaunch")
         } else {
             defaults.set(false, forKey: "firstLaunch")
-        }
-        
-        // If login is expired
-        if (!AuthenticationService.isAuthenticated()) {
-            // TODO - Do authentication
-            print("Not authenticated")
         }
         
         // Fill database

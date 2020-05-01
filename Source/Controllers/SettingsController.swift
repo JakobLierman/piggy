@@ -17,7 +17,7 @@ class SettingsController: SPLarkSettingsController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        settingsItems.append(SettingsItem(title: "Lock", subtitle: "Enabled", alternativeSubtitle: "Disabled", highlighted: User.currentUser().lock, functionName: "lock"))
+        settingsItems.append(SettingsItem(title: "Lock", subtitle: "Enabled", alternativeSubtitle: "Disabled", highlighted: AuthenticationService.isEnabled(), functionName: "lock"))
         settingsItems.append(SettingsItem(title: "Currency", subtitle: User.currentUser().currency, functionName: "currency"))
         settingsItems.append(SettingsItem(title: "Name", subtitle: User.currentUser().name, functionName: "name"))
         settingsItems.append(SettingsItem(title: "About", functionName: "about"))
@@ -56,6 +56,7 @@ class SettingsController: SPLarkSettingsController {
         switch settingsItems[index].functionName {
             case "lock":
                 self.toggleLock(settingsItems[index], completion: { () in
+                    self.settingsItems[index].highlighted = AuthenticationService.isEnabled()
                     self.reload(index: index)
                 })
                 break
