@@ -84,8 +84,26 @@ class SettingsController: SPLarkSettingsController {
         }
     }
     
-    private func toggleLock(_ item: SettingsItem, completion: @escaping () -> ()) {
-        // TODO: Lock functionality
+    private func toggleLock(_ item: SettingsItem, completion: @escaping () -> Void) {
+        let alert = UIAlertController(title: "Are you sure?", message: nil, preferredStyle: .alert)
+        alert.view.tintColor = UIColor(named: "Primary")
+        
+        if AuthenticationService.isEnabled() {
+            alert.message = nil
+            alert.addAction(UIAlertAction(title: "Disable lock", style: .default, handler: { _ in
+                AuthenticationService.setAuthentication(false)
+                completion()
+            }))
+        } else {
+            alert.message = "Securing only works when you phone's password is set."
+            alert.addAction(UIAlertAction(title: "Enable lock", style: .default, handler: { _ in
+                AuthenticationService.setAuthentication(true)
+                completion()
+            }))
+        }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     private func showCurrencySwitcher(_ currentValue: String, completion: @escaping (_ value: String) -> Void) {
