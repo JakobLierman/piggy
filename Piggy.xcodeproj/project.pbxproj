@@ -30,6 +30,7 @@
 		36468FB52439C39400543F75 /* Proxima Nova Extrabold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36468FB02439C39400543F75 /* Proxima Nova Extrabold.otf */; };
 		36468FB92439CD4500543F75 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36468FB82439CD4500543F75 /* Constants.swift */; };
 		36468FBB2439E09700543F75 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36468FBA2439E09700543F75 /* LoginViewController.swift */; };
+		365C40D1245C7D80007CC3D9 /* SPAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365C40D0245C7D80007CC3D9 /* SPAlert.swift */; };
 		365F3E3C242D32680096B76E /* SavingsTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F3E3B242D32680096B76E /* SavingsTarget.swift */; };
 		365F3E40242D42B20096B76E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F3E3F242D42B20096B76E /* Category.swift */; };
 		36A4D898243A263E00CBB84C /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A4D897243A263E00CBB84C /* RealmService.swift */; };
@@ -71,6 +72,7 @@
 		36468FB02439C39400543F75 /* Proxima Nova Extrabold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Extrabold.otf"; sourceTree = "<group>"; };
 		36468FB82439CD4500543F75 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		36468FBA2439E09700543F75 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		365C40D0245C7D80007CC3D9 /* SPAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPAlert.swift; sourceTree = "<group>"; };
 		365F3E3B242D32680096B76E /* SavingsTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsTarget.swift; sourceTree = "<group>"; };
 		365F3E3F242D42B20096B76E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		3663E7A6242A889D00CECF87 /* Piggy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Piggy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				36B2C0C92446FCA20098C3DA /* UITableViewExtension.swift */,
+				365C40D0245C7D80007CC3D9 /* SPAlert.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				36468FBB2439E09700543F75 /* LoginViewController.swift in Sources */,
 				3621121C2459726F006C1C02 /* CalculatorViewController.swift in Sources */,
 				36F0056A2458D64600B6D17B /* User.swift in Sources */,
+				365C40D1245C7D80007CC3D9 /* SPAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
