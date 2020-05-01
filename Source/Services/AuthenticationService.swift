@@ -7,11 +7,11 @@
 //
 
 import Foundation
-
+import LocalAuthentication
 
 class AuthenticationService {
     
-    private static let userDefault = UserDefaults.standard
+    private static let defaults = UserDefaults.standard
     
     private enum Keys: String {
         case loginStatus = "isLoggedIn"
@@ -19,25 +19,60 @@ class AuthenticationService {
         case useAuthentication = "useAuthentication"
     }
     
-    static func toggleAuthentication(_ hasAuthentication: Bool) {
-        userDefault.set(hasAuthentication, forKey: Keys.useAuthentication.rawValue)
-        userDefault.set(true, forKey: Keys.loginStatus.rawValue)
+    static func isEnabled() -> Bool {
+        return defaults.bool(forKey: Keys.useAuthentication.rawValue)
+    }
+    
+    static func authenticate(completion: @escaping (Bool) -> Void) {
+        let context = LAContext()
+        var error: NSError?
+
+        if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
+            let reason = "Identify yourself!"
+
+            context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { success, authenticationError in
+                DispatchQueue.main.async {
+                    if success {
+                        completion(true)
+                    } else {
+                        print(error?.localizedDescription ?? "Failed to authenticate")
+                        completion(false)
+                        // TODO: passwordNotSet
+                    }
+                }
+            }
+        } else {
+            print(error?.localizedDescription ?? "Can't evaluate policy")
+            completion(false)
+            // TODO: passwordNotSet
+        }
+    }
+    
+    static func setAuthentication(_ hasAuthentication: Bool) {
+        defaults.set(hasAuthentication, forKey: Keys.useAuthentication.rawValue)
+        defaults.set(true, forKey: Keys.loginStatus.rawValue)
     }
     
     static func setAuthenticated(_ isAuthenticated: Bool) {
-        let expirationDate = Date(timeIntervalSinceNow: 300)
-        let useAuthentication = userDefault.bool(forKey: Keys.useAuthentication.rawValue)
-        userDefault.set(useAuthentication ? useAuthentication : isAuthenticated, forKey: Keys.loginStatus.rawValue)
-        userDefault.set(expirationDate, forKey: Keys.expirationDate.rawValue)
+        self.setExpirationDate(Date(timeIntervalSinceNow: 300))
+        let useAuthentication = defaults.bool(forKey: Keys.useAuthentication.rawValue)
+        defaults.set(useAuthentication ? isAuthenticated : useAuthentication, forKey: Keys.loginStatus.rawValue)
+    }
+    
+    static func setExpirationDate(_ date: Date) {
+        defaults.set(date, forKey: Keys.expirationDate.rawValue)
+    }
+    
+    static func getExpirationDate() -> Date {
+        return (defaults.object(forKey: Keys.expirationDate.rawValue) ?? Date()) as! Date
     }
     
     static func isAuthenticated() -> Bool {
-        let useAuthentication = userDefault.bool(forKey: Keys.useAuthentication.rawValue)
-        if (useAuthentication) {
-            let isExpired = Date() > userDefault.object(forKey: Keys.expirationDate.rawValue) as! Date
-                userDefault.set(!isExpired, forKey: Keys.loginStatus.rawValue)
+        if (self.isEnabled()) {
+            let isExpired = Date() > self.getExpirationDate()
+            defaults.set(!isExpired, forKey: Keys.loginStatus.rawValue)
         }
-        return userDefault.bool(forKey: Keys.loginStatus.rawValue)
+        return defaults.bool(forKey: Keys.loginStatus.rawValue)
     }
     
 }
