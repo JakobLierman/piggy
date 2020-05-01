@@ -71,7 +71,8 @@ class GoalDetailsViewController: UIViewController {
         quickAddMinimumLabel.text = CurrencyConvert.doubleToCurrency(quickAddMinimumValue)
         quickAddMaximumLabel.text = CurrencyConvert.doubleToCurrency(quickAddMaximumValue)
         
-        completePercentage == 1.0 ? addBalanceContainer.removeFromSuperview() : goalReachedContainer.removeFromSuperview()
+        addBalanceContainer.isHidden = completePercentage == 1.0
+        goalReachedContainer.isHidden = completePercentage != 1.0
     }
     
     @IBAction func sliderValueChanged(_ sender: UISlider) {
