@@ -63,13 +63,7 @@ class SettingsController: SPLarkSettingsController {
                 self.showCurrencySwitcher(User.currentUser().currency, completion: { currency in
                     User.currentUser().updateCurrency(currency)
                     self.reload(index: index)
-                    
-                    // Alert - TODO: Dynamic change
-                    let restartAlert = UIAlertController(title: "Restart your application", message: "Changes will take effect after restarting the application.", preferredStyle: .alert)
-                    restartAlert.view.tintColor = UIColor(named: "Primary")
-                    restartAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                    
-                    self.present(restartAlert, animated: true, completion: nil)
+                    SPLarkController.updatePresentingController(modal: self)
                 })
                 break
             case "name":
@@ -93,7 +87,7 @@ class SettingsController: SPLarkSettingsController {
         // TODO: Lock functionality
     }
     
-    private func showCurrencySwitcher(_ currentValue: String, completion: @escaping (_ value: String) -> ()) {
+    private func showCurrencySwitcher(_ currentValue: String, completion: @escaping (_ value: String) -> Void) {
         let alert = UIAlertController(title: "Currency", message: nil, preferredStyle: .actionSheet)
         alert.view.tintColor = UIColor(named: "Primary")
         
