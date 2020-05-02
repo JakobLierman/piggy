@@ -19,17 +19,6 @@ class SavingsTargetTableViewCell: UITableViewCell {
     @IBOutlet weak var progressBarBackground: UIView!
     @IBOutlet weak var progressBarFill: UIView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     func configure(with savingsTarget: SavingsTarget) {
         cellImage.image = UIImage(named: savingsTarget.category?.icon ?? "save-money")
         nameLabel.text = savingsTarget.name
@@ -45,6 +34,12 @@ class SavingsTargetTableViewCell: UITableViewCell {
         progressBarFill.widthAnchor.constraint(equalTo: progressBarFill.superview!.widthAnchor, multiplier: CGFloat(savingsTarget.balance / savingsTarget.price)).isActive = true
         progressBarBackground.layer.cornerRadius = progressBarBackground.frame.height / 2.0
         progressBarFill.layer.cornerRadius = progressBarFill.frame.height / 2.0
+        
+        if savingsTarget.deadline != nil && savingsTarget.balance != savingsTarget.price {
+            if Calendar.current.startOfDay(for: Date()) > Calendar.current.startOfDay(for: savingsTarget.deadline!) {
+                self.backgroundColor = UIColor.init(named: "Background Warning")
+            }
+        }
     }
     
 }

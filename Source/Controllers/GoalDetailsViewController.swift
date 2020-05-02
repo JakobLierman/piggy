@@ -13,6 +13,12 @@ class GoalDetailsViewController: UIViewController {
     
     var savingsTarget: SavingsTarget!
     
+    let dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        return dateFormatter
+    }()
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageContainer: UIView!
     @IBOutlet weak var imageView: UIImageView!
@@ -48,6 +54,10 @@ class GoalDetailsViewController: UIViewController {
     
     private func loadValues() {
         self.title = savingsTarget.name
+        
+        if savingsTarget.deadline != nil {
+            self.navigationItem.prompt = "Deadline: " + dateFormatter.string(from: (savingsTarget.deadline)!)
+        }
         
         imageView.image = UIImage(named: savingsTarget.category?.icon ?? "save-money")
         
