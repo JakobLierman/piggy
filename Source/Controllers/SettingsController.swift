@@ -9,10 +9,13 @@
 import UIKit
 import SPLarkController
 import RealmSwift
+import SPAlert
 
 class SettingsController: SPLarkSettingsController {
     
     var settingsItems: [SettingsItem] = []
+    let db = RealmService.shared
+    let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,7 +80,10 @@ class SettingsController: SPLarkSettingsController {
                 self.showViewController(storyboard: "About")
                 break
             case "reset":
-                self.showResetConfirm() // TODO: Completion
+                self.showResetConfirm(completion: { () in
+                    SPAlert.present(title: "All data erased", preset: .done)
+                    self.dismiss(animated: true, completion: nil)
+                })
                 break
             default:
                 fatalError()
@@ -130,12 +136,15 @@ class SettingsController: SPLarkSettingsController {
         self.present(viewController, animated: true)
     }
     
-    private func showResetConfirm() {
-        let alert = UIAlertController(title: "Reset data", message: "This action can't be undone.", preferredStyle: .actionSheet)
+    private func showResetConfirm(completion: @escaping () -> Void) {
+        let alert = UIAlertController(title: "Reset data", message: "This action can't be undone.", preferredStyle: .alert)
         alert.view.tintColor = UIColor(named: "Primary")
         
         alert.addAction(UIAlertAction(title: "Reset my data", style: .destructive, handler: { _ in
-            // TODO: Reset data functionality
+            self.db.reset()
+            AuthenticationService.resetSettings()
+            // TODO: Onboarding
+            completion()
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         

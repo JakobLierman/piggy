@@ -13,7 +13,7 @@ class AuthenticationService {
     
     private static let defaults = UserDefaults.standard
     
-    private enum Keys: String {
+    private enum Keys: String, CaseIterable {
         case loginStatus = "isLoggedIn"
         case expirationDate = "expirationDate"
         case useAuthentication = "useAuthentication"
