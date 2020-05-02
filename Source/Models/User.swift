@@ -25,10 +25,6 @@ import RealmSwift
     }
     
     // MARK: Functions
-    override static func primaryKey() -> String? {
-        return "name"
-    }
-    
     func updateName(_ name: String) {
         let db = RealmService.shared
         db.update(self, with: ["name": name])

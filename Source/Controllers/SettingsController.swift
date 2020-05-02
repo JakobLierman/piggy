@@ -64,14 +64,18 @@ class SettingsController: SPLarkSettingsController {
                 })
                 break
             case "currency":
-                self.showCurrencySwitcher(User.currentUser().currency, completion: { currency in
+                self.showCurrencySwitcher(currentValue: User.currentUser().currency, completion: { currency in
                     User.currentUser().updateCurrency(currency)
                     self.reload(index: index)
                     SPLarkController.updatePresentingController(modal: self)
                 })
                 break
             case "name":
-                // TODO: Change name functionality
+                self.showNameChanger(currentValue: User.currentUser().name, completion: { name in
+                    User.currentUser().updateName(name)
+                    self.settingsItems[index].subtitle = User.currentUser().name
+                    self.reload(index: index)
+                })
                 break
             case "help":
                 self.showViewController(storyboard: "Help")
@@ -112,7 +116,7 @@ class SettingsController: SPLarkSettingsController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    private func showCurrencySwitcher(_ currentValue: String, completion: @escaping (_ value: String) -> Void) {
+    private func showCurrencySwitcher(currentValue: String, completion: @escaping (_ value: String) -> Void) {
         let alert = UIAlertController(title: "Currency", message: nil, preferredStyle: .actionSheet)
         alert.view.tintColor = UIColor(named: "Primary")
         
@@ -121,10 +125,29 @@ class SettingsController: SPLarkSettingsController {
         for currency in currencies {
             let action = UIAlertAction(title: "\(currency.key) \(currency.value)", style: .default, handler: { _ in
                 completion(currency.key)
-            });
+            })
             action.setValue(currentValue == currency.key, forKey: "checked")
-            alert.addAction(action);
+            alert.addAction(action)
         }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func showNameChanger(currentValue: String, completion: @escaping (_ value: String) -> Void) {
+        let alert = UIAlertController(title: "Name", message: "How should we call you?", preferredStyle: .alert)
+        alert.view.tintColor = UIColor(named: "Primary")
+        
+        alert.addTextField { (textField) in
+        textField.text = currentValue
+            textField.placeholder = "Enter Name"
+            textField.tintColor = UIColor(named: "Primary")
+            textField.clearButtonMode = .always
+        }
+        
+        alert.addAction(UIAlertAction(title: "Change name", style: .default, handler: { _ in
+            completion(alert.textFields![0].text ?? "Saver")
+        }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         self.present(alert, animated: true, completion: nil)
