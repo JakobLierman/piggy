@@ -10,14 +10,18 @@ import UIKit
 
 class HelpViewController: UITableViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         segue.destination.title = (sender as! UITableViewCell).textLabel?.text
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath == [2, 4] { // Contact support
+            if let url = URL(string: "https://github.com/JakobLierman/piggy/issues") {
+                UIApplication.shared.open(url, options: [:])
+            }
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+        
     }
     
     @IBAction func close(_ sender: UIBarButtonItem) {

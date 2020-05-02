@@ -159,9 +159,9 @@
 				36FAADB62444A32E00C94842 /* AddGoalTableViewController.swift */,
 				36BC0E55244B4CB900EFB769 /* GoalDetailsViewController.swift */,
 				36DF27C024561E43004EDB5B /* SettingsController.swift */,
-				3621019024589BAA004747BD /* AboutViewController.swift */,
 				3621121B2459726F006C1C02 /* CalculatorViewController.swift */,
 				3621121F2459C900006C1C02 /* HelpViewController.swift */,
+				3621019024589BAA004747BD /* AboutViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
