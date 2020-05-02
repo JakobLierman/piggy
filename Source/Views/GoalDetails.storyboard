@@ -196,6 +196,9 @@
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="Add Money"/>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="tappedTintColor">
+                                                                                <color key="value" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                         <connections>
                                                                             <action selector="quickAddTapped:" destination="ZV9-zy-Lbc" eventType="touchUpInside" id="T1A-XA-QIv"/>
