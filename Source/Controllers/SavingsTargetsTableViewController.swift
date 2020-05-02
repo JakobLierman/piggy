@@ -80,7 +80,11 @@ class SavingsTargetsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if savingsTargets.isEmpty {
-            tableView.setEmptyView(title: "You do not have any active goals", message: "Create one with the button above")
+            if (self.storyboard!.value(forKey: "name") as! String).starts(with: "Active") {
+                tableView.setEmptyView(title: "You do not have any active goals", message: "Create one with the button above")
+            } else {
+                tableView.setEmptyView(title: "You do not have any finished goals", message: "Start saving!")
+            }
         } else {
             tableView.restore()
         }
