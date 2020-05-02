@@ -21,7 +21,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSFaceIDUsageDescription</key>
-	<string>TODO - CHANGE MESSAGE</string>
+	<string>Unlock Piggy</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Proxima Nova Black.otf</string>

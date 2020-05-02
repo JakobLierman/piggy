@@ -28,7 +28,7 @@ class AuthenticationService {
         var error: NSError?
 
         if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
-            let reason = "Identify yourself!"
+            let reason = "Unlock Piggy"
 
             context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { success, authenticationError in
                 DispatchQueue.main.async {
@@ -68,11 +68,19 @@ class AuthenticationService {
     }
     
     static func isAuthenticated() -> Bool {
+        var isAuthenticated: Bool = true
         if (self.isEnabled()) {
             let isExpired = Date() > self.getExpirationDate()
             defaults.set(!isExpired, forKey: Keys.loginStatus.rawValue)
+            isAuthenticated = defaults.bool(forKey: Keys.loginStatus.rawValue)
         }
-        return defaults.bool(forKey: Keys.loginStatus.rawValue)
+        return isAuthenticated
+    }
+    
+    static func resetSettings() {
+        Keys.allCases.forEach {
+            defaults.removeObject(forKey: $0.rawValue)
+        }
     }
     
 }
