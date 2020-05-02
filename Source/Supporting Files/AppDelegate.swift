@@ -15,28 +15,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window : UIWindow?
     
     private let db = RealmService.shared
+    private let defaults = UserDefaults.standard
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         // First launch
-        let defaults = UserDefaults.standard
         if defaults.object(forKey: "firstLaunch") == nil {
             defaults.set(true, forKey: "firstLaunch")
         } else {
             defaults.set(false, forKey: "firstLaunch")
         }
         
-        // Fill database
         if defaults.bool(forKey: "firstLaunch") {
-            db.create(User(name: "Saver", currency: "EUR")) // TODO: Onboarding
-            
-            db.create(Category(id: nil, name: "Entertainment", icon: "dice"))
-            db.create(Category(id: nil, name: "Household", icon: "fridge"))
-            db.create(Category(id: nil, name: "Gifts", icon: "balloon"))
-            db.create(Category(id: nil, name: "Clothing", icon: "hanger"))
-            db.create(Category(id: nil, name: "Transportation", icon: "car"))
-            db.create(Category(id: nil, name: "Travelling", icon: "luggage"))
-            db.create(Category(id: nil, name: "Hobbies", icon: "gamer"))
+            db.fill()
+            // TODO: Onboarding
         }
         
         print(Realm.Configuration.defaultConfiguration.fileURL!)

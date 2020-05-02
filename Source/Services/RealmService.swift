@@ -48,6 +48,45 @@ class RealmService {
         }
     }
     
+    func deleteAllOfType<T: Object>(_ type: T.Type) {
+        do {
+            let objects = realm.objects(type)
+            try realm.write {
+                realm.delete(objects)
+            }
+        } catch {
+            post(error)
+        }
+    }
+    
+    func fill() {
+        do {
+            try realm.write {
+                realm.add(User(name: "Saver", currency: "EUR"))
+                realm.add(Category(id: nil, name: "Entertainment", icon: "dice"))
+                realm.add(Category(id: nil, name: "Household", icon: "fridge"))
+                realm.add(Category(id: nil, name: "Gifts", icon: "balloon"))
+                realm.add(Category(id: nil, name: "Clothing", icon: "hanger"))
+                realm.add(Category(id: nil, name: "Transportation", icon: "car"))
+                realm.add(Category(id: nil, name: "Travelling", icon: "luggage"))
+                realm.add(Category(id: nil, name: "Hobbies", icon: "gamer"))
+            }
+        } catch {
+            post(error)
+        }
+    }
+    
+    func reset() {
+        do {
+            try realm.write {
+                realm.deleteAll()
+            }
+            self.fill()
+        } catch {
+            post(error)
+        }
+    }
+    
     func post(_ error: Error) {
         NotificationCenter.default.post(name: NSNotification.Name("RealmError"), object: error)
     }
