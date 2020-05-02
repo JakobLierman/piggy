@@ -24,18 +24,20 @@ import RealmSwift
     convenience init(name: String, price: Double, balance: Double?, category: Category?, deadline: Date?) throws {
         self.init()
         
-        guard name.trimmingCharacters(in: .whitespacesAndNewlines) != "" else {
-            throw SavingsTargetError.emptyNameError
-        }
-        guard price > 0 else {
-            throw SavingsTargetError.noPriceError
-        }
-        guard (balance ?? 0) <= (price - 1) else {
-            throw SavingsTargetError.balanceError(maxBalance: price - 1)
-        }
-        if deadline != nil {
-            guard deadline! > Date() else {
-                throw SavingsTargetError.dateToEarly(earliestDate: Date())
+        if !UserDefaults.standard.bool(forKey: "forceDataInject") {
+            guard name.trimmingCharacters(in: .whitespacesAndNewlines) != "" else {
+                throw SavingsTargetError.emptyNameError
+            }
+            guard price > 0 else {
+                throw SavingsTargetError.noPriceError
+            }
+            guard (balance ?? 0) <= (price - 1) else {
+                throw SavingsTargetError.balanceError(maxBalance: price - 1)
+            }
+            if deadline != nil {
+                guard deadline! > Date() else {
+                    throw SavingsTargetError.dateToEarly(earliestDate: Date())
+                }
             }
         }
         

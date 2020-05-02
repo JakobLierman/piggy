@@ -74,6 +74,79 @@ class RealmService {
         } catch {
             post(error)
         }
+
+        // TODO: REMOVE DUMMY DATA IN PRODUCTION
+        self.addDummyData()
+    }
+    
+    private func addDummyData() {
+        UserDefaults.standard.set(true, forKey: "forceDataInject")
+        do {
+            let categories: Results<Category> = realm.objects(Category.self)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy/MM/dd"
+            try realm.write {
+                realm.add(try! SavingsTarget(
+                    name: "Cat adoptation fund",
+                    price: 100.0,
+                    balance: 100.0,
+                    category: nil,
+                    deadline: nil)
+                )
+                realm.add(try! SavingsTarget(
+                    name: "Rome",
+                    price: 700.0,
+                    balance: 700.0,
+                    category: categories.first(where: {$0.name == "Travelling"}),
+                    deadline: dateFormatter.date(from: "2019/09/15"))
+                )
+                realm.add(try! SavingsTarget(
+                    name: "Car",
+                    price: 25000.0,
+                    balance: 25000.0,
+                    category: categories.first(where: {$0.name == "Transportation"}),
+                    deadline: nil)
+                )
+                realm.add(try! SavingsTarget(
+                    name: "Concert ticket fund",
+                    price: 250.0,
+                    balance: 0.0,
+                    category: nil,
+                    deadline: nil)
+                )
+                realm.add(try! SavingsTarget(
+                    name: "Jean jacket",
+                    price: 50.0,
+                    balance: 0.0,
+                    category: categories.first(where: {$0.name == "Clothing"}),
+                    deadline: nil)
+                )
+                realm.add(try! SavingsTarget(
+                    name: "Father's day gift",
+                    price: 20.0,
+                    balance: 10.0,
+                    category: categories.first(where: {$0.name == "Gifts"}),
+                    deadline: dateFormatter.date(from: "2020/06/14"))
+                )
+                realm.add(try! SavingsTarget(
+                    name: "Microwave",
+                    price: 500.0,
+                    balance: 130.0,
+                    category: categories.first(where: {$0.name == "Household"}),
+                    deadline: dateFormatter.date(from: "2020/05/01"))
+                )
+                realm.add(try! SavingsTarget(
+                    name: "PC",
+                    price: 2000.0,
+                    balance: 1200.0,
+                    category: categories.first(where: {$0.name == "Entertainment"}),
+                    deadline: nil)
+                )
+            }
+        } catch {
+            post(error)
+        }
+        UserDefaults.standard.removeObject(forKey: "forceDataInject")
     }
     
     func reset() {
