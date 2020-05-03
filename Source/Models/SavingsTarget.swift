@@ -61,10 +61,16 @@ import RealmSwift
         return deadline!.timeIntervalSinceNow
     }
     
-    func addBalance(amount: Double) {
+    func addBalance(_ amount: Double) {
         let db = RealmService.shared
         let amountToAdd = (self.balance + amount) > self.price ? self.price - self.balance : amount
         db.update(self, with: ["balance": (self.balance + amountToAdd)])
+    }
+    
+    func removeBalance(_ amount: Double) {
+        let db = RealmService.shared
+        let amountToRemove = (self.balance - amount) < 0.0 ? 0.0 : amount
+        db.update(self, with: ["balance": (self.balance - amountToRemove)])
     }
     
 }

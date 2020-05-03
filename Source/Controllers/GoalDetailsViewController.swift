@@ -92,14 +92,20 @@ class GoalDetailsViewController: UIViewController {
     }
     
     @IBAction func quickAddTapped(_ sender: UIControl) {
-        self.savingsTarget.addBalance(amount: Double(round(addBalanceSlider.value)))
+        self.savingsTarget.addBalance(Double(round(addBalanceSlider.value)))
         self.loadValues()
         SPAlert.present(title: "Balance Added", preset: .done)
         navigationController?.popViewController(animated: true)
     }
     
     @IBAction func advancedAddTapped(_ sender: UIControl) {
-        // TODO: Advanced add functionality
+        let advancedAddAmountNavigationViewController = self.storyboard?.instantiateViewController(withIdentifier: "AdvancedAdd") as! UINavigationController
+        advancedAddAmountNavigationViewController.modalPresentationStyle = .popover
+        
+        let advancedAddAmountViewController = advancedAddAmountNavigationViewController.viewControllers.first as! AdvancedAddAmountViewController
+        advancedAddAmountViewController.savingsTarget = self.savingsTarget
+        
+        self.present(advancedAddAmountNavigationViewController, animated: true)
     }
     
 }
