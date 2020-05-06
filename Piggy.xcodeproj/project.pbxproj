@@ -21,7 +21,7 @@
 		3621019124589BAA004747BD /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3621019024589BAA004747BD /* AboutViewController.swift */; };
 		3621121C2459726F006C1C02 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3621121B2459726F006C1C02 /* CalculatorViewController.swift */; };
 		362112202459C900006C1C02 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3621121F2459C900006C1C02 /* HelpViewController.swift */; };
-		3624E41224477EE30092624A /* CurrencyConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3624E41124477EE30092624A /* CurrencyConvert.swift */; };
+		3624E41224477EE30092624A /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3624E41124477EE30092624A /* Currency.swift */; };
 		363AA9D1243DF02F005550D4 /* Calculator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 363AA9D0243DF02F005550D4 /* Calculator.storyboard */; };
 		36468FB12439C39400543F75 /* Proxima Nova Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36468FAC2439C39400543F75 /* Proxima Nova Thin.otf */; };
 		36468FB22439C39400543F75 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36468FAD2439C39400543F75 /* ProximaNova-Regular.otf */; };
@@ -30,9 +30,13 @@
 		36468FB52439C39400543F75 /* Proxima Nova Extrabold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36468FB02439C39400543F75 /* Proxima Nova Extrabold.otf */; };
 		36468FB92439CD4500543F75 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36468FB82439CD4500543F75 /* Constants.swift */; };
 		36468FBB2439E09700543F75 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36468FBA2439E09700543F75 /* LoginViewController.swift */; };
+		365BDDD12462A57D0024DB05 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365BDDD02462A57D0024DB05 /* Onboarding.swift */; };
+		365BDDD32462BDC60024DB05 /* TextFieldBLTNPageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365BDDD22462BDC60024DB05 /* TextFieldBLTNPageItem.swift */; };
 		365C40D1245C7D80007CC3D9 /* SPAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365C40D0245C7D80007CC3D9 /* SPAlert.swift */; };
 		365F3E3C242D32680096B76E /* SavingsTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F3E3B242D32680096B76E /* SavingsTarget.swift */; };
 		365F3E40242D42B20096B76E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F3E3F242D42B20096B76E /* Category.swift */; };
+		366F55EF2463326E00F67280 /* CurrencySelectorBLTNPageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F55EE2463326E00F67280 /* CurrencySelectorBLTNPageItem.swift */; };
+		366F55F12463610D00F67280 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F55F02463610D00F67280 /* UIImage.swift */; };
 		36A4D898243A263E00CBB84C /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A4D897243A263E00CBB84C /* RealmService.swift */; };
 		36A4D89A243A68D100CBB84C /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A4D899243A68D100CBB84C /* AuthenticationService.swift */; };
 		36B2C0CA2446FCA20098C3DA /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B2C0C92446FCA20098C3DA /* UITableViewExtension.swift */; };
@@ -64,7 +68,7 @@
 		3621019024589BAA004747BD /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		3621121B2459726F006C1C02 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		3621121F2459C900006C1C02 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
-		3624E41124477EE30092624A /* CurrencyConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConvert.swift; sourceTree = "<group>"; };
+		3624E41124477EE30092624A /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		363AA9D0243DF02F005550D4 /* Calculator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calculator.storyboard; sourceTree = "<group>"; };
 		36468FAC2439C39400543F75 /* Proxima Nova Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Thin.otf"; sourceTree = "<group>"; };
 		36468FAD2439C39400543F75 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
@@ -73,10 +77,14 @@
 		36468FB02439C39400543F75 /* Proxima Nova Extrabold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Extrabold.otf"; sourceTree = "<group>"; };
 		36468FB82439CD4500543F75 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		36468FBA2439E09700543F75 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		365BDDD02462A57D0024DB05 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		365BDDD22462BDC60024DB05 /* TextFieldBLTNPageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldBLTNPageItem.swift; sourceTree = "<group>"; };
 		365C40D0245C7D80007CC3D9 /* SPAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPAlert.swift; sourceTree = "<group>"; };
 		365F3E3B242D32680096B76E /* SavingsTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsTarget.swift; sourceTree = "<group>"; };
 		365F3E3F242D42B20096B76E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		3663E7A6242A889D00CECF87 /* Piggy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Piggy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		366F55EE2463326E00F67280 /* CurrencySelectorBLTNPageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelectorBLTNPageItem.swift; sourceTree = "<group>"; };
+		366F55F02463610D00F67280 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		36A4D897243A263E00CBB84C /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		36A4D899243A68D100CBB84C /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		36B2C0C92446FCA20098C3DA /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
@@ -198,7 +206,10 @@
 		3624E41324477F180092624A /* Helper Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3624E41124477EE30092624A /* CurrencyConvert.swift */,
+				3624E41124477EE30092624A /* Currency.swift */,
+				365BDDD02462A57D0024DB05 /* Onboarding.swift */,
+				365BDDD22462BDC60024DB05 /* TextFieldBLTNPageItem.swift */,
+				366F55EE2463326E00F67280 /* CurrencySelectorBLTNPageItem.swift */,
 			);
 			path = "Helper Classes";
 			sourceTree = "<group>";
@@ -238,6 +249,7 @@
 			children = (
 				36B2C0C92446FCA20098C3DA /* UITableViewExtension.swift */,
 				365C40D0245C7D80007CC3D9 /* SPAlert.swift */,
+				366F55F02463610D00F67280 /* UIImage.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -381,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				365F3E3C242D32680096B76E /* SavingsTarget.swift in Sources */,
+				366F55F12463610D00F67280 /* UIImage.swift in Sources */,
 				36FAADB72444A32E00C94842 /* AddGoalTableViewController.swift in Sources */,
 				36B2C0CA2446FCA20098C3DA /* UITableViewExtension.swift in Sources */,
 				36A4D898243A263E00CBB84C /* RealmService.swift in Sources */,
@@ -389,13 +402,16 @@
 				36BC0E56244B4CB900EFB769 /* GoalDetailsViewController.swift in Sources */,
 				36DF27C124561E43004EDB5B /* SettingsController.swift in Sources */,
 				360CBD10242C024400F96167 /* SceneDelegate.swift in Sources */,
+				366F55EF2463326E00F67280 /* CurrencySelectorBLTNPageItem.swift in Sources */,
 				36468FB92439CD4500543F75 /* Constants.swift in Sources */,
+				365BDDD32462BDC60024DB05 /* TextFieldBLTNPageItem.swift in Sources */,
 				36A4D89A243A68D100CBB84C /* AuthenticationService.swift in Sources */,
 				3606948A243E6D2900F3DE3D /* SavingsTargetTableViewCell.swift in Sources */,
 				362112202459C900006C1C02 /* HelpViewController.swift in Sources */,
 				3621019124589BAA004747BD /* AboutViewController.swift in Sources */,
-				3624E41224477EE30092624A /* CurrencyConvert.swift in Sources */,
+				3624E41224477EE30092624A /* Currency.swift in Sources */,
 				365F3E40242D42B20096B76E /* Category.swift in Sources */,
+				365BDDD12462A57D0024DB05 /* Onboarding.swift in Sources */,
 				36468FBB2439E09700543F75 /* LoginViewController.swift in Sources */,
 				3621121C2459726F006C1C02 /* CalculatorViewController.swift in Sources */,
 				36F0056A2458D64600B6D17B /* User.swift in Sources */,

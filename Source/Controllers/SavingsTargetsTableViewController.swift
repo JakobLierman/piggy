@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 import TORoundedButton
 import SPLarkController
+import BLTNBoard
 
 class SavingsTargetsTableViewController: UITableViewController {
     
@@ -25,6 +26,12 @@ class SavingsTargetsTableViewController: UITableViewController {
     var isFiltering: Bool {
         return searchController.isActive && !isSearchBarEmpty
     }
+    
+    lazy var onboardingBulletinManager: BLTNItemManager = {
+        let bulletinManager = BLTNItemManager(rootItem: Onboarding.makeWelcomePage())
+        bulletinManager.backgroundViewStyle = traitCollection.userInterfaceStyle == .light ? .blurredLight : .blurredDark
+        return bulletinManager
+    }()
     
     @IBOutlet weak var addTargetButton: RoundedButton!
     
@@ -51,6 +58,10 @@ class SavingsTargetsTableViewController: UITableViewController {
         
         if let selectedIndexPath = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: selectedIndexPath, animated: animated)
+        }
+        
+        if !Onboarding.userDidCompleteOnboarding {
+            onboardingBulletinManager.showBulletin(above: self)
         }
         
         self.notificationToken = db.realm.observe { notification, realm in

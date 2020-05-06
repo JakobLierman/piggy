@@ -11,5 +11,7 @@ target 'Piggy' do
   pod 'SPLarkController'
   pod 'SPAlert'
   pod 'SwiftConfettiView'
+  pod 'MaterialShowcase'
+  pod 'BulletinBoard'
 
 end
