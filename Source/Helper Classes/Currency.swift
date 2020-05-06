@@ -1,5 +1,5 @@
 //
-//  CurrencyConvert.swift
+//  Currency.swift
 //  Piggy
 //
 //  Created by Jakob Lierman on 15/04/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CurrencyConvert {
+class Currency {
     
     private static func currencyStringToFormatter(_ currency: String) -> NumberFormatter {
         let formatter = NumberFormatter()
@@ -44,4 +44,10 @@ class CurrencyConvert {
         let formatter = self.currencyStringToFormatter(User.currentUser().currency)
         return formatter.string(from: NSNumber(value: amount))
     }
+}
+
+enum CurrencyEnum: String {
+    case eur = "EUR"
+    case usd = "USD"
+    case gbp = "GBP"
 }

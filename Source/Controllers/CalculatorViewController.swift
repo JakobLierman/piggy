@@ -43,8 +43,8 @@ class CalculatorViewController: UIViewController {
         dailySavingsContainer.isHidden = segmentedControl.selectedSegmentIndex == 0
         deadlineContainer.isHidden = segmentedControl.selectedSegmentIndex == 1
         
-        self.amountToSaveTextField.text = CurrencyConvert.typedValueToCurrency(self.typedAmountToSave)
-        self.dailySavingsTextField.text = CurrencyConvert.typedValueToCurrency(self.typedDailySavings)
+        self.amountToSaveTextField.text = Currency.typedValueToCurrency(self.typedAmountToSave)
+        self.dailySavingsTextField.text = Currency.typedValueToCurrency(self.typedDailySavings)
         deadlineDatePicker.minimumDate = Date()
     }
 
@@ -67,7 +67,7 @@ class CalculatorViewController: UIViewController {
             let deadline = Calendar.current.startOfDay(for: deadlineDatePicker.date)
             let amountDays = Calendar.current.dateComponents([.day], from: today, to: deadline).day!
             let resultValue: Int = Int(Double(typedAmountToSave / amountDays).rounded(.up))
-            resultLabel.text = CurrencyConvert.typedValueToCurrency(resultValue)
+            resultLabel.text = Currency.typedValueToCurrency(resultValue)
             resultLabel.text! += " per day"
             
         } else if segmentedControl.selectedSegmentIndex == 1 {
@@ -110,7 +110,7 @@ extension CalculatorViewController: UITextFieldDelegate {
             if string == "" {
                 typedAmountToSave = typedAmountToSave / 10
             }
-            amountToSaveTextField.text = CurrencyConvert.typedValueToCurrency(self.typedAmountToSave)
+            amountToSaveTextField.text = Currency.typedValueToCurrency(self.typedAmountToSave)
         } else if textFieldToChange == dailySavingsTextField {
             if let digit = Int(string) {
                 typedDailySavings = typedDailySavings * 10 + digit
@@ -118,7 +118,7 @@ extension CalculatorViewController: UITextFieldDelegate {
             if string == "" {
                 typedDailySavings = typedDailySavings / 10
             }
-            dailySavingsTextField.text = CurrencyConvert.typedValueToCurrency(self.typedDailySavings)
+            dailySavingsTextField.text = Currency.typedValueToCurrency(self.typedDailySavings)
         } else {
             return true
         }

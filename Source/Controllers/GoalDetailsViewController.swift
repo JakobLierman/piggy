@@ -61,8 +61,8 @@ class GoalDetailsViewController: UIViewController {
         
         imageView.image = UIImage(named: savingsTarget.category?.icon ?? "save-money")
         
-        balanceLabel.text = CurrencyConvert.doubleToCurrency(savingsTarget.balance)
-        priceLabel.text = CurrencyConvert.doubleToCurrency(savingsTarget.price)
+        balanceLabel.text = Currency.doubleToCurrency(savingsTarget.balance)
+        priceLabel.text = Currency.doubleToCurrency(savingsTarget.price)
         
         let completePercentage = savingsTarget.balance / savingsTarget.price
         imageBackground.heightAnchor.constraint(equalTo: imageBackground.superview!.heightAnchor, multiplier: CGFloat(completePercentage)).isActive = true
@@ -77,9 +77,9 @@ class GoalDetailsViewController: UIViewController {
         addBalanceSlider.minimumValue = Float(quickAddMinimumValue)
         addBalanceSlider.maximumValue = Float(quickAddMaximumValue)
         addBalanceSlider.value = addBalanceSlider.minimumValue
-        addBalanceValueLabel.text = CurrencyConvert.doubleToCurrency(quickAddMinimumValue)
-        quickAddMinimumLabel.text = CurrencyConvert.doubleToCurrency(quickAddMinimumValue)
-        quickAddMaximumLabel.text = CurrencyConvert.doubleToCurrency(quickAddMaximumValue)
+        addBalanceValueLabel.text = Currency.doubleToCurrency(quickAddMinimumValue)
+        quickAddMinimumLabel.text = Currency.doubleToCurrency(quickAddMinimumValue)
+        quickAddMaximumLabel.text = Currency.doubleToCurrency(quickAddMaximumValue)
         
         addBalanceContainer.isHidden = completePercentage == 1.0
         goalReachedContainer.isHidden = completePercentage != 1.0
@@ -87,7 +87,7 @@ class GoalDetailsViewController: UIViewController {
     
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         let x = Double(round(sender.value))
-        addBalanceValueLabel.text = CurrencyConvert.doubleToCurrency(x)
+        addBalanceValueLabel.text = Currency.doubleToCurrency(x)
         // TODO: Move label
     }
     

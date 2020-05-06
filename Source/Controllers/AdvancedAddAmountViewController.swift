@@ -28,8 +28,8 @@ class AdvancedAddAmountViewController: UITableViewController {
         
         self.amountTextField.delegate = self
         
-        self.oldBalanceLabel.text = CurrencyConvert.doubleToCurrency(savingsTarget.balance)
-        self.priceLabel.text = CurrencyConvert.doubleToCurrency(savingsTarget.price)
+        self.oldBalanceLabel.text = Currency.doubleToCurrency(savingsTarget.balance)
+        self.priceLabel.text = Currency.doubleToCurrency(savingsTarget.price)
         
         self.newBalanceLabel.text = "--"
         self.balanceDifferenceLabel.text = "--"
@@ -56,8 +56,8 @@ class AdvancedAddAmountViewController: UITableViewController {
             }
         }
         
-        self.balanceDifferenceLabel.text! += CurrencyConvert.typedValueToCurrency(typedAmount) ?? "--"
-        self.newBalanceLabel.text = CurrencyConvert.doubleToCurrency(balance)
+        self.balanceDifferenceLabel.text! += Currency.typedValueToCurrency(typedAmount) ?? "--"
+        self.newBalanceLabel.text = Currency.doubleToCurrency(balance)
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
@@ -91,7 +91,7 @@ extension AdvancedAddAmountViewController: UITextFieldDelegate {
             if string == "" {
                 typedAmount = typedAmount / 10
             }
-            amountTextField.text = CurrencyConvert.typedValueToCurrency(self.typedAmount)
+            amountTextField.text = Currency.typedValueToCurrency(self.typedAmount)
         } else {
             return true
         }
