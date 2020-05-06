@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -84,6 +84,8 @@
                                 <constraints>
                                     <constraint firstItem="dlG-hT-hZV" firstAttribute="leading" secondItem="me3-ct-ZfQ" secondAttribute="leading" id="1gx-fk-JyS"/>
                                     <constraint firstItem="TCr-NV-SkW" firstAttribute="top" secondItem="me3-ct-ZfQ" secondAttribute="top" id="ALB-Gb-V6q"/>
+                                    <constraint firstItem="DJg-32-W8g" firstAttribute="height" secondItem="ApA-yn-D8X" secondAttribute="height" id="DzH-Sn-37E"/>
+                                    <constraint firstItem="TCr-NV-SkW" firstAttribute="height" secondItem="ApA-yn-D8X" secondAttribute="height" id="EEW-Iq-pNG"/>
                                     <constraint firstItem="dlG-hT-hZV" firstAttribute="top" secondItem="me3-ct-ZfQ" secondAttribute="top" id="Gyj-lG-fER"/>
                                     <constraint firstAttribute="bottom" secondItem="TCr-NV-SkW" secondAttribute="bottom" id="Kd4-LF-jJU"/>
                                     <constraint firstItem="ApA-yn-D8X" firstAttribute="top" secondItem="me3-ct-ZfQ" secondAttribute="top" id="LGO-vF-Nr0"/>

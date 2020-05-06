@@ -42,7 +42,9 @@
                                 <rect key="frame" x="30" y="673" width="315" height="55"/>
                                 <color key="tintColor" name="Text Light"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="VuN-49-Bjp"/>
+                                    <constraint firstAttribute="height" constant="55" id="VuN-49-Bjp">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="40"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="qDT-8u-PBB"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>

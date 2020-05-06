@@ -28,7 +28,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if defaults.bool(forKey: "firstLaunch") {
             db.fill()
-            // TODO: Onboarding
+            
+            defaults.set(false, forKey: "completedGeneralOnboarding")
+            defaults.set(false, forKey: "completedTableOnboarding")
+            defaults.set(false, forKey: "completedCalculatorOnboarding")
+            defaults.set(false, forKey: "completedNewOnboarding")
+            defaults.set(false, forKey: "completedDeleteOnboarding")
+            defaults.set(false, forKey: "completedSettingsOnboarding")
         }
         
         print(Realm.Configuration.defaultConfiguration.fileURL!)

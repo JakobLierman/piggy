@@ -36,18 +36,18 @@ class GoalDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        imageContainer.layer.cornerRadius = imageContainer.frame.height / 2.0
+        
+        self.loadValues()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        imageContainer.layer.cornerRadius = imageContainer.frame.size.height / 2.0
         balanceLabel.layer.cornerRadius = 8
         priceLabel.layer.cornerRadius = 8
         addBalanceContainer.layer.cornerRadius = 20
         addBalanceValueLabel.layer.cornerRadius = 8
         goalReachedContainer.layer.cornerRadius = 20
         
-        self.loadValues()
-    }
-    
-    override func viewDidLayoutSubviews() {
         scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         scrollView.alwaysBounceVertical = true
     }
