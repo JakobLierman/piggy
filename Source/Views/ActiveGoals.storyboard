@@ -52,14 +52,23 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Active Goals" id="vWc-iB-Hhw">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="ellipsis.circle" catalog="system" style="done" id="hfR-tf-dDg">
-                            <connections>
-                                <action selector="openSettingsTapped:" destination="qIL-57-eQA" id="4O9-g4-yx1"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="ellipsis.circle.fill" catalog="system" style="done" id="hfR-tf-dDg">
+                                <connections>
+                                    <action selector="openSettingsTapped:" destination="qIL-57-eQA" id="4O9-g4-yx1"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="questionmark.circle" catalog="system" style="done" id="3xo-vt-oGg">
+                                <connections>
+                                    <action selector="helpTapped:" destination="qIL-57-eQA" id="g0U-cU-CkA"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="addTargetButton" destination="Di7-A8-7fQ" id="Ysc-I8-pXW"/>
+                        <outlet property="helpBarButton" destination="3xo-vt-oGg" id="xDj-xW-5u7"/>
+                        <outlet property="openSettingsBarButton" destination="hfR-tf-dDg" id="Fpb-HU-88f"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ReL-KP-qCS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -87,8 +96,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ellipsis.circle" catalog="system" width="128" height="121"/>
+        <image name="ellipsis.circle.fill" catalog="system" width="128" height="121"/>
         <image name="money-box" width="30" height="30"/>
+        <image name="questionmark.circle" catalog="system" width="128" height="121"/>
         <namedColor name="Primary">
             <color red="0.92156862745098034" green="0.21176470588235294" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

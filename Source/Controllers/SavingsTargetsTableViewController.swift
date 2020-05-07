@@ -69,6 +69,14 @@ class SavingsTargetsTableViewController: UITableViewController {
         }
         
         tableView.reloadData()
+        
+        if !Onboarding.userDidCompleteNavigationShowcase {
+            showNavigationShowcase()
+        }
+        
+        if !Onboarding.userDidCompleteTableShowcase {
+            showTableShowcase()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -171,6 +179,12 @@ class SavingsTargetsTableViewController: UITableViewController {
         
         tableView.reloadData()
     }
+    
+    func showNavigationShowcase() {
+    }
+    
+    func showTableShowcase() {
+    }
 
     @IBAction private func addTargetTapped(_ sender: RoundedButton) {
         let addGoalStoryboard: UIStoryboard = UIStoryboard(name: "AddGoal", bundle: nil)
@@ -181,6 +195,11 @@ class SavingsTargetsTableViewController: UITableViewController {
     @IBAction private func openSettingsTapped(_ sender: UIBarButtonItem) {
         let settingsController = SettingsController()
         self.presentAsLark(settingsController)
+    }
+    
+    @IBAction private func helpTapped(_ sender: UIBarButtonItem) {
+        showNavigationShowcase()
+        showTableShowcase()
     }
 }
 

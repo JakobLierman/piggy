@@ -52,14 +52,23 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Finished Goals" id="SGC-NU-GWN">
-                        <barButtonItem key="rightBarButtonItem" image="ellipsis.circle" catalog="system" style="done" id="2c3-Gr-fz5">
-                            <connections>
-                                <action selector="openSettingsTapped:" destination="Z6t-Oh-O8w" id="X1y-ft-xSe"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="ellipsis.circle.fill" catalog="system" style="done" id="2c3-Gr-fz5">
+                                <connections>
+                                    <action selector="openSettingsTapped:" destination="Z6t-Oh-O8w" id="X1y-ft-xSe"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="questionmark.circle" catalog="system" style="done" id="qL9-xJ-JBd">
+                                <connections>
+                                    <action selector="helpTapped:" destination="Z6t-Oh-O8w" id="BSk-9W-MkJ"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="addTargetButton" destination="LK2-ip-xF3" id="a1M-BY-d4R"/>
+                        <outlet property="helpBarButton" destination="qL9-xJ-JBd" id="FmO-PI-21f"/>
+                        <outlet property="openSettingsBarButton" destination="2c3-Gr-fz5" id="qgF-PA-ofk"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZM-YU-TOf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -90,8 +99,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ellipsis.circle" catalog="system" width="128" height="121"/>
+        <image name="ellipsis.circle.fill" catalog="system" width="128" height="121"/>
         <image name="paid" width="30" height="30"/>
+        <image name="questionmark.circle" catalog="system" width="128" height="121"/>
         <namedColor name="Primary">
             <color red="0.92156862745098034" green="0.21176470588235294" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

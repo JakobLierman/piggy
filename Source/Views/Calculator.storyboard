@@ -169,11 +169,14 @@
                         <viewLayoutGuide key="safeArea" id="g4O-Dd-fQN"/>
                     </view>
                     <navigationItem key="navigationItem" title="Calculator" id="Qac-fq-a4Q">
-                        <barButtonItem key="rightBarButtonItem" image="ellipsis.circle" catalog="system" style="done" id="4Hv-ZY-mQq">
-                            <connections>
-                                <action selector="openSettingsTapped:" destination="j6M-G3-8Jk" id="rYQ-PK-08l"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="ellipsis.circle.fill" catalog="system" style="done" id="4Hv-ZY-mQq">
+                                <connections>
+                                    <action selector="openSettingsTapped:" destination="j6M-G3-8Jk" id="rYQ-PK-08l"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="questionmark.circle" catalog="system" style="done" id="cbT-3Z-MZe"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="amountToSaveContainer" destination="IPP-ca-lUq" id="rGZ-Sb-DG0"/>
@@ -195,7 +198,8 @@
     </scenes>
     <resources>
         <image name="calculator" width="30" height="30"/>
-        <image name="ellipsis.circle" catalog="system" width="128" height="121"/>
+        <image name="ellipsis.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="questionmark.circle" catalog="system" width="128" height="121"/>
         <namedColor name="Primary">
             <color red="0.92156862745098034" green="0.21176470588235294" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
