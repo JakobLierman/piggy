@@ -60,7 +60,7 @@ class SavingsTargetsTableViewController: UITableViewController {
             tableView.deselectRow(at: selectedIndexPath, animated: animated)
         }
         
-        if !Onboarding.userDidCompleteOnboarding {
+        if !Onboarding.userDidCompleteGeneralOnboarding {
             onboardingBulletinManager.showBulletin(above: self)
         }
         

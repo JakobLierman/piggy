@@ -30,11 +30,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             db.fill()
             
             defaults.set(false, forKey: "completedGeneralOnboarding")
-            defaults.set(false, forKey: "completedTableOnboarding")
-            defaults.set(false, forKey: "completedCalculatorOnboarding")
-            defaults.set(false, forKey: "completedNewOnboarding")
-            defaults.set(false, forKey: "completedDeleteOnboarding")
-            defaults.set(false, forKey: "completedSettingsOnboarding")
+            defaults.set(false, forKey: "completedNavigationShowcase")
+            defaults.set(false, forKey: "completedTableShowcase")
+            defaults.set(false, forKey: "completedCalculatorShowcase")
+            defaults.set(false, forKey: "completedNewShowcase")
+            defaults.set(false, forKey: "completedDeleteShowcase")
+            defaults.set(false, forKey: "completedSettingsShowcase")
         }
         
         print(Realm.Configuration.defaultConfiguration.fileURL!)

@@ -14,13 +14,73 @@ class Onboarding {
     static private let defaults = UserDefaults.standard
     static private let tintColor = UIColor(named: "Primary")!
     
-    static var userDidCompleteOnboarding: Bool {
+    static var userDidCompleteGeneralOnboarding: Bool {
         get {
             return UserDefaults.standard.bool(forKey: "completedGeneralOnboarding")
         }
         set {
             UserDefaults.standard.set(newValue, forKey: "completedGeneralOnboarding")
         }
+    }
+    static var userDidCompleteNavigationShowcase: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "completedNavigationShowcase")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "completedNavigationShowcase")
+        }
+    }
+    static var userDidCompleteTableShowcase: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "completedTableShowcase")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "completedTableShowcase")
+        }
+    }
+    static var userDidCompleteCalculatorShowcase: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "completedCalculatorShowcase")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "completedCalculatorShowcase")
+        }
+    }
+    static var userDidCompleteNewShowcase: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "completedNewShowcase")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "completedNewShowcase")
+        }
+    }
+    static var userDidCompleteDeleteShowcase: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "completedDeleteShowcase")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "completedDeleteShowcase")
+        }
+    }
+    static var userDidCompleteSettingsShowcase: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "completedSettingsShowcase")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "completedSettingsShowcase")
+        }
+    }
+    
+    static func restart() {
+        
+        userDidCompleteGeneralOnboarding = false
+        userDidCompleteNavigationShowcase = false
+        userDidCompleteTableShowcase = false
+        userDidCompleteCalculatorShowcase = false
+        userDidCompleteNewShowcase = false
+        userDidCompleteDeleteShowcase = false
+        userDidCompleteSettingsShowcase = false
+        
     }
     
     static func makeWelcomePage() -> BLTNPageItem {
@@ -131,7 +191,7 @@ class Onboarding {
         page.actionButtonTitle = "Start saving"
         page.appearance.actionButtonColor = tintColor
         page.actionHandler = { item in
-            userDidCompleteOnboarding = true
+            userDidCompleteGeneralOnboarding = true
             item.manager?.dismissBulletin()
         }
         
