@@ -11,14 +11,18 @@ import RealmSwift
 import TORoundedButton
 import SPLarkController
 import BLTNBoard
+import MaterialShowcase
 
 class SavingsTargetsTableViewController: UITableViewController {
+    
+    private let tintColor = UIColor(named: "Primary")!
     
     let db = RealmService.shared
     var savingsTargets: Results<SavingsTarget>!
     var notificationToken: NotificationToken?
     let searchController = UISearchController(searchResultsController: nil)
     var filteredSavingsTargets: [SavingsTarget] = []
+    var showcaseSequence = MaterialShowcaseSequence()
     
     var isSearchBarEmpty: Bool {
         return searchController.searchBar.text?.isEmpty ?? true
@@ -34,6 +38,8 @@ class SavingsTargetsTableViewController: UITableViewController {
     }()
     
     @IBOutlet weak var addTargetButton: RoundedButton!
+    @IBOutlet weak var openSettingsBarButton: UIBarButtonItem!
+    @IBOutlet weak var helpBarButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -181,6 +187,52 @@ class SavingsTargetsTableViewController: UITableViewController {
     }
     
     func showNavigationShowcase() {
+        let activeGoalsTabBarButtonShowcase = MaterialShowcase()
+        activeGoalsTabBarButtonShowcase.setTargetView(tabBar: self.tabBarController!.tabBar, itemIndex: 0)
+        activeGoalsTabBarButtonShowcase.primaryText = "Active goals"
+        activeGoalsTabBarButtonShowcase.secondaryText = "Your ongoing savings targets live here"
+        activeGoalsTabBarButtonShowcase.targetHolderColor = .clear
+        activeGoalsTabBarButtonShowcase.delegate = self
+        
+        let finishedGoalsTabBarButtonShowcase = MaterialShowcase()
+        finishedGoalsTabBarButtonShowcase.setTargetView(tabBar: self.tabBarController!.tabBar, itemIndex: 1)
+        finishedGoalsTabBarButtonShowcase.primaryText = "Finished goals"
+        finishedGoalsTabBarButtonShowcase.secondaryText = "Once you've saved enough, your savings target will show up here"
+        finishedGoalsTabBarButtonShowcase.targetHolderColor = .clear
+        finishedGoalsTabBarButtonShowcase.delegate = self
+        
+        let calculatorTabBarButtonShowcase = MaterialShowcase()
+        calculatorTabBarButtonShowcase.setTargetView(tabBar: self.tabBarController!.tabBar, itemIndex: 2)
+        calculatorTabBarButtonShowcase.primaryText = "Calculator"
+        calculatorTabBarButtonShowcase.secondaryText = "Calculate when you will reach your target if you put aside some money every day or how much you will need to save daily to reach you goals"
+        calculatorTabBarButtonShowcase.targetHolderColor = .clear
+        calculatorTabBarButtonShowcase.delegate = self
+        
+        let settingsBarButtonShowcase = MaterialShowcase()
+        settingsBarButtonShowcase.setTargetView(barButtonItem: openSettingsBarButton)
+        settingsBarButtonShowcase.primaryText = "Open settings"
+        settingsBarButtonShowcase.secondaryText = "Click here to open the settings panel"
+        settingsBarButtonShowcase.targetHolderColor = .clear
+        settingsBarButtonShowcase.backgroundPromptColor = tintColor
+        settingsBarButtonShowcase.delegate = self
+
+        let helpBarButtonShowcase = MaterialShowcase()
+        helpBarButtonShowcase.setTargetView(barButtonItem: helpBarButton)
+        helpBarButtonShowcase.primaryText = "Help"
+        helpBarButtonShowcase.secondaryText = "Stuck? Get help by clicking here"
+        helpBarButtonShowcase.targetHolderColor = .clear
+        helpBarButtonShowcase.backgroundPromptColor = tintColor
+        helpBarButtonShowcase.delegate = self
+        
+        showcaseSequence
+            .temp(activeGoalsTabBarButtonShowcase)
+            .temp(finishedGoalsTabBarButtonShowcase)
+            .temp(calculatorTabBarButtonShowcase)
+            .temp(settingsBarButtonShowcase)
+            .temp(helpBarButtonShowcase)
+            .start()
+        
+        Onboarding.userDidCompleteNavigationShowcase = true
     }
     
     func showTableShowcase() {
@@ -227,4 +279,10 @@ extension RoundedButton {
             //self.isHidden = hidden
         })
     }
+}
+
+extension SavingsTargetsTableViewController: MaterialShowcaseDelegate {
+  func showCaseDidDismiss(showcase: MaterialShowcase, didTapTarget: Bool) {
+    showcaseSequence.showCaseWillDismis()
+  }
 }
