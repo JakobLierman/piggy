@@ -37,6 +37,73 @@ class SavingsTargetsTableViewController: UITableViewController {
         return bulletinManager
     }()
     
+    lazy var activeGoalsTabBarButtonShowcase: MaterialShowcase = {
+        let showcase = MaterialShowcase()
+        showcase.setTargetView(tabBar: self.tabBarController!.tabBar, itemIndex: 0)
+        showcase.primaryText = "Active goals"
+        showcase.secondaryText = "Your ongoing savings targets live here"
+        showcase.targetHolderColor = .clear
+        showcase.delegate = self
+        return showcase
+    }()
+    lazy var finishedGoalsTabBarButtonShowcase: MaterialShowcase = {
+        let showcase = MaterialShowcase()
+        showcase.setTargetView(tabBar: self.tabBarController!.tabBar, itemIndex: 1)
+        showcase.primaryText = "Finished goals"
+        showcase.secondaryText = "Once you've saved enough, your savings target will show up here"
+        showcase.targetHolderColor = .clear
+        showcase.delegate = self
+        return showcase
+    }()
+    lazy var calculatorTabBarButtonShowcase: MaterialShowcase = {
+        let showcase = MaterialShowcase()
+        showcase.setTargetView(tabBar: self.tabBarController!.tabBar, itemIndex: 2)
+        showcase.primaryText = "Calculator"
+        showcase.secondaryText = "Calculate when you will reach your target if you put aside some money every day or how much you will need to save daily to reach you goals"
+        showcase.targetHolderColor = .clear
+        showcase.delegate = self
+        return showcase
+    }()
+    lazy var settingsBarButtonShowcase: MaterialShowcase = {
+        let showcase = MaterialShowcase()
+        showcase.setTargetView(barButtonItem: openSettingsBarButton)
+        showcase.primaryText = "Open settings"
+        showcase.secondaryText = "Click here to open the settings panel"
+        showcase.targetHolderColor = .clear
+        showcase.backgroundPromptColor = tintColor
+        showcase.delegate = self
+        return showcase
+    }()
+    lazy var helpBarButtonShowcase: MaterialShowcase = {
+        let showcase = MaterialShowcase()
+        showcase.setTargetView(barButtonItem: helpBarButton)
+        showcase.primaryText = "Help"
+        showcase.secondaryText = "Stuck? Get help by clicking here"
+        showcase.targetHolderColor = .clear
+        showcase.backgroundPromptColor = tintColor
+        showcase.delegate = self
+        return showcase
+    }()
+    lazy var addTargetButtonShowcase: MaterialShowcase = {
+        let showcase = MaterialShowcase()
+        showcase.setTargetView(view: addTargetButton)
+        showcase.primaryText = "Start here!"
+        showcase.secondaryText = "Add a new savings target by tapping this button"
+        showcase.targetHolderColor = .clear
+        showcase.delegate = self
+        return showcase
+    }()
+    lazy var savingsTableShowcase: MaterialShowcase = {
+        let showcase = MaterialShowcase()
+        showcase.setTargetView(view: tableView)
+        showcase.primaryText = "Your goals are all right here"
+        showcase.secondaryText = "You can see all targets with name, catergory image, price and progress as cells in this table"
+        showcase.targetHolderColor = .clear
+        showcase.backgroundPromptColor = tintColor
+        showcase.delegate = self
+        return showcase
+    }()
+    
     @IBOutlet weak var addTargetButton: RoundedButton!
     @IBOutlet weak var openSettingsBarButton: UIBarButtonItem!
     @IBOutlet weak var helpBarButton: UIBarButtonItem!
@@ -66,29 +133,27 @@ class SavingsTargetsTableViewController: UITableViewController {
             tableView.deselectRow(at: selectedIndexPath, animated: animated)
         }
         
-        if !Onboarding.userDidCompleteGeneralOnboarding {
-            onboardingBulletinManager.showBulletin(above: self)
-        }
-        
         self.notificationToken = db.realm.observe { notification, realm in
             self.tableView.reloadData()
         }
         
         tableView.reloadData()
-        
-        if !Onboarding.userDidCompleteNavigationShowcase {
-            showNavigationShowcase()
-        }
-        
-        if !Onboarding.userDidCompleteTableShowcase {
-            showTableShowcase()
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         self.hidesBottomBarWhenPushed = true
+        
+        if !Onboarding.userDidCompleteGeneralOnboarding {
+            onboardingBulletinManager.showBulletin(above: self)
+        }
+        
+        if !Onboarding.userDidCompleteNavigationShowcase && (self.storyboard!.value(forKey: "name") as! String).starts(with: "Active") {
+            showInitialShowcase()
+        } else if !Onboarding.userDidCompleteTableShowcase {
+            showTableShowcase()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -186,56 +251,29 @@ class SavingsTargetsTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    func showNavigationShowcase() {
-        let activeGoalsTabBarButtonShowcase = MaterialShowcase()
-        activeGoalsTabBarButtonShowcase.setTargetView(tabBar: self.tabBarController!.tabBar, itemIndex: 0)
-        activeGoalsTabBarButtonShowcase.primaryText = "Active goals"
-        activeGoalsTabBarButtonShowcase.secondaryText = "Your ongoing savings targets live here"
-        activeGoalsTabBarButtonShowcase.targetHolderColor = .clear
-        activeGoalsTabBarButtonShowcase.delegate = self
-        
-        let finishedGoalsTabBarButtonShowcase = MaterialShowcase()
-        finishedGoalsTabBarButtonShowcase.setTargetView(tabBar: self.tabBarController!.tabBar, itemIndex: 1)
-        finishedGoalsTabBarButtonShowcase.primaryText = "Finished goals"
-        finishedGoalsTabBarButtonShowcase.secondaryText = "Once you've saved enough, your savings target will show up here"
-        finishedGoalsTabBarButtonShowcase.targetHolderColor = .clear
-        finishedGoalsTabBarButtonShowcase.delegate = self
-        
-        let calculatorTabBarButtonShowcase = MaterialShowcase()
-        calculatorTabBarButtonShowcase.setTargetView(tabBar: self.tabBarController!.tabBar, itemIndex: 2)
-        calculatorTabBarButtonShowcase.primaryText = "Calculator"
-        calculatorTabBarButtonShowcase.secondaryText = "Calculate when you will reach your target if you put aside some money every day or how much you will need to save daily to reach you goals"
-        calculatorTabBarButtonShowcase.targetHolderColor = .clear
-        calculatorTabBarButtonShowcase.delegate = self
-        
-        let settingsBarButtonShowcase = MaterialShowcase()
-        settingsBarButtonShowcase.setTargetView(barButtonItem: openSettingsBarButton)
-        settingsBarButtonShowcase.primaryText = "Open settings"
-        settingsBarButtonShowcase.secondaryText = "Click here to open the settings panel"
-        settingsBarButtonShowcase.targetHolderColor = .clear
-        settingsBarButtonShowcase.backgroundPromptColor = tintColor
-        settingsBarButtonShowcase.delegate = self
-
-        let helpBarButtonShowcase = MaterialShowcase()
-        helpBarButtonShowcase.setTargetView(barButtonItem: helpBarButton)
-        helpBarButtonShowcase.primaryText = "Help"
-        helpBarButtonShowcase.secondaryText = "Stuck? Get help by clicking here"
-        helpBarButtonShowcase.targetHolderColor = .clear
-        helpBarButtonShowcase.backgroundPromptColor = tintColor
-        helpBarButtonShowcase.delegate = self
-        
+    func showInitialShowcase() {
         showcaseSequence
             .temp(activeGoalsTabBarButtonShowcase)
             .temp(finishedGoalsTabBarButtonShowcase)
             .temp(calculatorTabBarButtonShowcase)
             .temp(settingsBarButtonShowcase)
             .temp(helpBarButtonShowcase)
+            .temp(addTargetButtonShowcase)
+            .temp(savingsTableShowcase)
             .start()
-        
+            
         Onboarding.userDidCompleteNavigationShowcase = true
+        Onboarding.userDidCompleteTableShowcase = true
     }
     
     func showTableShowcase() {
+        showcaseSequence
+            .temp(addTargetButtonShowcase)
+            .temp(savingsTableShowcase)
+            .temp(deleteCellShowcase)
+            .start()
+        
+        Onboarding.userDidCompleteTableShowcase = true
     }
 
     @IBAction private func addTargetTapped(_ sender: RoundedButton) {
@@ -250,7 +288,6 @@ class SavingsTargetsTableViewController: UITableViewController {
     }
     
     @IBAction private func helpTapped(_ sender: UIBarButtonItem) {
-        showNavigationShowcase()
         showTableShowcase()
     }
 }
