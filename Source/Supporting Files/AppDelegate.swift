@@ -28,7 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if defaults.bool(forKey: "firstLaunch") {
             db.fill()
-            
             Onboarding.reset()
         }
         

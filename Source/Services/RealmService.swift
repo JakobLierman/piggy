@@ -59,33 +59,41 @@ class RealmService {
         }
     }
     
-    func fill() {
-        do {
-            try realm.write {
-                realm.add(User(name: "Saver", currency: "EUR"))
-                realm.add(Category(id: nil, name: "Entertainment", icon: "dice"))
-                realm.add(Category(id: nil, name: "Household", icon: "fridge"))
-                realm.add(Category(id: nil, name: "Gifts", icon: "balloon"))
-                realm.add(Category(id: nil, name: "Clothing", icon: "hanger"))
-                realm.add(Category(id: nil, name: "Transportation", icon: "car"))
-                realm.add(Category(id: nil, name: "Travelling", icon: "luggage"))
-                realm.add(Category(id: nil, name: "Hobbies", icon: "gamer"))
+    func fill(initialFill: Bool = true, dummyData: Bool = false) {
+        if initialFill {
+            do {
+                try realm.write {
+                    realm.add(User(name: "Saver", currency: "EUR"))
+                    realm.add(Category(id: nil, name: "Entertainment", icon: "dice"))
+                    realm.add(Category(id: nil, name: "Household", icon: "fridge"))
+                    realm.add(Category(id: nil, name: "Gifts", icon: "balloon"))
+                    realm.add(Category(id: nil, name: "Clothing", icon: "hanger"))
+                    realm.add(Category(id: nil, name: "Transportation", icon: "car"))
+                    realm.add(Category(id: nil, name: "Travelling", icon: "luggage"))
+                    realm.add(Category(id: nil, name: "Hobbies", icon: "gamer"))
+                }
+            } catch {
+                post(error)
             }
-        } catch {
-            post(error)
         }
 
-        // TODO: REMOVE DUMMY DATA IN PRODUCTION
-        self.addDummyData()
+        if dummyData {
+            self.addDummyData()
+        }
     }
     
     private func addDummyData() {
         UserDefaults.standard.set(true, forKey: "forceDataInject")
         do {
+            let oldObjects = realm.objects(SavingsTarget.self)
+            
             let categories: Results<Category> = realm.objects(Category.self)
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy/MM/dd"
+            
             try realm.write {
+                realm.delete(oldObjects)
+                
                 realm.add(try! SavingsTarget(
                     name: "Cat adoptation fund",
                     price: 100.0,

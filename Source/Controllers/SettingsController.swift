@@ -26,6 +26,8 @@ class SettingsController: SPLarkSettingsController {
         settingsItems.append(SettingsItem(title: "About", functionName: "about"))
         settingsItems.append(SettingsItem(title: "Help", functionName: "help"))
         settingsItems.append(SettingsItem(title: "Reset", highlighted: false, functionName: "reset"))
+        // Fill db for testing purposes
+        settingsItems.append(SettingsItem(title: "Fill database", subtitle: "For testing purposes", highlighted: false, functionName: "filldb"))
     }
     
     override func settingsCount() -> Int {
@@ -86,6 +88,12 @@ class SettingsController: SPLarkSettingsController {
             case "reset":
                 self.showResetConfirm(completion: { () in
                     SPAlert.present(title: "All data erased", preset: .done)
+                    self.dismiss(animated: true, completion: nil)
+                })
+                break
+            case "filldb":
+                self.showFillConfirm(completion: { () in
+                    SPAlert.present(title: "Application filled with dummy data", preset: .doc)
                     self.dismiss(animated: true, completion: nil)
                 })
                 break
@@ -167,6 +175,19 @@ class SettingsController: SPLarkSettingsController {
             self.db.reset()
             AuthenticationService.resetSettings()
             Onboarding.reset()
+            completion()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func showFillConfirm(completion: @escaping () -> Void) {
+        let alert = UIAlertController(title: "Fill application with dummy content", message: "This will overwrite current goals.", preferredStyle: .alert)
+        alert.view.tintColor = UIColor(named: "Primary")
+        
+        alert.addAction(UIAlertAction(title: "Fill database", style: .destructive, handler: { _ in
+            self.db.fill(initialFill: false, dummyData: true)
             completion()
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
