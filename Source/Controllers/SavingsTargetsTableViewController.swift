@@ -281,6 +281,7 @@ class SavingsTargetsTableViewController: UITableViewController {
     }
     
     func showTableShowcase() {
+        showcaseSequence = MaterialShowcaseSequence()
         showcaseSequence
             .temp(addTargetButtonShowcase)
             .temp(savingsTableShowcase)
