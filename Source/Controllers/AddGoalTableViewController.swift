@@ -9,19 +9,15 @@
 import UIKit
 import RealmSwift
 import SPAlert
+import MaterialShowcase
 
 class AddGoalTableViewController: UITableViewController {
-
-    @IBOutlet weak var goalNameTextField: UITextField!
-    @IBOutlet weak var amountToSaveTextField: UITextField!
-    @IBOutlet weak var amountSavedTextField: UITextField!
-    @IBOutlet weak var categoryButton: UIButton!
-    @IBOutlet weak var deadlineButton: UIButton!
-    @IBOutlet weak var toSaveCurrencySymbol: UILabel!
-    @IBOutlet weak var SavedCurrencySymbol: UILabel!
+    
+    private let tintColor = UIColor(named: "Primary")!
 
     let db = RealmService.shared
     var categories: Results<Category>!
+    var showcaseSequence = MaterialShowcaseSequence()
     
     var goalName: String?
     var typedAmountToSave: Int = 0
@@ -34,6 +30,80 @@ class AddGoalTableViewController: UITableViewController {
         dateFormatter.dateStyle = .long
         return dateFormatter
     }()
+    
+    lazy var goalNameTextFieldShowcase: MaterialShowcase = {
+        let showcase = MaterialShowcase()
+        showcase.setTargetView(view: self.goalNameTextField)
+        showcase.primaryText = "Savings Goal Name"
+        showcase.secondaryText = "Example: Nice dress, car, new phone, ..."
+        showcase.targetHolderColor = .clear
+        showcase.backgroundPromptColor = tintColor
+        showcase.delegate = self
+        return showcase
+    }()
+    lazy var amountToSaveTextFieldShowcase: MaterialShowcase = {
+        let showcase = MaterialShowcase()
+        showcase.setTargetView(view: self.amountToSaveTextField)
+        showcase.primaryText = "Amount To Save"
+        showcase.secondaryText = "Is your target 5000.00? Add it here! (Required)"
+        showcase.primaryTextAlignment = .right
+        showcase.secondaryTextAlignment = .right
+        showcase.targetHolderColor = .clear
+        showcase.backgroundRadius = 280
+        showcase.backgroundPromptColor = tintColor
+        showcase.delegate = self
+        return showcase
+    }()
+    lazy var amountSavedTextFieldShowcase: MaterialShowcase = {
+        let showcase = MaterialShowcase()
+        showcase.setTargetView(view: self.amountSavedTextField)
+        showcase.primaryText = "Amount Already Saved"
+        showcase.secondaryText = "Saved some money already? Great! You can add the amount here. (Optional)"
+        showcase.primaryTextAlignment = .right
+        showcase.secondaryTextAlignment = .right
+        showcase.targetHolderColor = .clear
+        showcase.backgroundRadius = 280
+        showcase.backgroundPromptColor = tintColor
+        showcase.backgroundPromptColor = tintColor
+        showcase.delegate = self
+        return showcase
+    }()
+    lazy var categoryButtonShowcase: MaterialShowcase = {
+        let showcase = MaterialShowcase()
+        showcase.setTargetView(view: self.categoryButton)
+        showcase.primaryText = "Category"
+        showcase.secondaryText = "Adding a category creates a nice image in the list view. (Optional)"
+        showcase.primaryTextAlignment = .right
+        showcase.secondaryTextAlignment = .right
+        showcase.targetHolderColor = .clear
+        showcase.backgroundRadius = 280
+        showcase.backgroundPromptColor = tintColor
+        showcase.backgroundPromptColor = tintColor
+        showcase.delegate = self
+        return showcase
+    }()
+    lazy var deadlineButtonShowcase: MaterialShowcase = {
+        let showcase = MaterialShowcase()
+        showcase.setTargetView(view: self.deadlineButton)
+        showcase.primaryText = "Deadline"
+        showcase.secondaryText = "Oh no... This is urgent? Keep track of deadlines. Expired items in the list are displayed with a red tint. (Optional)"
+        showcase.primaryTextAlignment = .right
+        showcase.secondaryTextAlignment = .right
+        showcase.targetHolderColor = .clear
+        showcase.backgroundRadius = 280
+        showcase.backgroundPromptColor = tintColor
+        showcase.backgroundPromptColor = tintColor
+        showcase.delegate = self
+        return showcase
+    }()
+
+    @IBOutlet weak var goalNameTextField: UITextField!
+    @IBOutlet weak var amountToSaveTextField: UITextField!
+    @IBOutlet weak var amountSavedTextField: UITextField!
+    @IBOutlet weak var categoryButton: UIButton!
+    @IBOutlet weak var deadlineButton: UIButton!
+    @IBOutlet weak var toSaveCurrencySymbol: UILabel!
+    @IBOutlet weak var SavedCurrencySymbol: UILabel!
     
     convenience init(goalName: String, amountToSave: Double, amountSaved: Double?, category: Category?, deadLine: Date?) {
         self.init()
@@ -57,6 +127,26 @@ class AddGoalTableViewController: UITableViewController {
         self.amountSavedTextField.delegate = self
         self.setSelectedCategory(self.category)
         self.setSelectedDeadline(self.deadline)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if !Onboarding.userDidCompleteNewShowcase {
+            showNewShowcase()
+        }
+    }
+    
+    func showNewShowcase() {
+        showcaseSequence
+            .temp(goalNameTextFieldShowcase)
+            .temp(amountToSaveTextFieldShowcase)
+            .temp(amountSavedTextFieldShowcase)
+            .temp(categoryButtonShowcase)
+            .temp(deadlineButtonShowcase)
+            .start()
+        
+        Onboarding.userDidCompleteNewShowcase = true
     }
     
     private func setSelectedCategory(_ selectedCategory: Category?) {
@@ -171,4 +261,10 @@ extension AddGoalTableViewController: UITextFieldDelegate {
         return false
     }
     
+}
+
+extension AddGoalTableViewController: MaterialShowcaseDelegate {
+  func showCaseDidDismiss(showcase: MaterialShowcase, didTapTarget: Bool) {
+    showcaseSequence.showCaseWillDismis()
+  }
 }
