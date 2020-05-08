@@ -8,15 +8,54 @@
 
 import UIKit
 import SPAlert
+import MaterialShowcase
 
 class GoalDetailsViewController: UIViewController {
     
+    private let tintColor = UIColor(named: "Secondary")!
+    
     var savingsTarget: SavingsTarget!
+    var showcaseSequence = MaterialShowcaseSequence()
     
     let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .long
         return dateFormatter
+    }()
+    
+    lazy var imageContainerShowcase: MaterialShowcase = {
+        let showcase = MaterialShowcase()
+        showcase.setTargetView(view: self.imageContainer)
+        showcase.primaryText = "Your progress"
+        showcase.secondaryText = "The more you save, the more the background fills!"
+        showcase.primaryTextAlignment = .center
+        showcase.secondaryTextAlignment = .center
+        showcase.targetHolderColor = .clear
+        showcase.targetHolderRadius = imageContainer.frame.size.height / 2.0
+        showcase.backgroundRadius = imageContainer.frame.size.height
+        showcase.backgroundPromptColor = tintColor
+        showcase.delegate = self
+        return showcase
+    }()
+    lazy var addBalanceContainerShowcase: MaterialShowcase = {
+        let showcase = MaterialShowcase()
+        showcase.setTargetView(view: self.addBalanceContainer)
+        showcase.primaryText = "Add Balance"
+        showcase.secondaryText = "Saved some 💰? Add it in the app!"
+        showcase.targetHolderColor = .clear
+        showcase.targetHolderRadius = addBalanceContainer.frame.size.height / 2.0
+        showcase.delegate = self
+        return showcase
+    }()
+    lazy var advancedAddButtonShowcase: MaterialShowcase = {
+        let showcase = MaterialShowcase()
+        showcase.setTargetView(view: self.advancedAddButton)
+        showcase.primaryText = "Addvanced Add Balance"
+        showcase.secondaryText = "You can add or remove as much balance as you want. This button gives you more options."
+        showcase.targetHolderColor = .clear
+        showcase.backgroundPromptColor = tintColor
+        showcase.delegate = self
+        return showcase
     }()
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -41,6 +80,14 @@ class GoalDetailsViewController: UIViewController {
         self.loadValues()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if !Onboarding.userDidCompleteDetailsShowcase {
+            showDetailsShowcase()
+        }
+    }
+    
     override func viewDidLayoutSubviews() {
         imageContainer.layer.cornerRadius = imageContainer.frame.size.height / 2.0
         balanceLabel.layer.cornerRadius = 8
@@ -51,6 +98,16 @@ class GoalDetailsViewController: UIViewController {
         
         scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         scrollView.alwaysBounceVertical = true
+    }
+    
+    func showDetailsShowcase() {
+        showcaseSequence
+            .temp(imageContainerShowcase)
+            .temp(addBalanceContainerShowcase)
+            .temp(advancedAddButtonShowcase)
+            .start()
+        
+        Onboarding.userDidCompleteDetailsShowcase = true
     }
     
     private func loadValues() {
@@ -109,4 +166,10 @@ class GoalDetailsViewController: UIViewController {
         self.present(advancedAddAmountNavigationViewController, animated: true)
     }
     
+}
+
+extension GoalDetailsViewController: MaterialShowcaseDelegate {
+  func showCaseDidDismiss(showcase: MaterialShowcase, didTapTarget: Bool) {
+    showcaseSequence.showCaseWillDismis()
+  }
 }
