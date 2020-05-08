@@ -175,7 +175,11 @@
                                     <action selector="openSettingsTapped:" destination="j6M-G3-8Jk" id="rYQ-PK-08l"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="questionmark.circle" catalog="system" style="done" id="cbT-3Z-MZe"/>
+                            <barButtonItem image="questionmark.circle" catalog="system" style="done" id="cbT-3Z-MZe">
+                                <connections>
+                                    <action selector="helpTapped:" destination="j6M-G3-8Jk" id="bad-4g-om6"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>

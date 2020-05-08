@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import MaterialShowcase
 
 class CalculatorViewController: UIViewController {
+    
+    private let tintColor = UIColor(named: "Primary")!
+    
+    var showcaseSequence = MaterialShowcaseSequence()
     
     var typedAmountToSave: Int = 0
     var typedDailySavings: Int = 0
@@ -17,6 +22,49 @@ class CalculatorViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .long
         return dateFormatter
+    }()
+    
+    lazy var segmentedControlShowcase: MaterialShowcase = {
+        let showcase = MaterialShowcase()
+        showcase.setTargetView(view: self.segmentedControl)
+        showcase.primaryText = "What to calculate?"
+        showcase.secondaryText = "Do you want to calculate the amount you need to save daily to reach your deadline or when you will reach your target when putting aside some money every day?"
+        showcase.targetHolderColor = .clear
+        showcase.backgroundPromptColor = tintColor
+        showcase.delegate = self
+        return showcase
+    }()
+    lazy var amountToSaveTextFieldShowcase: MaterialShowcase = {
+        let showcase = MaterialShowcase()
+        showcase.setTargetView(view: self.amountToSaveTextField)
+        showcase.primaryText = "Amount To Save"
+        showcase.secondaryText = "The goal is 350.00? Add it here."
+        showcase.targetHolderColor = .clear
+        showcase.backgroundPromptColor = tintColor
+        showcase.delegate = self
+        return showcase
+    }()
+    lazy var secundaryContainerShowcase: MaterialShowcase = {
+        let showcase = MaterialShowcase()
+        showcase.setTargetView(view: self.deadlineContainer)
+        showcase.primaryText = "Deadline or daily savings"
+        showcase.secondaryText = "Add your deadline or the amount you can put aside every day."
+        showcase.targetHolderColor = .clear
+        showcase.backgroundPromptColor = tintColor
+        showcase.delegate = self
+        return showcase
+    }()
+    lazy var resultContainerShowcase: MaterialShowcase = {
+        let showcase = MaterialShowcase()
+        showcase.setTargetView(view: self.resultContainer)
+        showcase.primaryText = "Result"
+        showcase.secondaryText = "Calculations complete! 🎉"
+        showcase.primaryTextAlignment = .center
+        showcase.secondaryTextAlignment = .center
+        showcase.targetHolderColor = .clear
+        showcase.backgroundPromptColor = tintColor
+        showcase.delegate = self
+        return showcase
     }()
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -37,6 +85,24 @@ class CalculatorViewController: UIViewController {
         self.amountToSaveTextField.delegate = self
         self.dailySavingsTextField.delegate = self
         self.updateView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if !Onboarding.userDidCompleteCalculatorShowcase {
+            showCalculatorShowcase()
+        }
+    }
+    
+    func showCalculatorShowcase() {
+        showcaseSequence.temp(segmentedControlShowcase)
+            .temp(amountToSaveTextFieldShowcase)
+            .temp(secundaryContainerShowcase)
+            .temp(resultContainerShowcase)
+            .start()
+        
+        Onboarding.userDidCompleteCalculatorShowcase = true
     }
     
     private func updateView() {
@@ -98,6 +164,10 @@ class CalculatorViewController: UIViewController {
         let settingsController = SettingsController()
         self.presentAsLark(settingsController)
     }
+    
+    @IBAction private func helpTapped(_ sender: UIBarButtonItem) {
+        showCalculatorShowcase()
+    }
 }
 
 extension CalculatorViewController: UITextFieldDelegate {
@@ -127,4 +197,10 @@ extension CalculatorViewController: UITextFieldDelegate {
         return false
     }
     
+}
+
+extension CalculatorViewController: MaterialShowcaseDelegate {
+  func showCaseDidDismiss(showcase: MaterialShowcase, didTapTarget: Bool) {
+    showcaseSequence.showCaseWillDismis()
+  }
 }
