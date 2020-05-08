@@ -166,7 +166,7 @@ class SettingsController: SPLarkSettingsController {
         alert.addAction(UIAlertAction(title: "Reset my data", style: .destructive, handler: { _ in
             self.db.reset()
             AuthenticationService.resetSettings()
-            Onboarding.restart()
+            Onboarding.reset()
             completion()
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

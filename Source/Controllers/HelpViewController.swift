@@ -17,7 +17,7 @@ class HelpViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath == [2, 3] { // Reset onboarding
-            Onboarding.restart()
+            Onboarding.reset()
             SPAlert.present(title: "Showing help again", preset: .done)
             self.dismiss(animated: true, completion: nil)
             tableView.deselectRow(at: indexPath, animated: true)

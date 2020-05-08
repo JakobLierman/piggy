@@ -62,6 +62,14 @@ class Onboarding {
             UserDefaults.standard.set(newValue, forKey: "completedDeleteShowcase")
         }
     }
+    static var userDidCompleteDetailsShowcase: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "completedDetailsShowcase")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "completedDetailsShowcase")
+        }
+    }
     static var userDidCompleteSettingsShowcase: Bool {
         get {
             return UserDefaults.standard.bool(forKey: "completedSettingsShowcase")
@@ -71,7 +79,7 @@ class Onboarding {
         }
     }
     
-    static func restart() {
+    static func reset() {
         
         userDidCompleteGeneralOnboarding = false
         userDidCompleteNavigationShowcase = false
@@ -79,6 +87,7 @@ class Onboarding {
         userDidCompleteCalculatorShowcase = false
         userDidCompleteNewShowcase = false
         userDidCompleteDeleteShowcase = false
+        userDidCompleteDetailsShowcase = false
         userDidCompleteSettingsShowcase = false
         
     }

@@ -29,13 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if defaults.bool(forKey: "firstLaunch") {
             db.fill()
             
-            defaults.set(false, forKey: "completedGeneralOnboarding")
-            defaults.set(false, forKey: "completedNavigationShowcase")
-            defaults.set(false, forKey: "completedTableShowcase")
-            defaults.set(false, forKey: "completedCalculatorShowcase")
-            defaults.set(false, forKey: "completedNewShowcase")
-            defaults.set(false, forKey: "completedDeleteShowcase")
-            defaults.set(false, forKey: "completedSettingsShowcase")
+            Onboarding.reset()
         }
         
         print(Realm.Configuration.defaultConfiguration.fileURL!)
