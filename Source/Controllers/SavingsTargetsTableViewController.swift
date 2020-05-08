@@ -103,6 +103,16 @@ class SavingsTargetsTableViewController: UITableViewController {
         showcase.delegate = self
         return showcase
     }()
+    lazy var deleteCellShowcase: MaterialShowcase = {
+        let showcase = MaterialShowcase()
+        showcase.setTargetView(view: tableView)
+        showcase.primaryText = "Delete goals by swiping them left"
+        showcase.secondaryText = nil
+        showcase.targetHolderColor = .clear
+        showcase.backgroundPromptColor = tintColor
+        showcase.delegate = self
+        return showcase
+    }()
     
     @IBOutlet weak var addTargetButton: RoundedButton!
     @IBOutlet weak var openSettingsBarButton: UIBarButtonItem!
@@ -153,6 +163,10 @@ class SavingsTargetsTableViewController: UITableViewController {
             showInitialShowcase()
         } else if !Onboarding.userDidCompleteTableShowcase {
             showTableShowcase()
+        }
+        
+        if !Onboarding.userDidCompleteDeleteShowcase && (self.storyboard!.value(forKey: "name") as! String).starts(with: "Finished") && tableView.numberOfRows(inSection: 0) != 0  {
+            showDeleteShowcase()
         }
     }
     
@@ -274,6 +288,15 @@ class SavingsTargetsTableViewController: UITableViewController {
             .start()
         
         Onboarding.userDidCompleteTableShowcase = true
+        Onboarding.userDidCompleteDeleteShowcase = true
+    }
+    
+    func showDeleteShowcase() {
+        showcaseSequence
+            .temp(deleteCellShowcase)
+            .start()
+        
+        Onboarding.userDidCompleteDeleteShowcase = true
     }
 
     @IBAction private func addTargetTapped(_ sender: RoundedButton) {
