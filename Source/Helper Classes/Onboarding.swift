@@ -109,6 +109,8 @@ class Onboarding {
     static func makeNamePage() -> TextFieldBLTNPageItem {
         
         let page = TextFieldBLTNPageItem(title: "How should we call you?")
+        
+        //page.descriptionText = ""
     
         page.actionButtonTitle = "Continue"
         page.appearance.actionButtonColor = self.tintColor

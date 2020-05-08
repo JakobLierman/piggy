@@ -53,9 +53,12 @@ extension TextFieldBLTNPageItem: UITextFieldDelegate {
         if isInputValid(text: textField.text) {
             textInputHandler?(self, textField.text)
         } else {
-            descriptionLabel!.textColor = .red
-            descriptionLabel!.text = "Enter your name to continue."
-            textField.backgroundColor = UIColor.red.withAlphaComponent(0.3)
+            descriptionLabel?.textColor = .red
+            descriptionLabel?.text = "Enter your name to continue or skip this step."
+            textField.layer.borderWidth = 2
+            textField.layer.borderColor =
+                UIColor.red.cgColor
+            textField.layer.cornerRadius = 6.0
         }
     }
     
