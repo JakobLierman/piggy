@@ -33,6 +33,7 @@ class GoalDetailsViewController: UIViewController {
     @IBOutlet weak var quickAddMinimumLabel: UILabel!
     @IBOutlet weak var quickAddMaximumLabel: UILabel!
     @IBOutlet weak var goalReachedContainer: UIView!
+    @IBOutlet weak var advancedAddButton: UIControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()

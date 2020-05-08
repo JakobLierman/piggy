@@ -342,6 +342,7 @@
                         <outlet property="addBalanceContainer" destination="w2J-48-a4X" id="JLs-4C-59s"/>
                         <outlet property="addBalanceSlider" destination="9ox-7r-xKA" id="QVJ-tb-RiX"/>
                         <outlet property="addBalanceValueLabel" destination="bYm-ga-Q7X" id="J46-7y-RHw"/>
+                        <outlet property="advancedAddButton" destination="BMB-FH-AAc" id="Lsc-NF-iBH"/>
                         <outlet property="balanceLabel" destination="ANd-ml-w6Y" id="SrE-on-YRw"/>
                         <outlet property="goalReachedContainer" destination="fRv-jk-eW2" id="xp8-nd-XkM"/>
                         <outlet property="imageBackground" destination="Ogc-j1-Phm" id="ttR-J9-4oy"/>

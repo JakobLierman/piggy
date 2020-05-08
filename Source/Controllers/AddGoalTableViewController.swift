@@ -64,7 +64,6 @@ class AddGoalTableViewController: UITableViewController {
         showcase.targetHolderColor = .clear
         showcase.backgroundRadius = 280
         showcase.backgroundPromptColor = tintColor
-        showcase.backgroundPromptColor = tintColor
         showcase.delegate = self
         return showcase
     }()
@@ -78,7 +77,6 @@ class AddGoalTableViewController: UITableViewController {
         showcase.targetHolderColor = .clear
         showcase.backgroundRadius = 280
         showcase.backgroundPromptColor = tintColor
-        showcase.backgroundPromptColor = tintColor
         showcase.delegate = self
         return showcase
     }()
@@ -91,7 +89,6 @@ class AddGoalTableViewController: UITableViewController {
         showcase.secondaryTextAlignment = .right
         showcase.targetHolderColor = .clear
         showcase.backgroundRadius = 280
-        showcase.backgroundPromptColor = tintColor
         showcase.backgroundPromptColor = tintColor
         showcase.delegate = self
         return showcase
