@@ -569,7 +569,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0vG-p1-Axb">
-                                        <rect key="frame" x="0.0" y="16.000000000000007" width="375" height="121.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="16" width="375" height="951.66666666666663"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In the home screen, click the savings goal you would like to edit." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wm8-kw-Ocd">
                                                 <rect key="frame" x="20" y="0.0" width="335" height="40.666666666666664"/>
@@ -583,11 +583,29 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help-add-balance" translatesAutoresizingMaskIntoConstraints="NO" id="ISG-US-FNQ">
+                                                <rect key="frame" x="20" y="141.66666666666666" width="335" height="127.99999999999997"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click the + button at the right to add or remove as much balance as you want. This button gives you more options." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsO-Jj-j1l">
+                                                <rect key="frame" x="20" y="289.66666666666669" width="335" height="61"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help-advanced-add" translatesAutoresizingMaskIntoConstraints="NO" id="kZs-Ro-5Gm">
+                                                <rect key="frame" x="20" y="370.66666666666674" width="335" height="581"/>
+                                            </imageView>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="kZs-Ro-5Gm" secondAttribute="trailing" constant="20" symbolic="YES" id="55s-Ze-7t9"/>
                                             <constraint firstAttribute="trailing" secondItem="Wm8-kw-Ocd" secondAttribute="trailing" constant="20" symbolic="YES" id="Jmx-ke-myF"/>
                                             <constraint firstAttribute="trailing" secondItem="eco-yT-F01" secondAttribute="trailing" constant="20" symbolic="YES" id="MzW-xI-CCT"/>
+                                            <constraint firstItem="kZs-Ro-5Gm" firstAttribute="leading" secondItem="0vG-p1-Axb" secondAttribute="leading" constant="20" symbolic="YES" id="S2w-hc-XFx"/>
+                                            <constraint firstItem="PsO-Jj-j1l" firstAttribute="leading" secondItem="0vG-p1-Axb" secondAttribute="leading" constant="20" symbolic="YES" id="UUy-57-2We"/>
+                                            <constraint firstAttribute="trailing" secondItem="PsO-Jj-j1l" secondAttribute="trailing" constant="20" symbolic="YES" id="Vjx-Zb-4dM"/>
+                                            <constraint firstItem="ISG-US-FNQ" firstAttribute="leading" secondItem="0vG-p1-Axb" secondAttribute="leading" constant="20" symbolic="YES" id="ZFH-WP-WtP"/>
                                             <constraint firstItem="eco-yT-F01" firstAttribute="leading" secondItem="0vG-p1-Axb" secondAttribute="leading" constant="20" symbolic="YES" id="a7Y-7e-qRV"/>
+                                            <constraint firstAttribute="trailing" secondItem="ISG-US-FNQ" secondAttribute="trailing" constant="20" symbolic="YES" id="fr5-3o-ui7"/>
                                             <constraint firstItem="Wm8-kw-Ocd" firstAttribute="leading" secondItem="0vG-p1-Axb" secondAttribute="leading" constant="20" symbolic="YES" id="s5M-Ps-hRM"/>
                                         </constraints>
                                     </stackView>
@@ -1192,8 +1210,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="help-add-balance" width="128" height="128"/>
         <image name="help-add-goal-screen" width="289.33334350585938" height="581"/>
         <image name="help-add-target-button" width="289.33334350585938" height="196"/>
+        <image name="help-advanced-add" width="289.33334350585938" height="581"/>
         <image name="help-currency-button" width="289.33334350585938" height="253"/>
         <image name="help-daily-savings" width="289.33334350585938" height="581"/>
         <image name="help-delete-swiped" width="289.33334350585938" height="146.33332824707031"/>
