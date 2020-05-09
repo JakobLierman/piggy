@@ -59,6 +59,7 @@ class GoalDetailsViewController: UIViewController {
     }()
     
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var imageContainer: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageBackground: UIView!
@@ -96,7 +97,7 @@ class GoalDetailsViewController: UIViewController {
         addBalanceValueLabel.layer.cornerRadius = 8
         goalReachedContainer.layer.cornerRadius = 20
         
-        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: stackView.frame.height + 24.0)
         scrollView.alwaysBounceVertical = true
     }
     
