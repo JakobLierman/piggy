@@ -35,6 +35,7 @@ class SavingsTargetTableViewCell: UITableViewCell {
         progressBarBackground.layer.cornerRadius = progressBarBackground.frame.height / 2.0
         progressBarFill.layer.cornerRadius = progressBarFill.frame.height / 2.0
         
+        self.backgroundColor = UIColor.init(named: "Background")
         if savingsTarget.deadline != nil && savingsTarget.balance != savingsTarget.price {
             if Calendar.current.startOfDay(for: Date()) > Calendar.current.startOfDay(for: savingsTarget.deadline!) {
                 self.backgroundColor = UIColor.init(named: "Background Warning")
