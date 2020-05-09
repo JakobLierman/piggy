@@ -219,35 +219,46 @@
                                                                             <action selector="quickAddTapped:" destination="ZV9-zy-Lbc" eventType="touchUpInside" id="T1A-XA-QIv"/>
                                                                         </connections>
                                                                     </view>
-                                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BMB-FH-AAc" customClass="TORoundedButton">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLd-yE-eJW">
                                                                         <rect key="frame" x="309" y="0.0" width="55" height="55"/>
                                                                         <subviews>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BMB-FH-AAc" customClass="TORoundedButton">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
+                                                                                <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                                <accessibility key="accessibilityConfiguration">
+                                                                                    <accessibilityTraits key="traits" button="YES"/>
+                                                                                </accessibility>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value=" "/>
+                                                                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                                                        <color key="value" name="Secondary"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="textPointSize">
+                                                                                        <real key="value" value="30"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                                <connections>
+                                                                                    <action selector="advancedAddTapped:" destination="ZV9-zy-Lbc" eventType="touchUpInside" id="zgR-hp-bs8"/>
+                                                                                </connections>
+                                                                            </view>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="SRU-Vj-8sY">
                                                                                 <rect key="frame" x="0.0" y="-0.33333333333333215" width="55" height="56"/>
                                                                                 <color key="tintColor" name="Secondary"/>
                                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large" weight="heavy"/>
                                                                             </imageView>
                                                                         </subviews>
-                                                                        <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                                        <accessibility key="accessibilityConfiguration">
-                                                                            <accessibilityTraits key="traits" button="YES"/>
-                                                                        </accessibility>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" secondItem="BMB-FH-AAc" secondAttribute="height" multiplier="1:1" id="51D-CM-45g"/>
-                                                                            <constraint firstItem="SRU-Vj-8sY" firstAttribute="leading" secondItem="BMB-FH-AAc" secondAttribute="leading" id="IaG-gp-lzn"/>
-                                                                            <constraint firstAttribute="trailing" secondItem="SRU-Vj-8sY" secondAttribute="trailing" id="LeZ-EK-ToY"/>
-                                                                            <constraint firstItem="SRU-Vj-8sY" firstAttribute="top" secondItem="BMB-FH-AAc" secondAttribute="top" id="VPB-f2-N0y"/>
-                                                                            <constraint firstAttribute="bottom" secondItem="SRU-Vj-8sY" secondAttribute="bottom" id="Vga-RR-PCx"/>
-                                                                            <constraint firstAttribute="height" constant="55" id="yqe-m8-tVV">
-                                                                                <variation key="heightClass=compact-widthClass=compact" constant="40"/>
-                                                                            </constraint>
+                                                                            <constraint firstAttribute="trailing" secondItem="BMB-FH-AAc" secondAttribute="trailing" id="3Fw-JV-LWh"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="BMB-FH-AAc" secondAttribute="bottom" id="7hd-yf-RBV"/>
+                                                                            <constraint firstItem="SRU-Vj-8sY" firstAttribute="leading" secondItem="BLd-yE-eJW" secondAttribute="leading" id="FJi-Cs-HlS"/>
+                                                                            <constraint firstAttribute="height" constant="55" id="Px1-PY-TuY"/>
+                                                                            <constraint firstItem="BMB-FH-AAc" firstAttribute="top" secondItem="BLd-yE-eJW" secondAttribute="top" id="QSk-TM-1Sb"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="SRU-Vj-8sY" secondAttribute="trailing" id="aAp-lr-zxB"/>
+                                                                            <constraint firstItem="SRU-Vj-8sY" firstAttribute="top" secondItem="BLd-yE-eJW" secondAttribute="top" id="e4k-OF-Dtb"/>
+                                                                            <constraint firstAttribute="width" secondItem="BLd-yE-eJW" secondAttribute="height" multiplier="1:1" id="fgc-np-5ZG"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="SRU-Vj-8sY" secondAttribute="bottom" id="rMQ-AY-ccd"/>
+                                                                            <constraint firstItem="BMB-FH-AAc" firstAttribute="leading" secondItem="BLd-yE-eJW" secondAttribute="leading" id="uui-c4-7z2"/>
                                                                         </constraints>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value=" "/>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                        <connections>
-                                                                            <action selector="advancedAddTapped:" destination="ZV9-zy-Lbc" eventType="touchUpInside" id="zgR-hp-bs8"/>
-                                                                        </connections>
                                                                     </view>
                                                                 </subviews>
                                                             </stackView>
@@ -381,7 +392,7 @@
             <objects>
                 <tableViewController id="K6t-yH-lXi" customClass="AdvancedAddAmountViewController" customModule="Piggy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xOo-OK-L8J">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="tintColor" name="Secondary"/>
