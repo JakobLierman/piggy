@@ -56,8 +56,7 @@ extension TextFieldBLTNPageItem: UITextFieldDelegate {
             descriptionLabel?.textColor = .red
             descriptionLabel?.text = "Enter your name to continue or skip this step."
             textField.layer.borderWidth = 2
-            textField.layer.borderColor =
-                UIColor.red.cgColor
+            textField.layer.borderColor = UIColor.red.cgColor
             textField.layer.cornerRadius = 6.0
         }
     }

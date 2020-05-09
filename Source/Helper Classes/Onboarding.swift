@@ -105,7 +105,7 @@ class Onboarding {
         page.image = UIImage(named: "Rounded Background AppIcon")?
             .resizeImage(128, opaque: false)
         
-        page.descriptionText = "Organize you savings targets and reach you goals faster."
+        page.descriptionText = "Organize your savings targets and reach you goals faster."
         
         page.actionButtonTitle = "Continue"
         page.appearance.actionButtonColor = tintColor

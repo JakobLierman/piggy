@@ -50,7 +50,7 @@ class GoalDetailsViewController: UIViewController {
     lazy var advancedAddButtonShowcase: MaterialShowcase = {
         let showcase = MaterialShowcase()
         showcase.setTargetView(view: self.advancedAddButton)
-        showcase.primaryText = "Addvanced Add Balance"
+        showcase.primaryText = "Advanced Add Balance"
         showcase.secondaryText = "You can add or remove as much balance as you want. This button gives you more options."
         showcase.targetHolderColor = .clear
         showcase.backgroundPromptColor = tintColor
