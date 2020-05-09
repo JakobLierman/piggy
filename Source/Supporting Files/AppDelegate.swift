@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        SettingsBundle.setVersionAndBuildNumber()
+        
         // First launch
         if defaults.object(forKey: "firstLaunch") == nil {
             defaults.set(true, forKey: "firstLaunch")

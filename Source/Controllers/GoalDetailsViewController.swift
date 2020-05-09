@@ -83,7 +83,7 @@ class GoalDetailsViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if !Onboarding.userDidCompleteDetailsShowcase {
+        if Onboarding.usesOnboardingAndHelp && !Onboarding.userDidCompleteDetailsShowcase {
             showDetailsShowcase()
         }
     }

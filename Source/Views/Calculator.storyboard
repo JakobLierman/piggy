@@ -189,6 +189,7 @@
                         <outlet property="dailySavingsTextField" destination="IIT-kf-bN4" id="hil-9I-WqY"/>
                         <outlet property="deadlineContainer" destination="VBc-iK-Vn1" id="t8U-Az-M1i"/>
                         <outlet property="deadlineDatePicker" destination="TQD-C4-SYk" id="LGP-Ne-gTf"/>
+                        <outlet property="helpBarButton" destination="cbT-3Z-MZe" id="OnR-Nq-vdm"/>
                         <outlet property="resultContainer" destination="oMw-HE-e16" id="ULG-83-TXx"/>
                         <outlet property="resultLabel" destination="wu2-8c-la9" id="rju-9w-duH"/>
                         <outlet property="scrollView" destination="L41-f2-nAL" id="Wb8-lk-gew"/>

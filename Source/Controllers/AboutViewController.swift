@@ -21,7 +21,7 @@ class AboutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        versionLabel.text = "Version 0.0.1 alpha"
+        versionLabel.text = "Version \(Bundle.main.releaseVersionNumber!) build \(Bundle.main.buildVersionNumber!)"
         iconLogoFrame.isUserInteractionEnabled = true
         
         confettiView.type = .confetti

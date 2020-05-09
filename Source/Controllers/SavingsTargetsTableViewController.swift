@@ -134,6 +134,10 @@ class SavingsTargetsTableViewController: UITableViewController {
         self.searchController.searchBar.placeholder = "Search Goals"
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        
+        if !Onboarding.usesOnboardingAndHelp {
+            self.helpBarButton.hide()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -155,17 +159,17 @@ class SavingsTargetsTableViewController: UITableViewController {
         
         self.hidesBottomBarWhenPushed = true
         
-        if !Onboarding.userDidCompleteGeneralOnboarding {
+        if Onboarding.usesOnboardingAndHelp && !Onboarding.userDidCompleteGeneralOnboarding {
             onboardingBulletinManager.showBulletin(above: self)
         }
         
-        if !Onboarding.userDidCompleteNavigationShowcase && (self.storyboard!.value(forKey: "name") as! String).starts(with: "Active") {
+        if Onboarding.usesOnboardingAndHelp && !Onboarding.userDidCompleteNavigationShowcase && (self.storyboard!.value(forKey: "name") as! String).starts(with: "Active") {
             showInitialShowcase()
-        } else if !Onboarding.userDidCompleteTableShowcase {
+        } else if Onboarding.usesOnboardingAndHelp && !Onboarding.userDidCompleteTableShowcase {
             showTableShowcase()
         }
         
-        if !Onboarding.userDidCompleteDeleteShowcase && (self.storyboard!.value(forKey: "name") as! String).starts(with: "Finished") && tableView.numberOfRows(inSection: 0) != 0  {
+        if Onboarding.usesOnboardingAndHelp && !Onboarding.userDidCompleteDeleteShowcase && (self.storyboard!.value(forKey: "name") as! String).starts(with: "Finished") && tableView.numberOfRows(inSection: 0) != 0  {
             showDeleteShowcase()
         }
     }
@@ -185,9 +189,9 @@ class SavingsTargetsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if savingsTargets.isEmpty {
             if (self.storyboard!.value(forKey: "name") as! String).starts(with: "Active") {
-                tableView.setEmptyView(title: "You do not have any active goals", message: "Create one with the button above")
+                tableView.setEmptyView(title: "You do not have any active goals", message: Onboarding.usesOnboardingAndHelp ? "Create one with the button above" : "")
             } else {
-                tableView.setEmptyView(title: "You do not have any finished goals", message: "Start saving!")
+                tableView.setEmptyView(title: "You do not have any finished goals", message: Onboarding.usesOnboardingAndHelp ? "Start saving!" : "")
             }
         } else {
             tableView.restore()

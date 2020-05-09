@@ -24,7 +24,9 @@ class SettingsController: SPLarkSettingsController {
         settingsItems.append(SettingsItem(title: "Currency", subtitle: User.currentUser().currency, functionName: "currency"))
         settingsItems.append(SettingsItem(title: "Name", subtitle: User.currentUser().name, functionName: "name"))
         settingsItems.append(SettingsItem(title: "About", functionName: "about"))
-        settingsItems.append(SettingsItem(title: "Help", functionName: "help"))
+        if Onboarding.usesOnboardingAndHelp {
+            settingsItems.append(SettingsItem(title: "Help", functionName: "help"))
+        }
         settingsItems.append(SettingsItem(title: "Reset", highlighted: false, functionName: "reset"))
         // Fill db for testing purposes
         settingsItems.append(SettingsItem(title: "Fill database", subtitle: "For testing purposes", highlighted: false, functionName: "filldb"))

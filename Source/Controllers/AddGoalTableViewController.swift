@@ -129,7 +129,7 @@ class AddGoalTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if !Onboarding.userDidCompleteNewShowcase {
+        if Onboarding.usesOnboardingAndHelp && !Onboarding.userDidCompleteNewShowcase {
             showNewShowcase()
         }
     }

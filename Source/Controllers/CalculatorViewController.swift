@@ -77,6 +77,7 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var deadlineDatePicker: UIDatePicker!
     @IBOutlet weak var resultContainer: UIStackView!
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var helpBarButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,12 +86,16 @@ class CalculatorViewController: UIViewController {
         self.amountToSaveTextField.delegate = self
         self.dailySavingsTextField.delegate = self
         self.updateView()
+        
+        if !Onboarding.usesOnboardingAndHelp {
+            self.helpBarButton.hide()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if !Onboarding.userDidCompleteCalculatorShowcase {
+        if Onboarding.usesOnboardingAndHelp && !Onboarding.userDidCompleteCalculatorShowcase {
             showCalculatorShowcase()
         }
     }

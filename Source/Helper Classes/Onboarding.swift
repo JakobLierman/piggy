@@ -14,6 +14,12 @@ class Onboarding {
     static private let defaults = UserDefaults.standard
     static private let tintColor = UIColor(named: "Primary")!
     
+    static var usesOnboardingAndHelp: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "usesOnboarding")
+        }
+    }
+    
     static var userDidCompleteGeneralOnboarding: Bool {
         get {
             return UserDefaults.standard.bool(forKey: "completedGeneralOnboarding")

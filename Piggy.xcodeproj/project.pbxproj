@@ -49,6 +49,10 @@
 		36F1EFA7245ED29E00AB1E19 /* AdvancedAddAmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F1EFA6245ED29E00AB1E19 /* AdvancedAddAmountViewController.swift */; };
 		36FAADB52444977600C94842 /* ActiveGoals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36FAADB42444977600C94842 /* ActiveGoals.storyboard */; };
 		36FAADB72444A32E00C94842 /* AddGoalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FAADB62444A32E00C94842 /* AddGoalTableViewController.swift */; };
+		36FC7F5E2466A16A00E981FB /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FC7F5D2466A16A00E981FB /* Bundle.swift */; };
+		36FC7F602466A7BB00E981FB /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 36FC7F5F2466A7BB00E981FB /* Settings.bundle */; };
+		36FC7F622466A8BF00E981FB /* SettingsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FC7F612466A8BF00E981FB /* SettingsBundle.swift */; };
+		36FC7F642466B19B00E981FB /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FC7F632466B19B00E981FB /* UIBarButtonItem.swift */; };
 		43A0F4C8CA496FB5CBBDA629 /* Pods_Piggy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AED37EDA87606CBB04C79716 /* Pods_Piggy.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +101,10 @@
 		36F1EFA6245ED29E00AB1E19 /* AdvancedAddAmountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedAddAmountViewController.swift; sourceTree = "<group>"; };
 		36FAADB42444977600C94842 /* ActiveGoals.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ActiveGoals.storyboard; sourceTree = "<group>"; };
 		36FAADB62444A32E00C94842 /* AddGoalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalTableViewController.swift; sourceTree = "<group>"; };
+		36FC7F5D2466A16A00E981FB /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		36FC7F5F2466A7BB00E981FB /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		36FC7F612466A8BF00E981FB /* SettingsBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBundle.swift; sourceTree = "<group>"; };
+		36FC7F632466B19B00E981FB /* UIBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
 		45A548FA65D0192B1268450D /* Pods-Piggy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piggy.debug.xcconfig"; path = "Target Support Files/Pods-Piggy/Pods-Piggy.debug.xcconfig"; sourceTree = "<group>"; };
 		AED37EDA87606CBB04C79716 /* Pods_Piggy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Piggy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF18BEADD0B0449A3BD9C9E8 /* Pods-Piggy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Piggy.release.xcconfig"; path = "Target Support Files/Pods-Piggy/Pods-Piggy.release.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +164,7 @@
 				360CBD02242C024300F96167 /* LaunchScreen.storyboard */,
 				360CBD03242C024300F96167 /* Info.plist */,
 				36468FB82439CD4500543F75 /* Constants.swift */,
+				36FC7F5F2466A7BB00E981FB /* Settings.bundle */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -210,6 +219,7 @@
 				365BDDD02462A57D0024DB05 /* Onboarding.swift */,
 				365BDDD22462BDC60024DB05 /* TextFieldBLTNPageItem.swift */,
 				366F55EE2463326E00F67280 /* CurrencySelectorBLTNPageItem.swift */,
+				36FC7F612466A8BF00E981FB /* SettingsBundle.swift */,
 			);
 			path = "Helper Classes";
 			sourceTree = "<group>";
@@ -250,6 +260,8 @@
 				36B2C0C92446FCA20098C3DA /* UITableViewExtension.swift */,
 				365C40D0245C7D80007CC3D9 /* SPAlert.swift */,
 				366F55F02463610D00F67280 /* UIImage.swift */,
+				36FC7F5D2466A16A00E981FB /* Bundle.swift */,
+				36FC7F632466B19B00E981FB /* UIBarButtonItem.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -339,6 +351,7 @@
 				36BC0E54244B455F00EFB769 /* GoalDetails.storyboard in Resources */,
 				360CBD12242C024400F96167 /* Home.storyboard in Resources */,
 				3606FF9E2440E8930021867E /* FinishedGoals.storyboard in Resources */,
+				36FC7F602466A7BB00E981FB /* Settings.bundle in Resources */,
 				3621018D24589373004747BD /* Help.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				365F3E3C242D32680096B76E /* SavingsTarget.swift in Sources */,
+				36FC7F5E2466A16A00E981FB /* Bundle.swift in Sources */,
 				366F55F12463610D00F67280 /* UIImage.swift in Sources */,
 				36FAADB72444A32E00C94842 /* AddGoalTableViewController.swift in Sources */,
 				36B2C0CA2446FCA20098C3DA /* UITableViewExtension.swift in Sources */,
@@ -409,6 +423,7 @@
 				3606948A243E6D2900F3DE3D /* SavingsTargetTableViewCell.swift in Sources */,
 				362112202459C900006C1C02 /* HelpViewController.swift in Sources */,
 				3621019124589BAA004747BD /* AboutViewController.swift in Sources */,
+				36FC7F642466B19B00E981FB /* UIBarButtonItem.swift in Sources */,
 				3624E41224477EE30092624A /* Currency.swift in Sources */,
 				365F3E40242D42B20096B76E /* Category.swift in Sources */,
 				365BDDD12462A57D0024DB05 /* Onboarding.swift in Sources */,
@@ -416,6 +431,7 @@
 				3621121C2459726F006C1C02 /* CalculatorViewController.swift in Sources */,
 				36F0056A2458D64600B6D17B /* User.swift in Sources */,
 				365C40D1245C7D80007CC3D9 /* SPAlert.swift in Sources */,
+				36FC7F622466A8BF00E981FB /* SettingsBundle.swift in Sources */,
 				36F1EFA7245ED29E00AB1E19 /* AdvancedAddAmountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -545,6 +561,7 @@
 				CODE_SIGN_ENTITLEMENTS = Piggy.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = JR2QV47NS6;
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -569,6 +586,7 @@
 				CODE_SIGN_ENTITLEMENTS = Piggy.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = JR2QV47NS6;
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
